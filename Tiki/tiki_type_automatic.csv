@@ -490,6 +490,11 @@
 ,,23072.0,Bàn thờ,23054,Đồ thờ cúng,1883,Nhà Cửa - Đời Sống
 ,,23078.0,"Hương, nhang",23054,Đồ thờ cúng,1883,Nhà Cửa - Đời Sống
 ,,23082.0,Phụ kiện thờ cúng,23054,Đồ thờ cúng,1883,Nhà Cửa - Đời Sống
+,,,,1795,Điện thoại Smartphone,1789,Điện Thoại - Máy Tính Bảng
+,,,,1794,Máy tính bảng,1789,Điện Thoại - Máy Tính Bảng
+,,,,28856,Máy đọc sách,1789,Điện Thoại - Máy Tính Bảng
+,,,,1796,Điện thoại phổ thông,1789,Điện Thoại - Máy Tính Bảng
+,,,,8061,Điện thoại bàn,1789,Điện Thoại - Máy Tính Bảng
 ,,2552.0,Tã dán,2551,"Tã, Bỉm",2549,Đồ Chơi - Mẹ & Bé
 ,,10414.0,Miếng lót sơ sinh,2551,"Tã, Bỉm",2549,Đồ Chơi - Mẹ & Bé
 ,,2553.0,Tã quần,2551,"Tã, Bỉm",2549,Đồ Chơi - Mẹ & Bé
@@ -509,6 +514,9 @@
 ,,6571.0,Thực phẩm chế biến sẵn,8339,Dinh dưỡng cho bé,2549,Đồ Chơi - Mẹ & Bé
 ,,6572.0,Dầu ăn cho bé,8339,Dinh dưỡng cho bé,2549,Đồ Chơi - Mẹ & Bé
 ,,2609.0,Trà và Thức uống cho bé,8339,Dinh dưỡng cho bé,2549,Đồ Chơi - Mẹ & Bé
+,,,,6568,Thực phẩm ăn dặm,2549,Đồ Chơi - Mẹ & Bé
+,,,,10416,Dinh dưỡng cho mẹ,2549,Đồ Chơi - Mẹ & Bé
+,,,,10418,Dinh dưỡng cho người lớn,2549,Đồ Chơi - Mẹ & Bé
 2557.0,"Bình sữa, Bình tập uống",2556.0,Đồ dùng ăn uống cho bé,11601,Đồ dùng cho bé,2549,Đồ Chơi - Mẹ & Bé
 2558.0,Núm ti,2556.0,Đồ dùng ăn uống cho bé,11601,Đồ dùng cho bé,2549,Đồ Chơi - Mẹ & Bé
 2560.0,Phụ kiện bình sữa,2556.0,Đồ dùng ăn uống cho bé,11601,Đồ dùng cho bé,2549,Đồ Chơi - Mẹ & Bé
@@ -1254,6 +1262,7 @@
 ,,49378.0,Quần bầu,49372,Thời trang bầu và sau sinh,931,Thời trang nữ
 ,,49380.0,Bộ đồ bầu,49372,Thời trang bầu và sau sinh,931,Thời trang nữ
 ,,49382.0,Đồ lót bầu,49372,Thời trang bầu và sau sinh,931,Thời trang nữ
+,,,,49384,Thời trang trung niên,931,Thời trang nữ
 49412.0,Áo nâng ngực,1509.0,Áo ngực,4554,Đồ lót nữ,931,Thời trang nữ
 49418.0,Áo không đệm - Bralette,1509.0,Áo ngực,4554,Đồ lót nữ,931,Thời trang nữ
 49420.0,Corset,1509.0,Áo ngực,4554,Đồ lót nữ,931,Thời trang nữ
@@ -1873,6 +1882,7 @@
 ,,4236.0,Tivi thường (LED),5015,Tivi,4221,Điện Tử - Điện Lạnh
 ,,8950.0,Tivi QLED,5015,Tivi,4221,Điện Tử - Điện Lạnh
 ,,7603.0,Tivi OLED,5015,Tivi,4221,Điện Tử - Điện Lạnh
+,,,,3862,Máy giặt,4221,Điện Tử - Điện Lạnh
 ,,7074.0,"Android TV Box, Smart Box",26568,Âm thanh & Phụ kiện Tivi,4221,Điện Tử - Điện Lạnh
 7083.0,Điều khiển từ xa Tivi,7082.0,Phụ kiện Tivi,26568,Âm thanh & Phụ kiện Tivi,4221,Điện Tử - Điện Lạnh
 26640.0,Đầu thu kỹ thuật số,7082.0,Phụ kiện Tivi,26568,Âm thanh & Phụ kiện Tivi,4221,Điện Tử - Điện Lạnh
@@ -1880,6 +1890,13 @@
 7084.0,Giá treo Tivi,7082.0,Phụ kiện Tivi,26568,Âm thanh & Phụ kiện Tivi,4221,Điện Tử - Điện Lạnh
 26638.0,Cáp Tivi,7082.0,Phụ kiện Tivi,26568,Âm thanh & Phụ kiện Tivi,4221,Điện Tử - Điện Lạnh
 28880.0,"Bộ vệ sinh, bảo vệ Tivi",7082.0,Phụ kiện Tivi,26568,Âm thanh & Phụ kiện Tivi,4221,Điện Tử - Điện Lạnh
+,,,,3863,Máy sấy quần áo,4221,Điện Tử - Điện Lạnh
+,,,,3864,Máy rửa chén,4221,Điện Tử - Điện Lạnh
+,,,,3865,Máy lạnh - Máy điều hòa,4221,Điện Tử - Điện Lạnh
+,,,,3866,Máy nước nóng,4221,Điện Tử - Điện Lạnh
+,,,,2328,Tủ lạnh,4221,Điện Tử - Điện Lạnh
+,,,,3868,Tủ đông - Tủ mát,4221,Điện Tử - Điện Lạnh
+,,,,3869,Tủ ướp rượu,4221,Điện Tử - Điện Lạnh
 ,,28884.0,"Phụ kiện, linh kiện tủ lạnh",8074,Phụ kiện điện lạnh,4221,Điện Tử - Điện Lạnh
 ,,28886.0,"Phụ kiện, linh kiện máy lạnh",8074,Phụ kiện điện lạnh,4221,Điện Tử - Điện Lạnh
 ,,28888.0,"Phụ kiện, linh kiện máy nước nóng",8074,Phụ kiện điện lạnh,4221,Điện Tử - Điện Lạnh
@@ -1899,6 +1916,7 @@
 ,,49564.0,Giày búp bê mũi nhọn,1192,Giày búp bê,1703,Giày - Dép nữ
 ,,49566.0,Giày búp bê mũi tròn,1192,Giày búp bê,1703,Giày - Dép nữ
 ,,49568.0,Giày búp bê mũi vuông,1192,Giày búp bê,1703,Giày - Dép nữ
+,,,,1008,Giày Đế xuồng nữ ,1703,Giày - Dép nữ
 ,,49570.0,Giày boots nữ cổ ngắn,981,Giày boots nữ,1703,Giày - Dép nữ
 ,,49572.0,Giày boots nữ cổ cao,981,Giày boots nữ,1703,Giày - Dép nữ
 ,,49574.0,Giày boots nữ gót nhọn,981,Giày boots nữ,1703,Giày - Dép nữ
@@ -2169,6 +2187,7 @@
 ,,11328.0,Ca nhạc - Phim - Kịch,11327,Sự kiện - Giải trí,11312,Voucher - Dịch vụ
 ,,11329.0,Vui chơi - Giải trí,11327,Sự kiện - Giải trí,11312,Voucher - Dịch vụ
 ,,11330.0,Studio - Chụp ảnh,11327,Sự kiện - Giải trí,11312,Voucher - Dịch vụ
+,,,,11333,Sự kiện - Thể thao,11312,Voucher - Dịch vụ
 ,,13368.0,Nha khoa,11326,Nha khoa - Sức khỏe,11312,Voucher - Dịch vụ
 ,,13370.0,Khám sức khỏe tổng quát,11326,Nha khoa - Sức khỏe,11312,Voucher - Dịch vụ
 ,,12744.0,Khóa học online,11332,Khóa học,11312,Voucher - Dịch vụ
@@ -2180,6 +2199,9 @@
 ,,13384.0,Khóa học ngoại ngữ,11332,Khóa học,11312,Voucher - Dịch vụ
 ,,13386.0,Khóa học nuôi dạy con và kỹ năng cho bé,11332,Khóa học,11312,Voucher - Dịch vụ
 ,,13388.0,Khóa học nghệ thuật và chủ đề khác,11332,Khóa học,11312,Voucher - Dịch vụ
+,,,,11334,Dịch vụ khác,11312,Voucher - Dịch vụ
+,,,,46516,TicketBox,11312,Voucher - Dịch vụ
+,,,,52842,Vé xe bus,11312,Voucher - Dịch vụ
 ,,49608.0,Túi tote có khóa,4559,Túi tote nữ,976,Túi thời trang nữ
 ,,49610.0,Túi tote không khóa,4559,Túi tote nữ,976,Túi thời trang nữ
 ,,49596.0,Túi đeo chéo công sở,4558,"Túi đeo chéo, túi đeo vai nữ",976,Túi thời trang nữ
@@ -2190,5 +2212,8 @@
 ,,49606.0,Ví dài,4561,Ví nữ,976,Túi thời trang nữ
 ,,49616.0,"Dây, quai đeo túi",8352,Phụ kiện túi,976,Túi thời trang nữ
 ,,49618.0,Phụ kiện cài túi,8352,Phụ kiện túi,976,Túi thời trang nữ
+,,,,5337,Túi xách công sở nam,27616,Túi thời trang nam
+,,,,958,Túi đeo chéo nam,27616,Túi thời trang nam
+,,,,49650,"Túi bao tử, túi đeo bụng",27616,Túi thời trang nam
 ,,49652.0,Ví nam ngang,959,Ví nam,27616,Túi thời trang nam
 ,,49654.0,Ví nam đứng,959,Ví nam,27616,Túi thời trang nam
