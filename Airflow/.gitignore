@@ -1,4 +1,4 @@
-dags
+# dags
 logs
-plugins
-py_env
+# plugins
+.env

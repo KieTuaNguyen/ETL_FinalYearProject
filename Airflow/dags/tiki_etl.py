@@ -29,4 +29,3 @@ for group in groups:
     group_list.append([group_id, text])
 
 groups = pd.DataFrame(group_list, columns=["Group_ID", "Group_Name"])
-groups.to_csv("tiki_group.csv", index=False, encoding="utf-8")
