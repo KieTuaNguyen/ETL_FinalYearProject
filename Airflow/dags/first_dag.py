@@ -8,11 +8,13 @@ except Exception as e:
   print("Error  {} ".format(e))
 
 
-def first_function(*args, **kwargs):
-  variable = kwargs.get("name", "Didnt get any key")
-  print("Hello world: {}".format(variable))
-  return "Hello world: " + variable
+def first_function(**context):
+  print("First function executed")
+  context['ti'].xcom_push(key='mykey', value="First function execution done")
 
+def second_function(**context):
+  instance = context['ti'].xcom_pull(key='mykey')
+  print("This is the second function being executed, which is using the value {} from the first function: ".format(instance))
 
 with DAG(
   dag_id = "first_dag",
@@ -29,5 +31,14 @@ with DAG(
   first_function_execute = PythonOperator(
     task_id = "first_function_execute",
     python_callable = first_function,
+    provide_context=True,
     op_kwargs={"name":"Kiet Nguyen"},
   )
+  
+  second_function_execute = PythonOperator(
+    task_id = "second_function_execute",
+    python_callable = second_function,
+    provide_context=True
+  )
+    
+first_function_execute >> second_function_execute
