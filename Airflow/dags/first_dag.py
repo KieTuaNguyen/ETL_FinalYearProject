@@ -8,9 +8,10 @@ except Exception as e:
   print("Error  {} ".format(e))
 
 
-def first_function():
-  print("Hello world!")
-  return "Hello world!"
+def first_function(*args, **kwargs):
+  variable = kwargs.get("name", "Didnt get any key")
+  print("Hello world: {}".format(variable))
+  return "Hello world: " + variable
 
 
 with DAG(
@@ -24,7 +25,9 @@ with DAG(
   },
   catchup= False
 ) as f:
+  
   first_function_execute = PythonOperator(
     task_id = "first_function_execute",
-    python_callable = first_function
+    python_callable = first_function,
+    op_kwargs={"name":"Kiet Nguyen"},
   )
