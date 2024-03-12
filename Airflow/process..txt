@@ -1,0 +1,16 @@
+API Endpoints -->  Airflow
+                      |
+                      | (Data Ingestion)
+                      v
+              Data Lake (e.g., AWS S3, Azure Blob Storage)
+                      |
+                      | (Batch Processing)
+                      v
+             Spark/Beam --> Data Warehouse (e.g., Redshift, Synapse)
+                                   |
+                                   | (Data Serving)
+                                   v
+                              Power BI
+                                   ^
+                                   |
+                          (Data Visualization)
