@@ -14,3 +14,9 @@ API Endpoints -->  Airflow
                                    ^
                                    |
                           (Data Visualization)
+
+Data Source     --> Data Ingestion  --> Batch Processing --> Data Serving --> Data Visualization
+(API Endpoints)          |                    |
+    |                    |                    |
+    |                    |                    |
+Tiki API            Airflow (DAGs)      Spark/Beam Jobs
