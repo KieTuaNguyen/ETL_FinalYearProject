@@ -1,0 +1,137 @@
+CategoryID,MasterCategoryID,Name
+623.0,320,Art & Photography
+27.0,320,Biographies & Memoirs
+4.0,320,Business & Economics
+614.0,320,How-to - Self Help
+7.0,320,Children's Books
+282.0,320,Dictionary
+5308.0,320,Education - Teaching
+9.0,320,Fiction - Literature
+6445.0,320,Magazines
+218.0,320,Medical Books
+28.0,320,Parenting & Relationships
+5309.0,320,Reference
+269.0,320,Science - Technology
+632.0,320,"History, Politics & Social Sciences"
+32.0,320,Travel & Holiday
+21.0,320,"Cookbooks, Food & Wine"
+839.0,316,Sách văn học
+846.0,316,Sách kinh tế
+393.0,316,Sách thiếu nhi 
+870.0,316,Sách kỹ năng sống
+2527.0,316,Nuôi dạy con
+2321.0,316,Sách Giáo Khoa - Giáo Trình
+887.0,316,Sách Học Ngoại Ngữ
+2320.0,316,Sách Tham Khảo
+897.0,316,Từ Điển
+873.0,316,Sách Kiến Thức Tổng Hợp
+879.0,316,Sách Khoa Học - Kỹ Thuật
+880.0,316,Sách Lịch sử
+881.0,316,Điện Ảnh - Nhạc - Họa
+1084.0,316,"Truyện Tranh, Manga, Comic"
+861.0,316,Sách Tôn Giáo - Tâm Linh
+857.0,316,Sách Văn Hóa - Địa Lý - Du Lịch
+875.0,316,Sách Chính Trị - Pháp Lý
+882.0,316,Sách Nông - Lâm - Ngư Nghiệp
+876.0,316,Sách Công Nghệ Thông Tin
+885.0,316,Sách Y Học
+1468.0,316,Tạp Chí - Catalogue
+868.0,316,Sách Tâm lý - Giới tính
+862.0,316,Sách Thường Thức - Gia Đình
+6905.0,316,Thể Dục - Thể Thao
+1862.0,7741,Dụng Cụ Văn Phòng
+1858.0,7741,Bút - Viết các loại
+2538.0,7741,Bút Chì Màu - Bút Lông Màu - Sáp Màu
+2365.0,7741,Dụng Cụ Học Sinh
+1910.0,7741,Flashcards
+1899.0,7741,Sổ Tay Các Loại
+1907.0,7741,Tập vở các loại 
+2333.0,7741,Văn Hóa Phẩm
+6210.0,7741,Thiết Bị Giáo Dục Trường Học
+5674.0,7741,Balo Học Sinh - Cặp học sinh
+2452.0,7741,Máy Tính Điện Tử
+3892.0,7741,Lịch
+16458.0,7741,Bút Kỹ Thuật
+2368.0,7741,Sản phẩm về giấy
+18398.0,7741,Thiết bị văn phòng
+18378.0,7741,Phấn - Bảng viết - Lau bảng
+4624.0,18328,Thú Nhồi Bông
+6225.0,18328,Bookmark
+6541.0,18328,Bưu ảnh - Postcard
+18330.0,18328,Quà tặng trang sức
+8264.0,18328,Album
+18332.0,18328,Mô hình trang trí
+18334.0,18328,Sticker - Decal trang trí
+6246.0,18328,Ly - Cốc
+6226.0,18328,Kẹp Ảnh Gỗ
+18346.0,18328,Hộp quà
+6215.0,18328,Tượng
+8265.0,18328,Móc Khóa
+6212.0,18328,Đồng Hồ Cát
+6213.0,18328,Quả Cầu Tuyết
+6214.0,18328,Hộp Nhạc
+18342.0,18328,Phụ kiện - Vật liệu trang trí
+18344.0,18328,Quà tặng trang trí khác
+25706.0,18328,Gương mini
+68202.0,18328,Khung hình
+68205.0,18328,Thiệp
+68208.0,18328,Túi Quà
+9271.0,1795,OPPO
+,1794,
+,28856,
+,1796,
+,8061,
+29010.0,8095,Laptop Truyền Thống
+2458.0,8095,Macbook
+5584.0,8095,Laptop Gaming
+29008.0,8095,Laptop 2 trong 1
+29012.0,8095,Chromebooks
+2665.0,12884,Màn Hình Máy Tính
+2308.0,12884,Máy In - Photocopy
+6255.0,12884,Phần Mềm Máy Tính
+4532.0,12884,Mực In và Toner
+4542.0,12884,Máy Scan Tài Liệu
+8086.0,12884,Giấy In
+2664.0,12884,Máy Chiếu và Phụ Kiện Máy Chiếu
+30020.0,12884,Máy Scan Mã Vạch
+10089.0,12884,Máy Hủy Tài Liệu
+12886.0,12884,Máy Chấm Công
+8088.0,12884,Máy Fax
+29006.0,12884,Máy Đếm Tiền
+12890.0,12884,Thiết Bị Truyền Thông Hội Nghị
+28844.0,8060,Ổ Cứng Gắn Trong
+1827.0,8060,Ổ Cứng Di Động
+5350.0,8060,Case Ổ Cứng- Hộp Đựng HDD Box - Dock Ổ Cứng
+5349.0,8060,Thiết Bị Lưu Trữ Qua Mạng NAS
+1828.0,8060,USB
+28838.0,8060,Đĩa Trắng - Băng Cuộn
+13150.0,2663,Thiết Bị Phát Sóng Wifi
+4343.0,2663,Bộ Kích Sóng Wifi
+4345.0,2663,Bộ Phát Wifi Di Động 3G/4G - Mifi
+4454.0,2663,Bộ Chia Mạng - Switch
+4642.0,2663,Phụ Kiện Thiết Bị Mạng
+28894.0,2663,Bộ Chuyển Đổi - Transceivers
+4346.0,2663,Mở Rộng Mạng Qua Đường Điện - Powerline Ethernet
+7361.0,2663,Card Mạng
+28896.0,2663,Ăng-Ten Mạng
+4585.0,2663,Modem ADSL
+8094.0,8093,Máy Tính All in one
+7369.0,8093,Mini PC
+5172.0,8093,Máy Tính Để Bàn Lắp Ráp
+29014.0,8093,Towers - Máy Chủ - Server
+29016.0,8093,Máy Tính Bộ Thương Hiệu
+28900.0,8129,Nguồn Máy Tính
+11964.0,8129,Bộ Lưu Điện - UPS
+11956.0,8129,Mainboard - Board Mạch Chủ
+11962.0,8129,Bộ Vi Xử Lý CPU
+11960.0,8129,Vỏ Case - Thùng Máy
+28902.0,8129,Hệ Thống Tản Nhiệt
+11958.0,8129,Card Màn Hình - VGA
+11966.0,8129,Sound Card - Card Âm Thanh
+2680.0,8129,RAM Máy Tính
+28908.0,8129,Ổ Đĩa Quang
+28910.0,8129,I/O Port Cards
+28914.0,8129,Thiết Bị Streaming và Capture Cards
+28916.0,8129,KVM Switches - Switch HDMI
+11968.0,8129,Linh Kiện Máy Tính Khác
+28918.0,8129,Linh Kiện Thay Thế Cho Laptop
