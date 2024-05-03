@@ -1,0 +1,1373 @@
+CategoryID,MasterCategoryID,Name
+623.0,320,Art & Photography
+27.0,320,Biographies & Memoirs
+4.0,320,Business & Economics
+614.0,320,How-to - Self Help
+7.0,320,Children's Books
+282.0,320,Dictionary
+5308.0,320,Education - Teaching
+9.0,320,Fiction - Literature
+6445.0,320,Magazines
+218.0,320,Medical Books
+28.0,320,Parenting & Relationships
+5309.0,320,Reference
+269.0,320,Science - Technology
+632.0,320,"History, Politics & Social Sciences"
+32.0,320,Travel & Holiday
+21.0,320,"Cookbooks, Food & Wine"
+839.0,316,Sách văn học
+846.0,316,Sách kinh tế
+393.0,316,Sách thiếu nhi 
+870.0,316,Sách kỹ năng sống
+2527.0,316,Nuôi dạy con
+2321.0,316,Sách Giáo Khoa - Giáo Trình
+887.0,316,Sách Học Ngoại Ngữ
+2320.0,316,Sách Tham Khảo
+897.0,316,Từ Điển
+873.0,316,Sách Kiến Thức Tổng Hợp
+879.0,316,Sách Khoa Học - Kỹ Thuật
+880.0,316,Sách Lịch sử
+881.0,316,Điện Ảnh - Nhạc - Họa
+1084.0,316,"Truyện Tranh, Manga, Comic"
+861.0,316,Sách Tôn Giáo - Tâm Linh
+857.0,316,Sách Văn Hóa - Địa Lý - Du Lịch
+875.0,316,Sách Chính Trị - Pháp Lý
+882.0,316,Sách Nông - Lâm - Ngư Nghiệp
+876.0,316,Sách Công Nghệ Thông Tin
+885.0,316,Sách Y Học
+1468.0,316,Tạp Chí - Catalogue
+868.0,316,Sách Tâm lý - Giới tính
+862.0,316,Sách Thường Thức - Gia Đình
+6905.0,316,Thể Dục - Thể Thao
+1862.0,7741,Dụng Cụ Văn Phòng
+1858.0,7741,Bút - Viết các loại
+2538.0,7741,Bút Chì Màu - Bút Lông Màu - Sáp Màu
+2365.0,7741,Dụng Cụ Học Sinh
+1910.0,7741,Flashcards
+1899.0,7741,Sổ Tay Các Loại
+1907.0,7741,Tập vở các loại 
+2333.0,7741,Văn Hóa Phẩm
+6210.0,7741,Thiết Bị Giáo Dục Trường Học
+5674.0,7741,Balo Học Sinh - Cặp học sinh
+2452.0,7741,Máy Tính Điện Tử
+3892.0,7741,Lịch
+16458.0,7741,Bút Kỹ Thuật
+2368.0,7741,Sản phẩm về giấy
+18398.0,7741,Thiết bị văn phòng
+18378.0,7741,Phấn - Bảng viết - Lau bảng
+4624.0,18328,Thú Nhồi Bông
+6225.0,18328,Bookmark
+6541.0,18328,Bưu ảnh - Postcard
+18330.0,18328,Quà tặng trang sức
+8264.0,18328,Album
+18332.0,18328,Mô hình trang trí
+18334.0,18328,Sticker - Decal trang trí
+6246.0,18328,Ly - Cốc
+6226.0,18328,Kẹp Ảnh Gỗ
+18346.0,18328,Hộp quà
+6215.0,18328,Tượng
+8265.0,18328,Móc Khóa
+6212.0,18328,Đồng Hồ Cát
+6213.0,18328,Quả Cầu Tuyết
+6214.0,18328,Hộp Nhạc
+18342.0,18328,Phụ kiện - Vật liệu trang trí
+18344.0,18328,Quà tặng trang trí khác
+25706.0,18328,Gương mini
+68202.0,18328,Khung hình
+68205.0,18328,Thiệp
+68208.0,18328,Túi Quà
+1934.0,1951,Ấm nước các loại
+23128.0,1951,Dụng cụ chứa đựng thực phẩm
+8319.0,1951,"Dao, kéo và phụ kiện"
+5433.0,1951,Dụng cụ làm bánh
+6305.0,1951,Kệ nhà bếp
+11808.0,1951,"Bếp nướng, vỉ nướng"
+1986.0,1951,Phụ kiện nhà bếp
+53052.0,1951,Nồi và chảo
+68034.0,1951,Bộ hộp cơm và phụ kiện
+23132.0,1951,Thùng đựng gạo
+6963.0,1954,"Bình nước, bình giữ nhiệt & Phụ kiện"
+2014.0,1954,"Bình lọc, lõi lọc, thiết bị lọc nước"
+3990.0,1954,"Bình, ly uống trà và phụ kiện"
+23304.0,1954,"Bình, ly uống cà phê và phụ kiện"
+3177.0,1954,"Ly, cốc & phụ kiện ly"
+3179.0,1954,"Đũa, muỗng, nĩa"
+23322.0,1954,Dụng cụ pha chế
+3180.0,1954,Phụ kiện phòng ăn
+3178.0,1954,"Tô, chén, dĩa"
+23282.0,1954,Bình đựng nước
+23346.0,8313,"Bộ ga, ra, drap"
+23352.0,8313,"Chăn, mền và phụ kiện"
+6724.0,8313,"Gối, ruột gối, vỏ gối"
+6723.0,8313,Nệm và phụ kiện
+8314.0,8313,Phụ kiện phòng ngủ
+23570.0,2150,Nội thất phòng khách
+23598.0,2150,Nội thất phòng ngủ
+23636.0,2150,Nội thất phòng ăn
+23654.0,2150,"Nội thất phòng học, làm việc"
+23662.0,2150,Nội thất trẻ em
+23678.0,2150,Nội thất khác
+3710.0,1973,Decal & giấy dán tường
+23778.0,1973,Decal & giấy dán kính
+1980.0,1973,Đồng hồ
+11222.0,1973,Tranh trang trí
+23806.0,1973,Trang trí nhà cửa khác
+5848.0,1973,Vật phẩm phong thủy
+2018.0,2015,Đèn pin
+2019.0,2015,Đèn ngủ
+23236.0,2015,Đèn ngoài trời
+23238.0,2015,Đèn trần
+23242.0,2015,Đèn cảm ứng
+23246.0,2015,Đèn khác
+2020.0,2015,Đèn diệt côn trùng
+23802.0,2015,"Đèn xông tinh dầu, tinh dầu và phụ kiện"
+5995.0,2223,"Áo mưa, ô dù và phụ kiện đi mưa"
+3879.0,2223,Dụng cụ làm vườn
+8316.0,2223,Máy xịt rửa và phụ kiện
+23422.0,2223,Ngoại thất sân vườn
+23434.0,2223,Bể bơi và phụ kiện
+23446.0,2223,Dụng cụ ngoài trời khác
+2685.0,1966,Khăn
+2339.0,1966,Phụ kiện nhà tắm
+23258.0,1966,Kệ nhà tắm
+23264.0,1966,Thiết bị phòng tắm
+23044.0,1966,Phụ kiện giặt ủi
+23018.0,1966,Dụng cụ vệ sinh
+4452.0,1974,Bảo hộ lao động
+12984.0,1974,Xe đẩy hàng
+12986.0,1974,"Sơn, dầu mỡ, hóa chất"
+2759.0,1974,Bộ dụng cụ đa năng
+12980.0,1974,"Đá cắt, que hàn, cưa & lưỡi cưa"
+2327.0,1974,Thang nhôm
+2760.0,1974,Dụng cụ sửa chữa nhà cửa
+27188.0,1974,Thiết bị đo lường
+2806.0,1974,"Thùng đồ nghề, túi công cụ"
+23450.0,10068,Đàn piano
+23462.0,10068,Amply
+23464.0,10068,Đàn organ - Keyboard
+23466.0,10068,"Đàn guitar, ukulele"
+23468.0,10068,Phụ kiện đàn
+10076.0,10068,Nhạc cụ dân tộc
+10074.0,10068,Nhạc cụ hơi
+23552.0,10068,Phụ kiện nhạc cụ
+10073.0,10068,Các loại đàn khác
+68289.0,10068,Amplifier
+68304.0,10068,Bộ Trống - Drum
+68318.0,10068,Đàn Kalimba
+23056.0,23054,Bộ đồ thờ
+23058.0,23054,"Lư trầm, bát hương, bát nhang"
+23072.0,23054,Bàn thờ
+23078.0,23054,"Hương, nhang"
+23082.0,23054,Phụ kiện thờ cúng
+23062.0,23054,Đèn thờ
+23080.0,23054,Kỷ chén thờ
+23070.0,23054,Mâm đồng/Mâm ngũ quả
+67951.0,23054,Ống cắm hương/nhang
+67952.0,23054,Vật dụng trang trí
+23046.0,53050,Bảo vệ nhà cửa
+23004.0,53050,"Dụng cụ diệt chuột, côn trùng"
+2363.0,53050,"Giá, móc, cây treo"
+23012.0,53050,Pin và dụng cụ sạc pin
+20492.0,53050,Thiết bị điều khiển thông minh
+67956.0,53050,Miếng dán đa năng
+9271.0,1795,OPPO
+,1794,
+,28856,
+,1796,
+,8061,
+2552.0,2551,Tã dán
+10414.0,2551,Miếng lót sơ sinh
+2553.0,2551,Tã quần
+10415.0,2551,Tã giấy
+2554.0,2551,Tã vải
+10417.0,2551,Tã bỉm dành cho người lớn
+2555.0,2551,Khăn giấy ướt cho bé
+2600.0,8339,Sữa bột cho bé
+10419.0,8339,Sữa công thức pha sẵn cho bé
+2606.0,8339,Bột ăn dặm
+10423.0,8339,Vitamins
+8340.0,8339,Thực phẩm khác
+10424.0,8339,Nước trái cây cho bé
+10427.0,8339,Trà và thức uống cho bé
+10447.0,8339,Bánh ăn dặm
+6570.0,8339,Bánh ăn dặm
+10448.0,8339,Bánh quy
+6571.0,8339,Thực phẩm chế biến sẵn cho bé
+10425.0,8339,Dầu ăn cho bé
+6572.0,8339,Dầu ăn cho bé
+2609.0,8339,Trà và Thức uống cho bé
+68449.0,8339,Các sản phẩm dinh dưỡng cho bé khác
+68450.0,8339,Gia vị cho bé
+68454.0,8339,"Mì, nui ăn dặm"
+,6568,
+68455.0,10416,Ngũ cốc cho mẹ bầu
+68456.0,10416,Sữa bột cho mẹ bầu
+68457.0,10416,Sữa nước cho mẹ bầu
+68458.0,10416,Thực phẩm lợi sữa
+68459.0,10416,Vitamins và thực phẩm chức năng cho mẹ bầu
+68460.0,10418,Sữa bột chức năng cho người lớn
+68461.0,10418,Sữa nước chức năng cho người lớn
+68462.0,10418,Thực phẩm chức năng từ thiên nhiên
+68463.0,10418,Vitamins và thực phẩm chức năng
+2556.0,11601,Đồ dùng ăn uống cho bé
+2567.0,11601,Đồ dùng vệ sinh cho bé
+2585.0,11601,Đồ dùng phòng ngủ cho bé
+2584.0,11601,Đồ dùng bảo vệ bé
+2576.0,11601,Dụng cụ chăm sóc sức khỏe
+2593.0,11601,Đồ dùng đi chơi
+68492.0,11601,Combo đi sinh và gói quà tặng
+1948.0,5250,"Lắp ghép, Xếp hình"
+8469.0,5250,Đồ chơi điều khiển
+1938.0,5250,"Búp bê, Thú bông"
+2848.0,5250,Đồ chơi gỗ
+4493.0,5250,Đồ chơi mô hình
+4506.0,5250,Đồ chơi giáo dục
+10523.0,5250,Đồ chơi thủ công
+4604.0,5250,Đồ chơi nhạc cụ
+4594.0,5250,Đồ chơi vận động
+4505.0,5250,Boardgame
+4500.0,5250,"Bột nặn, Cát nặn"
+10445.0,5250,Cờ
+4504.0,5250,Lều thảm
+4601.0,5250,Đồ chơi sơ sinh
+10536.0,5250,Đồ chơi ảo thuật
+10537.0,5250,Trò chơi dân gian
+10538.0,5250,Trò chơi trí tuệ
+10539.0,5250,Video games
+68470.0,5250,Đồ chơi khác
+68480.0,5250,"Đồ chơi sở thích, sưu tầm và trưng bày"
+68629.0,5164,"Chậu vệ sinh, ghế ngồi vệ sinh và nắp đậy"
+68630.0,5164,Đồ dùng vệ sinh cho người già
+68631.0,5164,Dụng cụ hỗ trợ trong nhà tắm cho người già
+68632.0,5164,Gậy chống
+6580.0,2640,"Máy hút sữa, Túi trữ sữa"
+10556.0,2640,Đai đỡ bụng bầu
+2654.0,2640,"Đai nịt bụng, Quần tạo dáng sau sinh"
+2656.0,2640,"Dung dịch tắm gội, Chăm sóc da"
+10559.0,2640,Phương pháp dân gian
+6581.0,2640,Phụ kiện cho mẹ
+10571.0,10570,Que thử thai
+1804.0,8215,Tai Nghe Có Dây
+1811.0,8215,Tai Nghe Bluetooth
+1805.0,8215,Loa Nghe Nhạc
+28642.0,8215,Micro
+20170.0,8215,DAC và Amplifier Di Động
+28656.0,8215,Máy Thu và Máy Phát Âm Thanh
+30374.0,8215,Thiết Bị Âm Thanh
+28858.0,8215,Thiết bị phát Streaming
+7078.0,8215,Máy radio cassette
+7079.0,8215,"Receivers, Amplifier, Mixer"
+26652.0,8215,Micro Karaoke - sân khấu
+28872.0,8215,Bộ giải mã âm thanh DAC
+8068.0,8215,Phụ kiện âm thanh
+7077.0,8215,"Đầu CD, DVD, karaoke, Blu-ray"
+4966.0,8215,Dàn âm thanh 
+7075.0,8215,Loa
+12676.0,2667,Đĩa Game
+7273.0,2667,Ghế Gaming
+8251.0,2667,Máy Chơi Game - Console
+6742.0,2667,Phụ Kiện Gaming
+9013.0,2667,Tay Bấm Game - Thiết Bị Điều Khiển
+8040.0,8039,Mắt Kính Thông Minh
+8042.0,8039,Thiết Bị Thực Tế Ảo VR
+2657.0,8039,Đồng Hồ Thông Minh
+8043.0,8039,Vòng Đeo Thông Minh - Vòng Theo Dõi Vận Động
+28420.0,8039,Phụ Kiện Thiết Bị Đeo Thông Minh
+28436.0,28432,Thiết Bị Số - Thiết Bị Thông Minh
+20246.0,28432,Mạch Điện Lập Trình và Linh Kiện Điện Tử
+28448.0,8214,Thẻ Nhớ và Bộ Nhớ Mở Rộng
+10691.0,8214,SIM Điện Thoại
+1821.0,8214,Pin Sạc Dự Phòng
+1823.0,8214,Dây Sạc - Dây Cáp
+3803.0,8214,Adapter - Củ Sạc
+20234.0,8214,Linh Kiện Thay Thế
+20242.0,8214,Dụng Cụ Sửa Chữa và Vệ Sinh
+20220.0,8214,Giá Đỡ - Chân Đế - Móc Dán
+20236.0,8214,Túi Bảo Vệ - Túi Chống Nước
+20244.0,8214,Hộp Đựng - Túi Đựng Phụ Kiện
+20240.0,8214,Vòng Đeo - Đai Đeo
+20222.0,8214,Dây Đeo và Phụ Kiện Trang Trí
+1824.0,8214,Miếng dán màn hình
+1822.0,8214,Bao Da - Ốp Lưng
+20238.0,8214,Bàn Phím Rời - Bút Cảm Ứng
+28620.0,8214,Phụ Kiện Chụp Hình
+28624.0,8214,Phụ Kiện Chơi Game
+1819.0,8214,Phụ Kiện Di Động Khác
+69243.0,8214,Miếng dán màn hình điện thoại và máy tính bảng
+28672.0,28670,Dụng Cụ Vệ Sinh và Sửa Chữa
+7795.0,28670,Phụ Kiện Laptop
+4880.0,28670,Webcam Máy Tính
+28688.0,28670,Bút Trình Chiếu
+1831.0,28670,Bàn Di Chuột - Miếng Lót Chuột
+28690.0,28670,Phụ Kiện Phím Chuột Văn Phòng
+28692.0,28670,Phụ Kiện Phím Chuột Chơi Game
+28702.0,28670,Tai Nghe Máy Tính
+28706.0,28670,Công Cụ Đồ Họa - Thiết Bị Cảm Ứng
+12296.0,28670,Các Loại Cáp Chuyển Đổi
+1892.0,1884,Nồi điện các loại
+1885.0,1884,Bếp các loại
+4875.0,1884,"Máy hút khói, khử mùi"
+2022.0,1884,Lò vi sóng
+2023.0,1884,Lò nướng điện
+2044.0,1884,Vỉ nướng điện
+2024.0,1884,"Máy xay, máy ép"
+1931.0,1884,Bình đun siêu tốc
+1932.0,1884,Bình thủy điện
+1939.0,1884,Máy pha cà phê
+8082.0,1884,Máy làm kem
+2025.0,1884,Máy làm sữa đậu nành
+2026.0,1884,Máy làm sữa chua
+5363.0,1884,Máy làm mì sợi
+2315.0,1884,Máy làm bánh
+1942.0,1884,Siêu sắc thuốc
+7239.0,1884,Máy làm tỏi đen
+23818.0,1884,Máy sấy chén
+9051.0,1884,Máy thái thực phẩm
+23820.0,1884,Máy sấy thực phẩm
+23822.0,1884,Máy hút chân không
+23824.0,1884,Máy hàn miệng túi
+23826.0,1884,Máy cắt thịt đông lạnh
+8728.0,1884,Đồ dùng nhà bếp khác
+2108.0,1884,Máy đánh trứng
+1993.0,1946,"Bàn ủi, bàn là"
+1997.0,1946,"Máy may, thêu, vắt sổ"
+2001.0,1946,Quạt điện
+2009.0,1946,Máy hút bụi
+4876.0,1946,Cây Nước Nóng Lạnh
+2010.0,1946,Máy lọc không khí
+5614.0,1946,Máy tạo ẩm
+5585.0,1946,Máy hút ẩm
+5010.0,1946,Máy lọc nước
+5976.0,1946,Máy sấy quần áo
+5977.0,1946,Máy sấy tay
+6510.0,1946,Thiết bị sưởi ấm
+55946.0,1946,Thiết bị chăm sóc cá nhân
+1601.0,1582,Mặt nạ
+5872.0,1582,Xịt khoáng 
+3424.0,1582,Chăm sóc vùng da mắt
+2347.0,1582,"Nước hoa hồng, toner"
+3422.0,1582,Kem chống nắng
+3426.0,1582,Sản phẩm trị mụn và sẹo
+17170.0,1582,Kem và sữa dưỡng da
+17174.0,1582,Sản phẩm chăm sóc da mặt khác
+53350.0,1582,Serum
+8227.0,1582,Bộ chăm sóc da mặt
+1583.0,1582,Sữa rửa mặt
+8206.0,1582,Tẩy tế bào chết
+11605.0,1582,Dung dịch tẩy trang
+5893.0,1582,Chống lão hóa da
+5865.0,1582,Bông tẩy trang
+1589.0,1584,Dụng cụ trang điểm
+1585.0,1584,Trang điểm mặt
+1586.0,1584,Trang điểm mắt
+1587.0,1584,Son & Trang điểm môi
+53354.0,1584,Trang điểm khác
+8228.0,1584,Bộ trang điểm
+1752.0,1594,Dung dịch vệ sinh
+17186.0,1594,Sản phẩm chăm sóc cá nhân khác
+8300.0,1594,"Băng vệ sinh, cốc nguyệt san"
+4408.0,1594,Khăn giấy ướt
+3449.0,1594,Sản phẩm tẩy lông
+17162.0,1594,"Lăn, xịt khử mùi"
+11757.0,1592,Bộ chăm sóc toàn thân
+8218.0,1592,Chăm sóc ngực
+1610.0,1592,Dưỡng Thể
+11755.0,1592,Kem tan mỡ
+11733.0,1592,Massage toàn thân
+1617.0,1592,Sản phẩm khử mùi
+8212.0,1592,Tắm và dụng cụ tắm
+1615.0,1592,Sản phẩm chống nắng
+1619.0,1592,"Tẩy tế bào chết, massage"
+11753.0,1592,Trị rạn nứt da
+8308.0,1592,Sản phẩm sạch khuẩn
+8309.0,1592,Sản phẩm chăm sóc cơ thể khác
+8226.0,1592,Bộ chăm sóc cơ thể
+8229.0,1592,Bộ chăm sóc tóc và da đầu
+8220.0,1592,Tẩy tế bào chết cơ thể
+8602.0,5873,Tinh dầu
+8224.0,5873,Nến thơm
+11868.0,5873,Sản phẩm thiên nhiên làm đẹp
+8225.0,5873,Đèn xông
+8222.0,1591,"Dầu gội, dầu xả"
+1620.0,1591,Tạo kiểu tóc
+1623.0,1591,Thuốc nhuộm tóc
+7065.0,1591,"Dưỡng tóc, ủ tóc"
+7061.0,1591,Bộ chăm sóc tóc
+1636.0,1595,Nước hoa nữ
+1637.0,1595,Nước hoa nam
+68189.0,1595,Nước hoa vùng kín
+68190.0,1595,Xịt thơm cơ thể
+8167.0,2306,Dụng cụ làm đẹp khác
+8166.0,2306,Dụng cụ tạo kiểu tóc
+8165.0,2306,Dụng cụ tẩy lông
+8164.0,2306,Massage thư giãn và làm đẹp
+11937.0,2306,Máy xông da mặt
+1634.0,2306,Dụng cụ cắt tóc
+5905.0,2306,Máy & Dụng cụ rửa mặt 
+11689.0,2306,Máy hút mụn
+1590.0,2306,Chăm sóc móng
+68283.0,2306,Dụng cụ tỉa lông mũi
+68285.0,2306,"Đai, nịt làm đẹp"
+11903.0,2307,Dụng cụ theo dõi sức khỏe
+11925.0,2307,Máy xông mũi họng
+11921.0,2307,"Que thử thai, rụng trứng"
+2342.0,2307,Thiết bị y tế chuyên dụng
+8172.0,2307,Thiết bị khác
+11923.0,2307,Túi chườm
+11927.0,2307,Máy đo bước
+11929.0,2307,Dụng cụ sơ cứu
+11931.0,2307,Vớ y khoa
+1633.0,2307,Băng keo cá nhân
+8305.0,2307,Khẩu trang y tế
+2162.0,2307,Chăm sóc mắt
+68211.0,2307,"Hỗ trợ giấc ngủ, giảm ngáy"
+11939.0,2307,Dụng cụ định hình
+2826.0,2322,Thực phẩm chức năng làm đẹp
+2827.0,2322,Thực phẩm chức năng thiên nhiên
+55950.0,2322,Vitamin và Khoáng chất
+56014.0,2322,Cơ xương khớp
+11861.0,2322,Hỗ trợ trí não
+11869.0,2322,Hỗ trợ tiêu hóa
+11867.0,2322,Hỗ trợ mắt
+11871.0,2322,Hỗ trợ tim mạch
+11873.0,2322,Tăng cường hệ miễn dịch
+11863.0,2322,Hỗ trợ tiểu đường
+11875.0,2322,Thải độc cơ thể
+56030.0,2322,Sinh lý - Nội tiết tố
+1630.0,8142,Bao cao su
+1631.0,8142,Gel bôi trơn
+1627.0,1625,Nước súc miệng
+11833.0,1625,Bàn chải đánh răng
+11835.0,1625,Kem đánh răng
+11837.0,1625,Tẩy trắng răng
+10228.0,1625,Bộ sản phẩm chăm sóc răng miệng
+1626.0,1625,Thiết bị chăm sóc răng
+68329.0,1625,Sản phẩm làm sạch lưỡi
+68330.0,1625,"Xịt, miếng ngậm thơm miệng"
+11878.0,8597,Xe tay ga
+11882.0,8597,Xe số
+11884.0,8597,Xe côn tay
+11888.0,8597,Xe mô tô
+13100.0,8597,Xe 50cc
+37596.0,8597,Phiếu mua xe mô tô
+37598.0,8597,Phiếu mua xe máy
+6072.0,6070,Xe máy điện
+6071.0,6070,Xe đạp điện
+11890.0,6070,Xe thăng bằng
+6073.0,6070,Phụ kiện xe điện
+8435.0,6070,Xe Scooter điện
+11892.0,8431,Xe đạp thể thao
+11894.0,8431,"Xe đạp thời trang, thông dụng"
+11896.0,8431,Xe đạp thể thao đường phố
+11898.0,8431,Xe đạp đua
+11900.0,8431,Xe đạp gấp
+11914.0,8431,Xe đạp Fixed Gear
+11902.0,8431,Xe đạp trẻ em
+24376.0,8431,Xe đạp thể thao khác
+24372.0,8431,Xe đạp địa hình
+68638.0,8431,Xe đạp đôi
+68639.0,8431,Xe đạp một bánh
+68640.0,8431,Khung sườn xe đạp
+37600.0,8595,Sedan
+37606.0,8595,SUV
+37676.0,8595,CUV
+37608.0,8595,MPV
+37610.0,8595,Hatchback
+37612.0,8595,Bán tải
+37614.0,8595,Mini van
+37616.0,8595,Xe thể thao
+37618.0,8595,Xe mui trần
+37620.0,8595,Limousine
+37622.0,8595,Xe tải
+37624.0,8595,Xe khách
+37626.0,8595,Xe chuyên dụng
+37628.0,8595,Phiếu đặt cọc xe ô tô
+37630.0,8595,Phiếu mua xe ô tô từ 200 triệu trở lên
+37632.0,8595,Phiếu mua xe ô tô dưới 200 triệu
+37634.0,8595,Các dòng ô tô khác
+54698.0,8595,Ô tô điện
+11906.0,24832,Mũ bảo hiểm
+6061.0,24832,Phụ kiện xe máy
+45476.0,24832,Phụ tùng xe máy
+45498.0,24832,Chăm sóc xe máy
+45522.0,24832,Đồ bảo hộ đi xe
+11904.0,24832,Phụ kiện - Đồ nghề xe đạp
+6045.0,24832,Phụ kiện ô tô
+45606.0,24832,Máy rửa xe
+6052.0,24832,Phụ tùng ô tô
+24362.0,24832,Chăm sóc ô tô
+17224.0,17208,Lắp đặt mâm lốp
+17226.0,17208,"Lắp đặt phụ tùng, phụ kiện"
+23116.0,17208,Dịch vụ sơn xe
+23118.0,17208,"Dịch vụ bảo trì, sửa chữa"
+27582.0,941,Đầm Dáng Xòe
+27580.0,941,Đầm dáng ôm
+27584.0,941,Đầm suông
+5344.0,941,Đầm công sở
+5346.0,941,Đầm dự tiệc
+5345.0,941,Đầm maxi
+67211.0,941,Đầm Jumpsuit
+67213.0,941,Đầm hai dây
+67214.0,941,Đầm chữ A
+67216.0,941,Đầm yếm
+67217.0,941,Đầm Baby Doll
+67218.0,941,Đầm trễ vai
+5407.0,5404,Chân váy dài
+5406.0,5404,Chân váy ngắn
+5408.0,5404,Chân váy xếp li
+49288.0,5404,Chân váy bút chì
+49290.0,5404,Chân váy chữ A
+5405.0,5404,Chân váy công sở
+1701.0,27600,Quần jean nữ
+939.0,27600,Quần shorts nữ
+938.0,27600,Quần tây nữ
+49346.0,27600,Quần ống rộng nữ
+49348.0,27600,Quần baggy nữ
+1716.0,27600,Quần legging - tregging nữ
+49350.0,27600,Quần yếm
+67166.0,27600,Quần kaki nữ
+27594.0,936,Áo cardigan nữ
+27588.0,936,"Áo vest, blazer nữ"
+27598.0,936,Áo len - Áo khoác nỉ nữ
+49352.0,936,Áo khoác jeans nữ
+27596.0,936,Áo khoác dạ nữ
+49354.0,936,Áo khoác chống nắng nữ
+49356.0,936,Áo khoác phao nữ
+49358.0,936,Áo khoác da nữ
+49360.0,936,Áo khoác bomber jackets
+67225.0,936,Áo khoác gió nữ
+67226.0,936,Áo hoodies nữ
+49362.0,1702,Áo liền quần
+49364.0,1702,Bộ trang phục
+10385.0,1702,Áo dài
+49366.0,4553,Đồ gia đình
+49368.0,4553,Áo đôi
+49374.0,49372,Đầm bầu
+49376.0,49372,Áo bầu
+49378.0,49372,Quần bầu
+49380.0,49372,Bộ đồ bầu
+49382.0,49372,Đồ lót bầu
+67150.0,49384,Thời trang nữ trung niên khác
+67151.0,49384,Chân váy nữ trung niên
+67152.0,49384,Đầm nữ trung niên
+67153.0,49384,Quần nữ trung niên
+67154.0,49384,Áo nữ trung niên
+1509.0,4554,Áo ngực
+1510.0,4554,Quần lót nữ
+8347.0,4554,Nịt bụng
+8344.0,4554,Bộ đồ lót nữ
+67197.0,4554,Đồ lót giữ nhiệt nữ
+8346.0,1508,Đồ ngủ nữ
+49432.0,1508,Đồ mặc nhà
+49442.0,6179,Bikini
+27576.0,6179,Đồ bơi một mảnh
+27578.0,6179,Đồ bơi hai mảnh
+67181.0,934,Áo sơ mi nữ tay ngắn
+67182.0,934,Áo sơ mi nữ tay dài
+67173.0,935,Áo kiểu nữ khác
+67174.0,935,Áo trễ vai
+67175.0,935,Áo cúp ngực
+67176.0,935,Áo ống
+67177.0,935,Áo ống DELETE
+67171.0,10389,Áo crop-top tay dài
+67172.0,10389,Áo crop-top tay ngắn
+10388.0,933,Áo hai dây - Áo ba lỗ nữ
+67185.0,933,Áo thun nữ dài tay có cổ
+67186.0,933,Áo thun nữ dài tay không cổ
+67187.0,933,Áo thun nữ ngắn tay có cổ
+67188.0,933,Áo thun nữ ngắn tay không cổ
+67231.0,67230,"Đầm, váy nữ kích cỡ lớn"
+67232.0,67230,Bộ quần áo nữ kích cỡ lớn
+67233.0,67230,Quần nữ kích cỡ lớn
+67234.0,67230,Áo nữ kích cỡ lớn
+8275.0,4421,Bánh
+8276.0,4421,Kẹo
+8277.0,4421,Chocolate
+8278.0,4421,Snack
+10222.0,4421,Bánh kẹo khác
+53526.0,4421,Thức ăn khô
+53528.0,4421,Các Loại Đồ Ăn Vặt Khác
+67057.0,4421,Thạch các loại
+67058.0,4421,Pudding
+53556.0,4421,Mứt trái cây
+67065.0,4421,Đặc sản địa phương
+67066.0,4421,Bỏng ngô
+67067.0,4421,Các loại rong biển ăn liền
+67068.0,4421,Khoai tây lát
+6548.0,4421,Các loại đậu sấy khô
+67069.0,4421,Các loại hạt sấy khô
+67103.0,4421,Trái cây rau củ sấy
+67507.0,4421,Bánh tráng
+4393.0,15074,Thực phẩm khô
+11304.0,15074,Đặc sản Việt Nam
+4419.0,15074,Đồ hộp
+53558.0,15074,Thực phẩm khác
+68544.0,15074,Đậu
+68556.0,15074,Thực phẩm chế biến sẵn
+4426.0,24024,Đồ uống có gas
+15076.0,24024,Đồ uống không gas
+8282.0,4422,Gia vị
+8283.0,4422,Nước chấm và nước sốt
+5477.0,4422,Dầu ăn
+11256.0,4422,Nấu ăn và làm bánh
+53530.0,5451,Thức ăn thú cưng
+53540.0,5451,Phụ kiện thú cưng
+66986.0,5451,Chăm sóc sức khỏe thú cưng
+66991.0,5451,Dụng cụ chăm sóc thú cưng
+66995.0,5451,Đồ dùng vệ sinh thú cưng
+67034.0,5451,Dung dịch vệ sinh thú cưng
+53574.0,11347,Bánh Trung Thu
+53576.0,11347,Hộp Quà Tết
+53578.0,11347,Hộp Quà Tặng
+53580.0,11347,Hàng Mùa Vụ Khác
+8274.0,22998,Trà
+4423.0,22998,Cà phê
+5478.0,22998,"Ngũ cốc, bột"
+53560.0,22998,Các loại đồ uống khác
+53612.0,22998,Nước đóng chai
+53614.0,22998,Nước Trái Cây
+68660.0,22998,Nước ngọt & đồ uống không cồn
+68676.0,22998,Bột chocolate
+68677.0,22998,Bột pha nước trái cây
+68678.0,22998,Siro các loại
+8273.0,53562,Sữa nước
+4427.0,53562,Sữa Chức Năng Dạng Bột
+53572.0,53562,Các Sản Phẩm Từ Sữa Khác
+67508.0,53562,Sữa bột
+67509.0,53562,Sữa đặc
+11343.0,53582,Rượu
+53584.0,53582,Bia Nội Địa
+53586.0,53582,Bia Nhập Khẩu
+53588.0,53582,Bia Thủ Công
+11344.0,53582,Nước hoa quả lên men
+48030.0,53582,Rượu vang
+48032.0,53582,Rượu mạnh
+48036.0,53582,Rượu gạo - Soju - Sake
+53604.0,53582,Các loại rượu khác
+68607.0,53582,Rượu Champagnes
+68609.0,53582,Rượu trái cây
+,53620,
+68577.0,68576,Bánh ngũ cốc
+68578.0,68576,Bơ phết
+68579.0,68576,Bột bánh pancake & waffle
+68580.0,68576,Bột ngũ cốc
+68581.0,68576,Mật Ong
+68582.0,68576,Mứt
+68583.0,68576,Ngũ cốc ăn sáng
+68584.0,68576,Ngũ cốc Muesli
+68585.0,68576,Thanh
+68586.0,68576,Yến mạch
+1977.0,8411,Bóng bàn
+8438.0,8411,Cầu lông
+8440.0,8411,Tennis
+8443.0,4227,Bóng chày
+2980.0,4227,Bóng rổ và dụng cụ bóng rổ
+2981.0,4227,Bóng Đá
+8444.0,4227,Bóng chuyền
+2156.0,4227,Cầu Đá - Cầu Mây
+23960.0,23120,Kendo
+23964.0,23120,Pencat Silat
+8445.0,24002,Thể dục dụng cụ
+24036.0,24002,Bowling
+24052.0,24002,Bida
+24056.0,24002,"Bắn cung, bắn ná thể thao"
+24058.0,24002,Phóng phi tiêu
+24060.0,24002,Bộ môn ném đĩa
+24064.0,24002,Golf
+24068.0,24002,Trượt patin
+24070.0,24002,Trượt băng
+24074.0,24002,Yoga & Pilates
+8437.0,24002,Trượt ván
+24136.0,24128,Giàn tạ đa năng
+24138.0,24128,Xà đơn
+24140.0,24128,Xà kép
+24142.0,24128,"Dụng cụ - Thiết bị tập bụng, eo"
+24152.0,24128,Dây nhảy
+3323.0,24128,Tạ tập
+24164.0,24128,Dây đàn hồi tập gym
+24166.0,24128,Dụng cụ tập cơ tay
+24168.0,24128,Dụng cụ hít đất
+24170.0,24128,Dụng cụ tập thể thao khác
+24174.0,6826,Giày chạy bộ nam
+24190.0,6826,Giày đánh golf nam
+30964.0,6826,Giày thể thao nam khác
+67601.0,6826,Giày ba lê và khiêu vũ cho nam
+67602.0,6826,Giày Bowling nam
+67605.0,6826,Giày đạp xe nam
+67606.0,6826,Giày đi bộ nam
+67607.0,6826,Giày lội nước nam
+67608.0,6826,Giày luyện tập nam
+24218.0,6827,Giày chạy bộ nữ
+32874.0,6827,Giày thể thao nữ khác
+67615.0,6827,Giày ba lê và khiêu vũ cho nữ
+67616.0,6827,Giày Bowling nữ
+67619.0,6827,Giày đánh golf nữ
+67620.0,6827,Giày đạp xe nữ
+67621.0,6827,Giày đi bộ nữ
+67622.0,6827,Giày lội nước nữ
+67623.0,6827,Giày luyện tập nữ
+24296.0,24294,Cần câu
+24298.0,24294,Lưỡi - Mồi - Phao
+24300.0,24294,Dây câu
+24302.0,24294,Máy câu
+24304.0,24294,Dụng cụ câu cá khác
+8459.0,24306,Bình nước thể thao
+8451.0,24306,"Dụng cụ cổ động, cổ vũ"
+24308.0,24306,Thiết bị điện tử thể thao
+8458.0,24306,Thiết bị sơ cứu
+24310.0,24306,Đai chạy bộ
+24314.0,24306,"Khăn đa năng, khăn thể thao"
+24318.0,24306,Phụ kiện thể thao khác
+2157.0,8413,Bơi lội
+8447.0,8413,Lướt ván
+8448.0,8413,Dụng cụ và phụ kiện chèo thuyền
+8450.0,8413,Phao trượt
+24328.0,8413,Lặn biển
+10804.0,10803,Thực phẩm tăng cân
+10805.0,10803,Thực phẩm giảm cân
+10806.0,10803,Thực phẩm tăng cơ
+10807.0,10803,Tăng sức bền và bổ sung năng lượng
+67789.0,10803,Trước luyện tập
+8428.0,67485,Đồ dùng dã ngoại
+24258.0,67485,Dụng cụ leo núi
+6140.0,67647,Trang phục thể thao nam
+6141.0,67647,Trang phục thể thao nữ
+5333.0,917,Áo thun nam ngắn tay có cổ
+1685.0,917,Áo thun nam ngắn tay không cổ
+10378.0,917,Áo thun nam ba lỗ
+8336.0,917,Áo thun nam dài tay không cổ
+67298.0,917,Áo thun nam dài tay có cổ
+10379.0,918,Áo sơ mi nam tay dài
+10380.0,918,Áo sơ mi nam tay ngắn
+49444.0,918,Áo sơ mi nam cổ tàu
+10381.0,925,Áo khoác phao nam
+49456.0,925,Áo khoác da nam
+49458.0,925,Áo khoác gió
+49460.0,925,Áo khoác nỉ
+49464.0,925,Áo khoác bomber nam
+49508.0,925,Áo khoác jeans nam
+27552.0,925,Áo cardigan nam
+27566.0,925,Áo vest và Blazer nam
+49510.0,10382,Áo hoodies nam vải da cá
+49512.0,10382,Áo hoodies nam vải nỉ
+49514.0,10382,Áo hoodies nam vải cotton
+27554.0,4546,Áo len dệt kim
+22900.0,4546,Áo nỉ nam
+922.0,27562,Quần tây nam
+5409.0,27562,Quần jogger nam
+49496.0,27562,Quần jeans nam
+49500.0,27562,Quần kaki nam dài
+49506.0,27562,Quần thun nam
+2269.0,27570,Đồ mặc nhà nam - Bộ dài
+4555.0,27570,Đồ mặc nhà nam - Bộ ngắn
+49518.0,49516,Áo đôi
+49520.0,49516,Quần đôi cho nam
+49522.0,49516,Áo gia đình
+4556.0,27548,Quần lót nam
+4557.0,27548,Bộ đồ lót nam
+67317.0,27548,Áo lót nam
+67328.0,27548,Đồ lót giữ nhiệt nam
+49526.0,49524,Áo nam kích cỡ lớn
+49528.0,49524,Quần nam kích cỡ lớn
+49530.0,49524,Bộ quần áo nam kích cỡ lớn
+49534.0,49532,Áo nam trung niên
+49536.0,49532,Quần nam trung niên
+49538.0,16004,Áo bơi - đi biển nam
+49540.0,16004,Quần bơi - đi biển nam
+67310.0,67309,Bộ trang phục ngành nghề cho nam
+67311.0,67309,Bộ trang phục truyền thống nam
+67312.0,67309,Đồ hóa trang nam
+49494.0,67329,Quần short jean nam
+49498.0,67329,Quần short kaki nam
+49504.0,67329,Quần short thun nam
+20768.0,20766,Bánh kẹo
+20770.0,20766,Chăm sóc thú cưng
+20782.0,20766,Đồ hộp
+20784.0,20766,Đồ uống
+20800.0,20766,Gia vị
+20806.0,20766,Nấu ăn và làm bánh
+20808.0,20766,Thực phẩm bổ dưỡng
+20810.0,20766,Thực phẩm khô
+20826.0,20824,Điện lạnh
+20828.0,20824,Thiết bị nhà bếp
+20862.0,20824,Thiết bị gia đình
+24986.0,20824,Phụ kiện điện gia dụng
+20910.0,20908,Chăm sóc cá nhân
+20928.0,20908,Chăm sóc cơ thể
+20962.0,20908,Chăm sóc da mặt
+20980.0,20908,Chăm sóc tóc và da đầu
+20990.0,20908,Hỗ trợ tình dục
+20992.0,20908,Nước hoa
+21000.0,20908,Thiết bị chăm sóc sức khỏe
+21014.0,20908,Thiết bị làm đẹp
+21022.0,20908,Thực phẩm chức năng
+21032.0,20908,Trang điểm
+21056.0,21054,Điện Thoại Phổ Thông
+21058.0,21054,Điện Thoại Smartphone
+21060.0,21054,Máy Tính Bảng
+21076.0,21074,Laptop
+21078.0,21074,Macbook
+21084.0,21074,Linh kiện máy tính
+21086.0,21074,Màn hình máy tính
+21088.0,21074,Máy chiếu
+21092.0,21074,Máy in - Máy Scan
+21094.0,21074,Máy in - Máy Scan
+21106.0,21074,Thiết bị lưu trữ
+21110.0,21074,Thiết bị lưu trữ
+21132.0,21074,Thiết bị mạng sử dung cho laptop & Máy vi tính
+21138.0,21134,Các loại camera khác
+21144.0,21134,Đồ chơi ngành ảnh
+21146.0,21134,Máy ảnh DSLR
+21148.0,21134,Máy ảnh du lịch
+21150.0,21134,Máy ảnh lấy liền
+21152.0,21134,Máy ảnh Mirrorless
+21154.0,21134,Máy quay phim
+21156.0,21134,Ống kính (Lens)
+21158.0,21134,Phụ kiện camera
+21162.0,21134,Phụ kiện máy ảnh
+21164.0,21134,Webcam
+21170.0,21166,"Chăm sóc mẹ mang thai, sau sinh"
+21172.0,21166,Dinh dưỡng cho bé
+21174.0,21166,Dinh dưỡng cho người lớn
+21176.0,21166,Đồ chơi
+21180.0,21166,Đồ dùng cho bé
+21246.0,21166,Đồ dùng cho người già
+21248.0,21166,"Tã, Bỉm cho bé"
+21250.0,21166,Thời trang cho mẹ và bé
+21270.0,21268,Dụng cụ phòng ăn & nhà bếp
+21272.0,21268,Đèn & thiết bị chiếu sáng
+21274.0,21268,Đồ dùng nhà tắm
+21276.0,21268,Đồ dùng phòng ngủ
+21280.0,21268,Ngoài trời & sân vườn
+21282.0,21268,Sửa chữa nhà cửa
+21284.0,21268,Nhạc cụ
+21286.0,21268,Nội thất
+21288.0,21268,Trang trí nhà cửa
+24996.0,21268,Bảo vệ nhà cửa
+24998.0,21268,Sắp xếp nhà cửa
+25000.0,21268,Thiết bị nhà cửa khác
+21300.0,21298,English Books
+21334.0,21298,Văn Phòng Phẩm
+25008.0,21298,Quà Tặng
+21348.0,21346,Phụ kiện ô tô
+21350.0,21346,Phụ kiện xe máy
+21352.0,21346,Phụ kiện xe đạp
+21354.0,21346,Phụ kiện khác
+21358.0,21356,Các môn thể thao chơi vợt
+21360.0,21356,Các môn thể thao đồng đội
+21362.0,21356,Các môn thể dục và yoga
+21364.0,21356,Đấm bốc & Võ thuật
+21368.0,21356,Hoạt động dã ngoại
+21370.0,21356,"Phụ kiện thể thao, dã ngoại"
+21372.0,21356,Thể thao dưới nước
+21374.0,21356,Thực phẩm bổ sung năng lượng
+21384.0,21382,Bao da - Ốp lưng
+21386.0,21382,Màn hình & miếng dán màn hình
+21388.0,21382,Adapter - Củ sạc
+21390.0,21382,"Dây sạc, Dây cáp"
+21392.0,21382,Đầu đọc thẻ nhớ
+21396.0,21382,Đế Tản Nhiệt Laptop
+21398.0,21382,Đồ chơi công nghệ
+21400.0,21382,Thiết bị Game
+21402.0,21382,Gậy tự sướng/ Selfie
+21404.0,21382,Hub USB
+21406.0,21382,Loa nghe nhạc
+21410.0,21382,Máy nghe nhạc
+21412.0,21382,Phụ kiện âm thanh
+21414.0,21382,Pin sạc dự phòng
+21416.0,21382,Sim điện thoại
+21418.0,21382,Tai nghe
+21420.0,21382,Thẻ nhớ điện thoại
+21422.0,21382,Thiết bị thông minh
+21436.0,21382,Thiết bị mạng
+21440.0,21382,Thiết bị số - Khác
+25010.0,21382,Loa vi tính
+25014.0,21382,Microphone
+25016.0,21382,Máy ghi âm
+25022.0,21382,Portable Amplifier
+25024.0,21382,Chuột
+25026.0,21382,Bàn phím
+25028.0,21382,Linh kiện điện thoại
+21444.0,21442,Thời trang nam
+21462.0,21442,Thời trang nữ
+21478.0,21442,Trang Sức
+21488.0,21442,Túi xách và Phụ kiện
+25034.0,21442,Phụ kiện thời trang khác
+21366.0,21442,Giày & trang phục thể thao
+21498.0,21496,Amply
+21500.0,21496,Dàn âm thanh
+21502.0,21496,"Đầu CD, DVD, karaoke"
+21504.0,21496,Máy radio cassette
+21506.0,21496,Micro
+21508.0,21496,Phụ kiện loa âm thanh
+21510.0,21496,Phụ kiện Tivi
+21512.0,21496,Tivi
+21514.0,21496,"Tivi box, Smart box"
+,25036,
+27470.0,27468,YG Entertainment 
+30928.0,27468,BT21
+31794.0,27468,SM Entertainment
+31796.0,27468,JYP Entertainment
+31798.0,27468,Bighit Entertainment
+32370.0,27468,Pledis Entertainment
+32374.0,27468,Warner Music
+32382.0,27468,Brandnew Music
+35610.0,27468,Source Music
+36122.0,27468,Line Friends
+29010.0,8095,Laptop Truyền Thống
+2458.0,8095,Macbook
+5584.0,8095,Laptop Gaming
+29008.0,8095,Laptop 2 trong 1
+29012.0,8095,Chromebooks
+2665.0,12884,Màn Hình Máy Tính
+2308.0,12884,Máy In - Photocopy
+6255.0,12884,Phần Mềm Máy Tính
+4532.0,12884,Mực In và Toner
+4542.0,12884,Máy Scan Tài Liệu
+8086.0,12884,Giấy In
+2664.0,12884,Máy Chiếu và Phụ Kiện Máy Chiếu
+30020.0,12884,Máy Scan Mã Vạch
+10089.0,12884,Máy Hủy Tài Liệu
+12886.0,12884,Máy Chấm Công
+8088.0,12884,Máy Fax
+29006.0,12884,Máy Đếm Tiền
+12890.0,12884,Thiết Bị Truyền Thông Hội Nghị
+28844.0,8060,Ổ Cứng Gắn Trong
+1827.0,8060,Ổ Cứng Di Động
+5350.0,8060,Case Ổ Cứng- Hộp Đựng HDD Box - Dock Ổ Cứng
+5349.0,8060,Thiết Bị Lưu Trữ Qua Mạng NAS
+1828.0,8060,USB
+28838.0,8060,Đĩa Trắng - Băng Cuộn
+13150.0,2663,Thiết Bị Phát Sóng Wifi
+4343.0,2663,Bộ Kích Sóng Wifi
+4345.0,2663,Bộ Phát Wifi Di Động 3G/4G - Mifi
+4454.0,2663,Bộ Chia Mạng - Switch
+4642.0,2663,Phụ Kiện Thiết Bị Mạng
+28894.0,2663,Bộ Chuyển Đổi - Transceivers
+4346.0,2663,Mở Rộng Mạng Qua Đường Điện - Powerline Ethernet
+7361.0,2663,Card Mạng
+28896.0,2663,Ăng-Ten Mạng
+4585.0,2663,Modem ADSL
+8094.0,8093,Máy Tính All in one
+7369.0,8093,Mini PC
+5172.0,8093,Máy Tính Để Bàn Lắp Ráp
+29014.0,8093,Towers - Máy Chủ - Server
+29016.0,8093,Máy Tính Bộ Thương Hiệu
+28900.0,8129,Nguồn Máy Tính
+11964.0,8129,Bộ Lưu Điện - UPS
+11956.0,8129,Mainboard - Board Mạch Chủ
+11962.0,8129,Bộ Vi Xử Lý CPU
+11960.0,8129,Vỏ Case - Thùng Máy
+28902.0,8129,Hệ Thống Tản Nhiệt
+11958.0,8129,Card Màn Hình - VGA
+11966.0,8129,Sound Card - Card Âm Thanh
+2680.0,8129,RAM Máy Tính
+28908.0,8129,Ổ Đĩa Quang
+28910.0,8129,I/O Port Cards
+28914.0,8129,Thiết Bị Streaming và Capture Cards
+28916.0,8129,KVM Switches - Switch HDMI
+11968.0,8129,Linh Kiện Máy Tính Khác
+28918.0,8129,Linh Kiện Thay Thế Cho Laptop
+49620.0,27572,Giày thể thao nam cổ thấp
+49622.0,27572,Giày thể thao nam cổ cao
+49624.0,5340,Giày lười vải nam
+49626.0,5340,Giày lười da nam
+49628.0,5340,Giày lười nhựa nam
+49630.0,1581,Giày tây nam có dây
+49632.0,1581,Giày tây nam không dây
+49634.0,5341,Giày sandals nam quai ngang
+49636.0,5341,Giày sandals nam quai chéo
+10383.0,5342,Dép nam xỏ ngón
+10384.0,5342,Dép nam quai ngang
+49638.0,5342,Dép nam đi trong nhà
+49640.0,8337,Giày boots nam cổ cao
+49642.0,8337,Giày boots nam cổ thấp
+49644.0,8338,Dụng cụ chăm sóc & làm sạch giày
+49646.0,8338,Miếng lót giày nam
+49648.0,8338,Phụ kiện giày nam khác
+68160.0,8338,Dây giày
+68161.0,8338,Khử mùi giày
+68162.0,8338,Túi đựng giày
+12900.0,5015,Tivi cao cấp
+4239.0,5015,Smart Tivi - Android Tivi
+11524.0,5015,Internet Tivi
+6280.0,5015,Tivi 4K
+4236.0,5015,Tivi thường (LED)
+8950.0,5015,Tivi QLED
+7603.0,5015,Tivi OLED
+67238.0,3862,Tháp giặt sấy
+67239.0,3862,Máy giặt mini
+67240.0,3862,Máy giặt cửa trên
+67241.0,3862,Máy giặt cửa ngang
+7074.0,26568,"Android TV Box, Smart Box"
+7082.0,26568,Phụ kiện Tivi
+67209.0,3863,Tủ sấy quần áo
+67210.0,3863,Máy sấy thông hơi
+67212.0,3863,Máy sấy ngưng tụ
+67215.0,3863,Máy sấy bơm nhiệt
+67219.0,3864,Máy rửa chén độc lập
+67220.0,3864,Máy rửa chén để bàn
+67223.0,3864,Máy rửa chén bán âm
+67224.0,3864,Máy rửa chén âm tủ
+67235.0,3865,Máy lạnh tủ đứng
+67236.0,3865,Máy lạnh treo tường
+67237.0,3865,Máy lạnh âm trần
+67227.0,3866,Máy nước nóng trực tiếp
+67228.0,3866,Máy nước nóng năng lượng mặt trời
+67229.0,3866,Máy nước nóng gián tiếp
+67189.0,2328,Tủ lạnh side by side
+67190.0,2328,Tủ lạnh nhiều cửa
+67194.0,2328,Tủ lạnh mini
+67198.0,3868,Tủ mát
+67199.0,3868,Tủ đông- tủ mát
+,3869,
+28884.0,8074,"Phụ kiện, linh kiện tủ lạnh"
+28886.0,8074,"Phụ kiện, linh kiện máy lạnh"
+28888.0,8074,"Phụ kiện, linh kiện máy nước nóng"
+28890.0,8074,"Phụ kiện, linh kiện máy giặt"
+28892.0,8074,"Phụ kiện, linh kiện điện lạnh khác"
+49542.0,8355,Giày cao gót nhọn
+49544.0,8355,Giày cao gót quai sau
+49546.0,8355,Giày bít mũi quai ngang
+49548.0,8355,Giày cao gót hở mũi
+49550.0,8355,Giày cao gót sục
+49552.0,27604,Giày thể thao cổ thấp
+49554.0,27604,Giày thể thao cổ cao
+49556.0,4550,Giày sandals đế bằng
+49558.0,4550,Giày sandals chiến binh
+49560.0,4550,Giày sandals buộc dây
+49562.0,4550,Giày sandals xỏ ngón
+49564.0,1192,Giày búp bê mũi nhọn
+49566.0,1192,Giày búp bê mũi tròn
+49568.0,1192,Giày búp bê mũi vuông
+,1008,
+49570.0,981,Giày boots nữ cổ ngắn
+49572.0,981,Giày boots nữ cổ cao
+49574.0,981,Giày boots nữ gót nhọn
+49576.0,984,Dép xỏ ngón
+49578.0,984,Dép quai ngang
+49580.0,984,Dép đi trong nhà
+49582.0,4551,Giày lười cao gót
+49584.0,4551,Giày lười hở gót
+49586.0,4551,Giày lười mũi vuông
+49588.0,4551,Giày lười mũi nhọn
+49590.0,8357,Miếng lót giày
+49592.0,8357,Dụng cụ chăm sóc & làm sạch giày
+49594.0,8357,Phụ kiện giày nữ khác
+68163.0,8357,Dây giày
+68164.0,8357,Khử mùi giày
+68165.0,8357,Túi đựng giày
+1808.0,28806,Máy Ảnh Compact - Máy Ảnh Du Lịch
+1809.0,28806,Máy Ảnh DSLR
+2658.0,28806,Máy Ảnh Mirrorless
+2144.0,28806,Máy Ảnh Lấy Liền
+28808.0,28806,Máy Chụp Ảnh Phim
+2662.0,1818,"Pin - Sạc Máy Ảnh, Máy Quay"
+20260.0,1818,Dụng Cụ Vệ Sinh Máy Ảnh
+8054.0,1818,"Phụ Kiện Máy Ảnh, Máy Quay Khác"
+20262.0,1818,Miếng Dán Bảo Vệ Màn Hình Máy Ảnh
+1841.0,1818,Kính Lọc - Filter
+28758.0,1818,Điều Khiển Từ Xa
+28756.0,1818,Phụ Kiện Cho Ống Kính
+20264.0,1818,Adapter - Ngàm Chuyển
+20266.0,1818,Lens Hood
+28760.0,1818,Gimbal
+28762.0,1818,Nắp Ống Kính
+28764.0,1818,Ngàm Gắn Máy Quay Trên Người
+28766.0,1818,"Túi Hút Ẩm Cho Máy Ảnh, Máy Quay"
+28768.0,1818,Hộp Chụp Ảnh Sản Phẩm
+2678.0,1818,"Chân Máy Ảnh, Monopod, Tripod"
+1839.0,1818,Thẻ Nhớ Máy Ảnh
+28772.0,1818,Thiết Bị Rửa Ảnh
+28774.0,1818,Film Máy Ảnh
+28776.0,1818,Thiết Bị Phòng Tối
+1843.0,1840,Hộp Đựng - Tủ Chống Ẩm
+20270.0,1840,"Bao Đựng Chống Sốc, Chống Nước"
+28780.0,1840,"Dây Đeo Máy Ảnh, Máy Quay, Ống Nhòm"
+28778.0,1840,Túi Đựng Máy Ảnh
+28782.0,1840,Túi và Hộp Đựng Máy Quay
+28784.0,1840,Túi và Hộp Đựng Máy Ảnh
+28786.0,1840,Hộp Đựng Filter
+28788.0,1840,Hộp Đựng Lens
+28790.0,1840,Túi Đựng Kính Viễn Vọng
+28792.0,1840,Túi Đựng Chân Đế Tripod và Monopod
+20268.0,28794,Ống Nhòm
+28796.0,28794,Ống Ngắm
+28798.0,28794,Kính Hiển Vi
+28800.0,28794,Kính Nhìn Đêm
+28802.0,28794,Kính Viễn Vọng - Kính Thiên Văn
+28804.0,28794,"Phụ Kiện Ống Kính, Ống Ngắm"
+28810.0,2757,Ống Kính Máy Quay Phim
+28812.0,2757,Ống Kính Máy Ảnh
+28816.0,28814,Đèn Chiếu Sáng Studio
+28818.0,28814,Máy Đo Sáng và Phụ Kiện
+4075.0,28814,Đèn Flash và Phụ Kiện
+28820.0,28814,Thiết Bị Phản Sáng và Phụ Kiện
+4074.0,28822,Máy Quay Phim
+28824.0,28822,Máy Quay Phim Chuyên Dụng
+28826.0,28822,Micro Cho Máy Quay
+28828.0,28822,Phụ Kiện Máy Quay Khác
+5121.0,4077,Camera IP
+5123.0,4077,Camera Quan Sát Analog
+5124.0,4077,Đầu Ghi Hình Camera
+28832.0,4077,Hệ Thống Camera Giám Sát
+7912.0,4077,Phụ Kiện Camera Giám Sát
+8048.0,8047,Máy Bay Camera - Drone
+8049.0,8047,Phụ Kiện Máy Bay Camera - Drone
+8050.0,8047,Linh Kiện Thay Thế Máy Bay camera - Drone
+4879.0,28834,Action Camera
+28836.0,28834,Phụ Kiện Camera Hành Trình
+4079.0,28834,"Camera Hành Trình Ô Tô, Xe Máy"
+978.0,8370,Kính mát
+1017.0,8370,Gọng kính
+11839.0,8370,Kính áp tròng
+11374.0,8370,Mắt kính trẻ em
+11843.0,8370,Phụ kiện kính
+5401.0,975,Nón nữ
+5403.0,975,Khăn - Tất - Vớ nữ
+8361.0,975,Phụ kiện tóc nữ
+5387.0,975,Thắt lưng - Dây nịt nữ và phụ kiện
+5400.0,975,Phụ kiện cưới
+15118.0,975,Cài Áo
+67145.0,975,Phụ kiện thời trang nữ khác
+67146.0,975,"Ô, dù"
+8341.0,27550,Nón nam
+8343.0,27550,Khăn nam
+5343.0,27550,"Tất, vớ nam"
+968.0,27550,"Thắt lưng, dây nịt nam"
+49720.0,27550,Hình xăm nam
+8342.0,27550,Găng tay nam
+67142.0,27550,"Cà vạt, nơ cổ"
+67144.0,27550,Phụ kiện thời trang nam khác
+44826.0,44824,Trái Cây Nội Địa
+44828.0,44824,Trái Cây Nhập Khẩu
+54278.0,54276,"Thịt heo, lợn"
+54280.0,54276,"Thịt bò, bê"
+54282.0,54276,"Thịt gà, vịt, chim"
+54284.0,54276,Thịt đông lạnh
+54286.0,54276,Các loại thịt khác
+54288.0,54276,"Trứng gà, vịt, cút"
+54292.0,54290,"Tôm, cua, ghẹ, ốc"
+54294.0,54290,"Cá, hải sản đông lạnh"
+54296.0,54290,"Cá khô, tôm, mực khô"
+54298.0,54290,Thủy hải sản chế biến
+54300.0,54290,Thủy hải sản khác
+54304.0,54302,"Rau xanh, rau tươi"
+54306.0,54302,"Củ, quả, măng tươi"
+54308.0,54302,"Hành, tỏi, ớt, rau thơm"
+54310.0,54302,"Nấm, hạt các loại"
+54312.0,54302,Combo rau củ
+54314.0,54302,Nông sản tươi khác
+54318.0,54316,"Bún, phở tươi, bánh mì"
+54320.0,54316,"Dưa muối, đồ chua, mắm"
+54322.0,54316,"Lạp xưởng, thịt khô, nem"
+54324.0,54316,"Xôi, chè, bánh các loại"
+54326.0,54316,"Đậu hũ, thực phẩm khác"
+54328.0,54316,Đặc sản Việt nam
+44832.0,54316,Thực phẩm chế biến sẵn
+54398.0,54316,Đồ hộp
+69036.0,54316,Thực phẩm khác
+54384.0,54316,Thực phẩm khô
+54336.0,54330,Sữa đặc
+54338.0,54330,Các Sản Phẩm Từ Sữa Khác
+54340.0,54330,"Kem cây, kem hộp"
+54342.0,54330,"Bơ, magarine"
+69080.0,54330,Sữa bột
+69082.0,54330,Sữa Chức Năng Dạng Bột
+68719.0,54330,Sữa nước
+54346.0,54344,"Thịt, hải sản đông lạnh"
+54348.0,54344,Rau củ quả đông lạnh
+54350.0,54344,"Xúc xích, pate, giò chả"
+54352.0,54344,"Pizza, mì, cơm đông lạnh"
+54354.0,54344,"Chả giò, cá, gà viên"
+54356.0,54344,"Bánh bao, há cảo, mandu"
+54358.0,54344,"Sandwich, mì, cơm ăn liền"
+54360.0,54344,Gói nguyên liệu nấu ăn
+54364.0,54362,Dầu ăn
+54370.0,54362,Gia vị
+54374.0,54362,"Sốt, nước chấm"
+54380.0,54362,Nấu ăn và làm bánh
+54382.0,54362,Nguyên liệu nấu ăn khác
+54414.0,54412,Bia Nhập Khẩu
+54416.0,54412,Rượu Vang
+54672.0,54412,Rượu mạnh
+69129.0,54412,Bia Nội Địa
+69130.0,54412,Bia Thủ Công
+69131.0,54412,Các loại rượu khác
+69132.0,54412,Nước hoa quả lên men
+69133.0,54412,Rượu Champagnes
+69134.0,54412,Rượu gạo - Soju - Sake
+69174.0,54412,Rượu trái cây
+54448.0,54438,"Tã, Bỉm"
+54450.0,54438,Đồ dùng cho bé
+54458.0,54452,Mứt trái cây
+54464.0,54452,"Giỏ quà, bánh theo mùa"
+68690.0,54452,Bánh tráng
+68691.0,54452,Bắp
+68692.0,54452,Các loại đậu hạt
+68693.0,54452,Các Loại Đồ Ăn Vặt Khác
+68703.0,54452,Đặc Sản Địa Phương
+68704.0,54452,Kẹo
+68743.0,54452,Khoai tây chiên
+68744.0,54452,Rong biển
+68745.0,54452,Trái cây rau củ sấy
+54468.0,54466,Thức ăn thú cưng
+54472.0,54466,Phụ kiện thú cưng
+68764.0,54466,Chăm sóc sức khỏe thú cưng
+68779.0,54466,Đồ dùng vệ sinh thú cưng
+68787.0,54466,Dụng cụ chăm sóc thú cưng
+68788.0,54466,Dung dịch vệ sinh thú cưng
+54504.0,54500,Giấy vệ sinh và giấy ăn
+54508.0,54500,Diệt côn trùng
+54510.0,54500,"Hoa tươi, hoa chậu"
+54512.0,54500,"Túi rác, cây lau sàn"
+68661.0,54500,Vệ sinh nhà bếp
+68662.0,54500,Vệ sinh nhà cửa
+68663.0,54500,Vệ sinh nhà tắm
+54516.0,54514,Đồ dùng nhà bếp
+54518.0,54514,"Chăn ga, đồ phòng ngủ"
+54520.0,54514,"Điện gia dụng, bóng đèn"
+54522.0,54514,Dụng cụ sửa chữa
+54524.0,54514,"Nội thất, trang trí nhà"
+54526.0,54514,"Đồ nhà tắm, tiện ích khác"
+68748.0,68747,Bánh Trung Thu
+68749.0,68747,Hàng Mùa Vụ Khác
+68750.0,68747,Hộp Quà Tặng
+68751.0,68747,Hộp Quà Tết
+54474.0,68840,Chăm sóc cá nhân
+68857.0,68840,Chăm sóc da mặt
+68858.0,68840,Chăm sóc tóc và da đầu
+68859.0,68840,Hỗ trợ tình dục
+54490.0,68840,Chăm sóc cơ thể
+69046.0,69032,Bột chocolate
+69047.0,69032,Bột pha nước trái cây
+54426.0,69032,Cà phê
+54422.0,69032,Siro các loại
+54424.0,69032,Trà
+69343.0,69032,"Ngũ cốc, bột"
+69119.0,69118,Các loại đồ uống khác
+69120.0,69118,Nước đóng chai
+69123.0,69118,Nước ngọt & đồ uống không cồn
+69124.0,69118,Nước trái cây
+54432.0,54430,"Đồ chay khô, đóng hộp"
+54434.0,54430,Đồ chay đông lạnh
+54436.0,54430,"Mì chay, gia vị chay"
+8512.0,1778,Đồng hồ business nam
+8511.0,1778,"Đồng hồ thời trang, casual nam"
+8513.0,1778,Đồng hồ thể thao nam
+7449.0,1778,Đồng hồ lộ máy
+5384.0,977,Đồng hồ dây da
+5385.0,977,Đồng hồ dây kim loại
+8516.0,977,Đồng hồ thể thao nữ
+27544.0,11375,Đồng hồ bé trai
+27546.0,11375,Đồng hồ bé gái
+49722.0,27542,Dây đồng hồ
+49724.0,27542,Hộp đựng đồng hồ
+49726.0,27542,Dụng cụ sửa đồng hồ
+49728.0,27542,Pin đồng hồ
+68159.0,27542,Phụ kiện đồng hồ khác
+15250.0,8374,Dây chuyền
+15318.0,8374,Vòng tay
+15320.0,8374,Bông tai
+15236.0,8374,Nhẫn
+15936.0,8374,Bộ trang sức
+27534.0,8374,Vàng miếng
+68612.0,8374,Các loại đá quý
+68613.0,8374,Các loại trang sức khác
+68614.0,8374,Lắc chân
+68615.0,8374,Lắc tay
+8351.0,27608,Balo nam
+6522.0,27608,Balo nữ
+6521.0,27608,Balo laptop
+27610.0,27608,Balo dây rút
+67134.0,27608,Balo chống nước
+6525.0,27612,Túi chống sốc
+6524.0,27612,Cặp đựng laptop
+67131.0,27612,"Balo laptop, chống nước"
+6523.0,8387,"Balo du lịch, phượt"
+7566.0,8387,Túi trống
+8388.0,8387,Ví passport
+49656.0,6526,Vali nhựa
+49658.0,6526,Vali vải
+49660.0,6526,Vali trẻ em
+8390.0,6526,Phụ kiện vali
+68143.0,68140,Gối du lịch
+68146.0,68140,Túi đựng mỹ phẩm
+68147.0,68140,Ví hộ chiếu
+8391.0,68140,Phụ kiện du lịch khác
+11314.0,11313,Buffet
+11316.0,11313,Nhà hàng - Quán ăn
+11317.0,11313,Cafe - Kem - Bánh
+11318.0,11313,Bar - Beer club
+24390.0,11313,Nhà hàng
+24392.0,11313,Quán ăn
+24394.0,11313,Voucher ẩm thực khác
+11320.0,11319,Khách sạn - Resort
+11321.0,11319,Tour du lịch
+24378.0,11319,Sim 3G/4G - Bộ phát Wifi
+24380.0,11319,Vé tham quan - du lịch
+11323.0,11322,Spa - Thẩm mỹ viện
+11325.0,11322,Salon làm đẹp
+13360.0,11322,Phòng tập
+24396.0,11322,Dịch vụ chăm sóc da mặt
+24398.0,11322,Massage Body - Foot
+24400.0,11322,Phẫu thuật thẩm mỹ
+11328.0,11327,Ca nhạc - Phim - Kịch
+11329.0,11327,Vui chơi - Giải trí
+11330.0,11327,Studio - Chụp ảnh
+11331.0,11327,Hội thảo
+,11333,
+13368.0,11326,Nha khoa
+13372.0,11326,Bảo hiểm sức khỏe
+13370.0,11326,Khám sức khỏe tổng quát
+12744.0,11332,Khóa học online
+12746.0,11332,Khóa học KYNA
+13374.0,11332,Khóa học kinh doanh - marketing
+13376.0,11332,Khóa học vi tính văn phòng
+13378.0,11332,Khóa học Kế toán - Tài chính - Đầu tư
+13380.0,11332,Khóa học thiết kế đồ họa và video
+13382.0,11332,Khóa học IT và lập trình
+13384.0,11332,Khóa học ngoại ngữ
+13386.0,11332,Khóa học nuôi dạy con và kỹ năng cho bé
+13388.0,11332,Khóa học nghệ thuật và chủ đề khác
+,11334,
+,33466,
+,44472,
+,46516,
+,52842,
+49608.0,4559,Túi tote có khóa
+49610.0,4559,Túi tote không khóa
+49596.0,4558,Túi đeo chéo công sở
+49598.0,4558,Túi đeo chéo dạo phố
+49600.0,4560,Túi xách to bản
+49602.0,4560,Túi xách vừa và nhỏ
+49604.0,4561,Ví ngắn
+49606.0,4561,Ví dài
+49612.0,8350,Clutch ánh kim
+49614.0,8350,Clutch da
+49616.0,8352,"Dây, quai đeo túi"
+49618.0,8352,Phụ kiện cài túi
+,5337,
+,958,
+,49650,
+49652.0,959,Ví nam ngang
+49654.0,959,Ví nam đứng
+8295.0,4386,"Khử mùi, sáp thơm"
+4398.0,4399,Nước lau sàn
+10237.0,4399,Sản phẩm tẩy đa năng
+10238.0,4400,Bộ sản phẩm vệ sinh nhà cửa
+4407.0,4388,Khăn giấy khô
+4409.0,4388,Giấy vệ sinh
+4406.0,4388,Khăn ăn
+68142.0,4388,Khăn giấy bếp
+4402.0,4387,Bột giặt
+8239.0,4387,Nước giặt
+4404.0,4387,Nước ủi quần áo
+4403.0,4387,Nước xả vải
+4405.0,4387,Sản phẩm chăm sóc áo quần khác
+10231.0,4387,Bộ sản phẩm chăm sóc quần áo
+68132.0,4441,Diệt côn trùng dạng bột
+68133.0,4441,Diệt côn trùng dạng nhang đốt
+68137.0,4441,Diệt côn trùng dạng nước và tinh dầu
+68138.0,4441,Diệt côn trùng dạng sáp và viên nén
+68139.0,4441,Diệt côn trùng dạng xịt

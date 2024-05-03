@@ -1,0 +1,231 @@
+MasterCategoryID,GroupID,Name
+320,8322,English Books
+316,8322,Sách tiếng Việt
+7741,8322,Văn phòng phẩm
+18328,8322,Quà lưu niệm
+1951,1883,Dụng cụ nhà bếp
+1954,1883,Đồ dùng phòng ăn
+8313,1883,Đồ dùng phòng ngủ
+2150,1883,Nội thất
+1973,1883,Trang trí nhà cửa
+2015,1883,Đèn & thiết bị chiếu sáng
+2223,1883,Ngoài trời & sân vườn
+1966,1883,Đồ dùng và thiết bị nhà tắm
+1974,1883,Sửa chữa nhà cửa
+10068,1883,Nhạc cụ
+23054,1883,Đồ thờ cúng
+53050,1883,Dụng cụ & Thiết bị tiện ích
+1795,1789,Điện thoại Smartphone
+1794,1789,Máy tính bảng
+28856,1789,Máy đọc sách
+1796,1789,Điện thoại phổ thông
+8061,1789,Điện thoại bàn
+2551,2549,"Tã, Bỉm"
+8339,2549,Dinh dưỡng cho bé
+6568,2549,Thực phẩm ăn dặm
+10416,2549,Dinh dưỡng cho mẹ
+10418,2549,Dinh dưỡng cho người lớn
+11601,2549,Đồ dùng cho bé
+5250,2549,Đồ chơi
+5164,2549,Đồ dùng cho người già
+2640,2549,"Chăm sóc mẹ mang thai, sau sinh"
+10570,2549,Chuẩn bị mang thai
+8215,1815,Thiết Bị Âm Thanh và Phụ Kiện
+2667,1815,Thiết Bị Chơi Game và Phụ Kiện
+8039,1815,Thiết Bị Đeo Thông Minh và Phụ Kiện
+28432,1815,Thiết Bị Thông Minh và Linh Kiện Điện Tử
+8214,1815,Phụ Kiện Điện Thoại và Máy Tính Bảng
+28670,1815,Phụ kiện máy tính và Laptop
+1884,1882,Đồ dùng nhà bếp
+1946,1882,Thiết bị gia đình
+1582,1520,Chăm sóc da mặt
+1584,1520,Trang điểm 
+1594,1520,Chăm sóc cá nhân
+1592,1520,Chăm sóc cơ thể
+5873,1520,Sản phẩm thiên nhiên & Khác
+1591,1520,Chăm sóc tóc và da đầu
+1595,1520,Nước hoa
+2306,1520,Dụng cụ làm đẹp
+2307,1520,Máy Massage & Thiết bị chăm sóc sức khỏe
+2322,1520,Thực phẩm chức năng
+8142,1520,Hỗ trợ tình dục
+1625,1520,Chăm sóc răng miệng
+8597,8594,Xe máy
+6070,8594,Xe điện
+8431,8594,Xe đạp
+8595,8594,Ô tô
+24832,8594,Phụ kiện - Chăm sóc xe
+17208,8594,"Dịch vụ, lắp đặt"
+941,931,Đầm nữ
+5404,931,Chân váy
+27600,931,Quần nữ
+936,931,Áo vest - Áo khoác nữ
+1702,931,Áo liền quần - Bộ trang phục
+4553,931,Đồ đôi - Đồ gia đình
+49372,931,Thời trang bầu và sau sinh
+49384,931,Thời trang nữ trung niên
+4554,931,Đồ lót nữ
+1508,931,Đồ ngủ - Đồ mặc nhà nữ
+6179,931,Trang phục bơi nữ
+934,931,Áo sơ mi nữ
+935,931,Áo kiểu nữ
+10389,931,Áo crop-top
+933,931,Áo thun nữ
+67230,931,Quần áo nữ kích cỡ lớn
+4421,4384,Đồ Ăn Vặt
+15074,4384,Thực phẩm Đóng hộp và Khô
+24024,4384,Đồ Uống Không Cồn
+4422,4384,Gia Vị và Chế Biến
+5451,4384,Chăm sóc thú cưng
+11347,4384,Bộ quà tặng
+22998,4384,Đồ uống
+53562,4384,Sữa và các Sản phẩm từ sữa
+53582,4384,"Rượu, bia và nước lên men"
+53620,4384,Đậu & Hạt Các Loại
+68576,4384,Ngũ cốc và mứt
+8411,1975,Các môn thể thao chơi vợt
+4227,1975,Các môn thể thao đồng đội
+23120,1975,Các môn thể thao đối kháng 
+24002,1975,Các môn thể thao khác
+24128,1975,Dụng cụ - thiết bị tập thể thao
+6826,1975,Giày thể thao nam
+6827,1975,Giày thể thao nữ
+24294,1975,Dụng cụ câu cá
+24306,1975,Phụ kiện thể thao
+8413,1975,Thể thao dưới nước
+10803,1975,Thực phẩm bổ sung năng lượng
+67485,1975,Đồ dùng dã ngoại & Leo núi
+67647,1975,Trang phục thể thao
+917,915,Áo thun nam
+918,915,Áo sơ mi nam
+925,915,Áo vest - Áo khoác nam
+10382,915,Áo hoodie nam
+4546,915,Áo nỉ - Áo len nam
+27562,915,Quần dài nam
+27570,915,"Đồ ngủ, đồ mặc nhà nam"
+49516,915,Đồ đôi - Đồ gia đình nam
+27548,915,Đồ lót nam
+49524,915,Quần áo nam kích cỡ lớn
+49532,915,Quần áo nam trung niên
+16004,915,Đồ bơi - Đồ đi biển nam
+67309,915,Bộ trang phục nam
+67329,915,Quần short nam
+20766,17166,Bách hóa online
+20824,17166,Điện gia dụng
+20908,17166,Làm Đẹp - Sức Khỏe
+21054,17166,Điện Thoại - Máy Tính Bảng
+21074,17166,Laptop & Máy Vi Tính
+21134,17166,Máy Ảnh - Máy Quay Phim
+21166,17166,Mẹ & Bé
+21268,17166,Nhà Cửa - Đời Sống
+21298,17166,"Sách, Văn phòng phẩm & Quà lưu niệm"
+21346,17166,"Ô tô, xe máy, xe đạp"
+21356,17166,Thể thao - Dã ngoại
+21382,17166,Thiết Bị Số - Phụ Kiện Số
+21442,17166,Thời Trang
+21496,17166,Tivi & Thiết Bị Nghe Nhìn
+25036,17166,Sản phẩm - thiết bị công nghiệp
+27468,17166,Artist Collection
+8095,1846,Laptop
+12884,1846,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi
+8060,1846,Thiết Bị Lưu Trữ
+2663,1846,Thiết Bị Mạng
+8093,1846,PC - Máy Tính Bộ
+8129,1846,Linh Kiện Máy Tính - Phụ Kiện Máy Tính
+27572,1686,Giày thể thao nam
+5340,1686,Giày lười nam
+1581,1686,Giày tây nam
+5341,1686,Giày sandals nam
+5342,1686,Dép nam
+8337,1686,Giày boots nam
+8338,1686,Phụ kiện giày nam
+5015,4221,Tivi
+3862,4221,Máy giặt
+26568,4221,Âm thanh & Phụ kiện Tivi
+3863,4221,Máy sấy quần áo
+3864,4221,Máy rửa chén
+3865,4221,Máy lạnh - Máy điều hòa
+3866,4221,Máy nước nóng
+2328,4221,Tủ lạnh
+3868,4221,Tủ đông - Tủ mát
+3869,4221,Tủ ướp rượu
+8074,4221,Phụ kiện điện lạnh
+8355,1703,Giày cao gót
+27604,1703,Giày thể thao nữ
+4550,1703,Giày sandals nữ
+1192,1703,Giày búp bê
+1008,1703,Giày Đế xuồng nữ 
+981,1703,Giày boots nữ
+984,1703,Dép - Guốc nữ
+4551,1703,Giày lười nữ
+8357,1703,Phụ kiện giày nữ
+28806,1801,Máy Ảnh
+1818,1801,"Phụ Kiện Máy Ảnh, Máy Quay"
+1840,1801,Balo - Túi Đựng - Bao Da
+28794,1801,Ống Kính - Ống Ngắm
+2757,1801,Ống Kính (Lens)
+28814,1801,Thiết Bị Ánh Sáng
+28822,1801,Thiết Bị Quay Phim
+4077,1801,Camera Giám Sát
+8047,1801,Máy Bay Camera và Phụ Kiện
+28834,1801,Camera Hành Trình - Action Camera và Phụ Kiện
+8370,27498,Mắt kính
+975,27498,Phụ kiện thời trang nữ
+27550,27498,Phụ kiện thời trang nam
+44824,44792,Trái Cây
+54276,44792,"Thịt, Trứng"
+54290,44792,"Cá, thuỷ hải sản"
+54302,44792,Rau củ quả
+54316,44792,Thực phẩm đóng hộp và khô
+54330,44792,Sữa và các Sản phẩm từ sữa
+54344,44792,"Đông lạnh, mát"
+54362,44792,Gia Vị và Chế Biến
+54412,44792,Đồ uống có cồn
+54438,44792,Dành cho trẻ em
+54452,44792,"Bánh kẹo, đồ ăn vặt"
+54466,44792,Chăm sóc thú cưng
+54500,44792,Chăm sóc nhà cửa
+54514,44792,"Gia dụng, tiện ích"
+68747,44792,Bộ quà tặng
+68840,44792,Làm Đẹp - Sức Khỏe
+69032,44792,Đồ uống - Pha chế dạng bột
+69118,44792,Đồ Uống Không Cồn
+54430,44792,Thực phẩm chay
+1778,8371,Đồng hồ nam
+977,8371,Đồng hồ nữ
+11375,8371,Đồng hồ trẻ em
+27542,8371,Phụ kiện đồng hồ
+8374,8371,Trang sức
+27608,6000,Balo
+27612,6000,"Balo, cặp, túi chống sốc laptop"
+8387,6000,Túi du lịch và phụ kiện
+6526,6000,"Vali, phụ kiện vali "
+68140,6000,Phụ kiện du lịch
+11313,11312,Nhà hàng - Ăn uống
+11319,11312,Du lịch - Khách sạn
+11322,11312,Spa & Làm đẹp
+11327,11312,Sự kiện - Giải trí
+11333,11312,Sự kiện - Thể thao
+11326,11312,Nha khoa - Sức khỏe
+11332,11312,Khóa học
+11334,11312,Dịch vụ khác
+33466,11312,TikiNOW
+44472,11312,Quyên góp
+46516,11312,TicketBox
+52842,11312,Vé xe bus
+4559,976,Túi tote nữ
+4558,976,"Túi đeo chéo, túi đeo vai nữ"
+4560,976,Túi xách tay nữ
+4561,976,Ví nữ
+8350,976,Ví đi tiệc
+8352,976,Phụ kiện túi
+5337,27616,Túi xách công sở nam
+958,27616,Túi đeo chéo nam
+49650,27616,"Túi bao tử, túi đeo bụng"
+959,27616,Ví nam
+4386,15078,Vệ sinh nhà cửa
+4399,15078,Vệ sinh nhà bếp
+4400,15078,Vệ sinh nhà tắm
+4388,15078,Giấy vệ sinh và giấy ăn
+4387,15078,Giặt giũ & Chăm sóc quần áo
+4441,15078,Diệt côn trùng
