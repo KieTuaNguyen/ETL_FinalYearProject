@@ -1,0 +1,83 @@
+﻿SubCategoryID,CategoryID,Name,isSubCategory
+1795,1795,Điện thoại Smartphone,0
+1794,1794,Máy tính bảng,0
+28856,28856,Máy đọc sách,0
+1796,1796,Điện thoại phổ thông,0
+8061,8061,Điện thoại bàn,0
+29010,29010,Laptop Truyền Thống,0
+2458,2458,Macbook,0
+5584,5584,Laptop Gaming,0
+29008,29008,Laptop 2 trong 1,0
+29012,29012,Chromebooks,0
+28932,2665,Màn Hình Phổ Thông,1
+12672,2665,Màn Hình Gaming,1
+28934,2665,Màn Hình Di Động,1
+28930,2665,Màn Hình Đồ Họa,1
+6556,2308,Máy In Laser,1
+6561,2308,Máy In Phun,1
+8089,2308,Máy In Ảnh,1
+28936,2308,"Máy In Nhãn, Hóa Đơn",1
+28938,2308,Máy In Kim,1
+8087,2308,Máy Photocopy,1
+28940,2308,Linh Kiện và Phụ Kiện Máy In,1
+6255,6255,Phần Mềm Máy Tính,0
+28942,4532,Mực In Màu,1
+28944,4532,Drums và Toner Cho Máy In Laser,1
+4542,4542,Máy Scan Tài Liệu,0
+28946,8086,Nhãn In,1
+28948,8086,Giấy In Hóa Đơn - Giấy In Tem,1
+28950,8086,Giấy In Ảnh,1
+28952,2664,Máy chiếu,1
+28960,2664,Phụ kiện máy chiếu,1
+29002,2664,Màn hình ghép - Màn hình LED,1
+30020,30020,Máy Scan Mã Vạch,0
+10089,10089,Máy Hủy Tài Liệu,0
+12886,12886,Máy Chấm Công,0
+8088,8088,Máy Fax,0
+29006,29006,Máy Đếm Tiền,0
+12890,12890,Thiết Bị Truyền Thông Hội Nghị,0
+4051,28844,Ổ Cứng HDD,1
+2146,28844,Ổ Cứng SSD,1
+28840,1827,Ổ Cứng SSD Di Động,1
+28842,1827,Ổ Cứng HDD Di Động,1
+5350,5350,Case Ổ Cứng- Hộp Đựng HDD Box - Dock Ổ Cứng,0
+5349,5349,Thiết Bị Lưu Trữ Qua Mạng NAS,0
+1828,1828,USB,0
+28838,28838,Đĩa Trắng - Băng Cuộn,0
+4316,13150,Access Point - Điểm Truy Cập,1
+4293,13150,Router Wifi,1
+4294,13150,USB Wifi,1
+4343,4343,Bộ Kích Sóng Wifi,0
+4345,4345,Bộ Phát Wifi Di Động 3G/4G - Mifi,0
+4454,4454,Bộ Chia Mạng - Switch,0
+4642,4642,Phụ Kiện Thiết Bị Mạng,0
+28894,28894,Bộ Chuyển Đổi - Transceivers,0
+4346,4346,Mở Rộng Mạng Qua Đường Điện - Powerline Ethernet,0
+7361,7361,Card Mạng,0
+28896,28896,Ăng-Ten Mạng,0
+4585,4585,Modem ADSL,0
+8094,8094,Máy Tính All in one,0
+7369,7369,Mini PC,0
+67081,5172,PC Gaming,1
+29014,29014,Towers - Máy Chủ - Server,0
+29016,29016,Máy Tính Bộ Thương Hiệu,0
+28900,28900,Nguồn Máy Tính,0
+11964,11964,Bộ Lưu Điện - UPS,0
+11956,11956,Mainboard - Board Mạch Chủ,0
+11962,11962,Bộ Vi Xử Lý CPU,0
+11960,11960,Vỏ Case - Thùng Máy,0
+28904,28902,Quạt Tản Nhiệt,1
+28906,28902,Keo - Pad Tản Nhiệt,1
+11958,11958,Card Màn Hình - VGA,0
+11966,11966,Sound Card - Card Âm Thanh,0
+2679,2680,RAM Laptop,1
+12298,2680,RAM Desktop,1
+28908,28908,Ổ Đĩa Quang,0
+28910,28910,I/O Port Cards,0
+28914,28914,Thiết Bị Streaming và Capture Cards,0
+28916,28916,KVM Switches - Switch HDMI,0
+11968,11968,Linh Kiện Máy Tính Khác,0
+28920,28918,Adapter Sạc Laptop,1
+28922,28918,Bàn Phím Thay Thế Laptop,1
+28924,28918,Pin Thay Thế Laptop,1
+28926,28918,Linh Kiện Thay Thế Laptop Khác,1
