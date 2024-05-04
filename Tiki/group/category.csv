@@ -1,0 +1,471 @@
+﻿GroupID,GroupName,MasterCategoryID,MasterCategoryName,CategoryID,CategoryName,SubCategoryID,SubCategoryName,isSubCategory
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,625.0,Architecture,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,5770.0,Graphic Design,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,626.0,"Religion, Culture",1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,9423.0,Photography,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,112.0,Decorative Arts & Design,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,97.0,Other Arts,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,18358.0,Drawing & Painting,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,18360.0,Fashion,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,18362.0,History - Criticism,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,18364.0,Sculpture,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,126.0,Music,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,101.0,Performing Arts,1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,18366.0,"Collections, Catalogs & Exhibitions",1.0
+8322,Nhà Sách Tiki,320,English Books,623.0,Art & Photography,68040.0,Study & Teaching,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,201.0,Business Leaders,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,203.0,Celebrities & Famous People,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,205.0,Family & Childhood,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,202.0,"Historical, Political & Military",1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,204.0,Autobiography & Memoirs,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,181.0,Travelers & Explorers,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,15658.0,Arts & Literature,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,15660.0,True Crime,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,18368.0,Sports & Outdoor,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,68041.0,Reference & Collections,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,68042.0,Survival,1.0
+8322,Nhà Sách Tiki,320,English Books,27.0,Biographies & Memoirs,68043.0,Travelers & Explorers,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,47.0,Finance,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,15410.0,Economics,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,20.0,Investment,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,50.0,Job - Career,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,13.0,Management - Leadership,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,43.0,Marketing - Sales,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,59.0,Personal Finance,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,9882.0,Processes & Infrastructure,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,56.0,Skills,1.0
+8322,Nhà Sách Tiki,320,English Books,4.0,Business & Economics,68044.0,Business and Entrepreneurship,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,9900.0,Communication & Social Skills,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,334.0,Creativity,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,10999.0,Emotions,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,9902.0,Motivational,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,247.0,Personal Improvement,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,10998.0,Relationship,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,248.0,Religion - Spirituality,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,9899.0,Stress Management,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,249.0,Success,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,68097.0,Anxieties & Phobias,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,68098.0,Art Therapy & Relaxation,1.0
+8322,Nhà Sách Tiki,320,English Books,614.0,How-to - Self Help,68099.0,Happiness,1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,80.0,Baby - Toddler,1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,9885.0,"Colouring, Sticker & Activity",1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,11020.0,Early Learning,1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,11019.0,Education & Reference,1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,11018.0,Picture & Storybooks,1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,9896.0,"Science, Nature & How It Works",1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,9897.0,Growing Up & Facts of Life,1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,11014.0,"History, Geography & Cultures",1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,11015.0,Literature & Fiction,1.0
+8322,Nhà Sách Tiki,320,English Books,7.0,Children's Books,14810.0,Series Books,1.0
+8322,Nhà Sách Tiki,320,English Books,282.0,Dictionary,14864.0,English Language Dictionary,1.0
+8322,Nhà Sách Tiki,320,English Books,282.0,Dictionary,14866.0,Bilingual Dictionary,1.0
+8322,Nhà Sách Tiki,320,English Books,282.0,Dictionary,14652.0,Children's & School Dictionary,1.0
+8322,Nhà Sách Tiki,320,English Books,5308.0,Education - Teaching,14870.0,Teaching - Learning,1.0
+8322,Nhà Sách Tiki,320,English Books,5308.0,Education - Teaching,14872.0,ELTs,1.0
+8322,Nhà Sách Tiki,320,English Books,5308.0,Education - Teaching,14896.0,"Grammar, vocabulary & skills",1.0
+8322,Nhà Sách Tiki,320,English Books,5308.0,Education - Teaching,14898.0,Graded Readers,1.0
+8322,Nhà Sách Tiki,320,English Books,5308.0,Education - Teaching,14900.0,Test Preparation,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,142.0,Children's Action & Adventure,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,139.0,Classic,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,140.0,Contemporary,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,10997.0,Dramas & Plays,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,141.0,Historical Fiction,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,73.0,Humor & Satire,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,10996.0,Literary,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,8.0,"Mystery, Thriller & Suspense",1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,9864.0,Mythology & Folk Tales,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,9422.0,Romance,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,10995.0,Short Stories & Anthologies,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,145.0,Poetry,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,110.0,History - Criticism,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,14920.0,Comics & Graphic Novels,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,14922.0,Women's Fiction,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,11016.0,Science Fiction & Fantasy,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,68095.0,Ancient & Medieval Literature,1.0
+8322,Nhà Sách Tiki,320,English Books,9.0,Fiction - Literature,68096.0,World Literature,1.0
+8322,Nhà Sách Tiki,320,English Books,6445.0,Magazines,6445.0,Magazines,0.0
+8322,Nhà Sách Tiki,320,English Books,218.0,Medical Books,68100.0,Basic Medical Sciences,1.0
+8322,Nhà Sách Tiki,320,English Books,218.0,Medical Books,68101.0,Dentistry,1.0
+8322,Nhà Sách Tiki,320,English Books,218.0,Medical Books,68102.0,Medical Research,1.0
+8322,Nhà Sách Tiki,320,English Books,218.0,Medical Books,68103.0,Medicine,1.0
+8322,Nhà Sách Tiki,320,English Books,218.0,Medical Books,68104.0,Nursing,1.0
+8322,Nhà Sách Tiki,320,English Books,28.0,Parenting & Relationships,178.0,Marriage & Adult Relationships,1.0
+8322,Nhà Sách Tiki,320,English Books,28.0,Parenting & Relationships,210.0,Pregnancy & Childbirth,1.0
+8322,Nhà Sách Tiki,320,English Books,28.0,Parenting & Relationships,9911.0,"Babysitting, Day Care & Child Care",1.0
+8322,Nhà Sách Tiki,320,English Books,28.0,Parenting & Relationships,209.0,Parenting,1.0
+8322,Nhà Sách Tiki,320,English Books,28.0,Parenting & Relationships,211.0,Family Health & Relationship,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,193.0,Crafts & Hobbies,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,11027.0,"Health, Fitness & Sports",1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,11026.0,Home Living,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,162.0,Psychology,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,29.0,Professions,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,15714.0,Atlases - Encyclopedia,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,15716.0,Gardening,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,68111.0,Almanacs & Yearbooks,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,68112.0,Consumer Guides,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,68113.0,Foreign Language Reference,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,68114.0,Jobs & Careers,1.0
+8322,Nhà Sách Tiki,320,English Books,5309.0,Reference,68115.0,Quotation Reference Books,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,11030.0,Archaeology,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,11031.0,Astronomy & Space Science,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,242.0,Agriculture & Forestry,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,11032.0,Environment,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,11034.0,Mathematics,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,11035.0,Nature & Ecology,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,11028.0,Human & Biology Science,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,10.0,Internet - Computers,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,24732.0,Others,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,68127.0,Chemistry,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,68128.0,Earth Sciences,1.0
+8322,Nhà Sách Tiki,320,English Books,269.0,Science - Technology,68129.0,Physics,1.0
+8322,Nhà Sách Tiki,320,English Books,632.0,"History, Politics & Social Sciences",11021.0,Anthropology,1.0
+8322,Nhà Sách Tiki,320,English Books,632.0,"History, Politics & Social Sciences",11022.0,Philosophy,1.0
+8322,Nhà Sách Tiki,320,English Books,632.0,"History, Politics & Social Sciences",11023.0,Politics & Current Affairs,1.0
+8322,Nhà Sách Tiki,320,English Books,632.0,"History, Politics & Social Sciences",11024.0,Social Sciences,1.0
+8322,Nhà Sách Tiki,320,English Books,632.0,"History, Politics & Social Sciences",11025.0,Sociology,1.0
+8322,Nhà Sách Tiki,320,English Books,632.0,"History, Politics & Social Sciences",24.0,History,1.0
+8322,Nhà Sách Tiki,320,English Books,632.0,"History, Politics & Social Sciences",158.0,Religion and Spirituality,1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,274.0,Americas,1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,271.0,Asia,1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,272.0,Australia & South Pacific,1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,273.0,Europe,1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,276.0,Vietnam,1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,275.0,Guidebook series,1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,14924.0,Discovery & Exploration,1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,51186.0,Sách Tiếng Anh Mùa Giáng Sinh (Christmas - Santa Claus),1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,68130.0,Food & Lodging Travel Reference,1.0
+8322,Nhà Sách Tiki,320,English Books,32.0,Travel & Holiday,68131.0,Travel Tips,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",161.0,Diets - Weight Loss - Nutrition,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",159.0,Drinks & Beverages,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",163.0,"Ingredients, Methods & Appliances",1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",14858.0,Regional - International,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",14860.0,Baking - Desserts,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",14862.0,Vegetarian & Vegan,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",68078.0,Beverages & Wine,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",68088.0,Cooking Education & Reference,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",68089.0,Main Courses & Side Dishes,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",68090.0,Outdoor Cooking,1.0
+8322,Nhà Sách Tiki,320,English Books,21.0,"Cookbooks, Food & Wine",68091.0,Professional Cooking,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,4933.0,Du ký,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,7358.0,Light novel,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,5244.0,Phê Bình - Lý Luận Văn Học,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,5245.0,Phóng sự - Ký sự - Bút ký,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,842.0,Tác phẩm kinh điển,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,446.0,Thơ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,843.0,Tiểu sử - Hồi ký,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,844.0,Tiểu Thuyết,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,8973.0,Tranh Truyện,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,10079.0,Truyện cổ tích - Ngụ ngôn,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,444.0,Truyện cười,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,6750.0,Truyện dài,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,1367.0,Truyện đam mỹ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,840.0,Truyện Giả tưởng - Huyền Bí - Phiêu Lưu,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,639.0,Truyện kiếm hiệp,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,665.0,Truyện kinh dị,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,845.0,Truyện ngắn - Tản văn - Tạp Văn,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,1521.0,Truyện ngôn tình,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,664.0,Truyện trinh thám,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,26904.0,Ca Dao - Tục Ngữ - Thành ngữ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,839.0,Sách văn học,26902.0,Sách ảnh,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,846.0,Sách kinh tế,847.0,Bài học kinh doanh,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,846.0,Sách kinh tế,483.0,Sách doanh nhân,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,846.0,Sách kinh tế,372.0,Sách khởi nghiệp,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,846.0,Sách kinh tế,593.0,Sách kinh tế học,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,846.0,Sách kinh tế,385.0,Sách kỹ năng làm việc,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,846.0,Sách kinh tế,848.0,Sách Marketing - Bán hàng ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,846.0,Sách kinh tế,849.0,"Sách quản trị, lãnh đạo",1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,846.0,Sách kinh tế,4144.0,Sách quản trị nhân lực,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,846.0,Sách kinh tế,67904.0,Sách tài chính,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,393.0,Sách thiếu nhi ,852.0,Đạo đức - Kỹ năng sống,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,393.0,Sách thiếu nhi ,853.0,Kiến thức - Bách khoa,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,393.0,Sách thiếu nhi ,856.0,Tô màu - Luyện chữ  ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,393.0,Sách thiếu nhi ,1753.0,Truyện cổ tích,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,393.0,Sách thiếu nhi ,854.0,Truyện kể cho bé,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,393.0,Sách thiếu nhi ,6040.0,Truyện tranh Ehon,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,393.0,Sách thiếu nhi ,855.0,Truyện tranh thiếu nhi,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,393.0,Sách thiếu nhi ,1754.0,Văn học thiếu nhi,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,393.0,Sách thiếu nhi ,67953.0,Sách chuyển động -Tương tác,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,870.0,Sách kỹ năng sống,871.0,Sách tư duy - Kỹ năng sống,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,870.0,Sách kỹ năng sống,716.0,Sách hướng nghiệp,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,870.0,Sách kỹ năng sống,67929.0,Sách kỹ năng mềm,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,870.0,Sách kỹ năng sống,67945.0,Sách tâm lý học,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2527.0,Nuôi dạy con,6138.0,Sách Thai Giáo,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2527.0,Nuôi dạy con,3271.0,Sách Kiến Thức - Kỹ Năng Cho Trẻ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2527.0,Nuôi dạy con,3320.0,Cẩm nang làm cha mẹ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2527.0,Nuôi dạy con,3272.0,Sách Dinh Dưỡng - Sức Khỏe Cho Bé,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2527.0,Nuôi dạy con,68020.0,Giáo dục tuổi teen,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2527.0,Nuôi dạy con,68021.0,Phương pháp giáo dục trẻ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2321.0,Sách Giáo Khoa - Giáo Trình,16660.0,Sách Giáo Khoa Cấp 1,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2321.0,Sách Giáo Khoa - Giáo Trình,16662.0,Sách Giáo Khoa Cấp 2,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2321.0,Sách Giáo Khoa - Giáo Trình,16664.0,Sách Giáo Khoa Cấp 3,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2321.0,Sách Giáo Khoa - Giáo Trình,6991.0,Giáo Trình Đại Học - Cao Đẳng,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,887.0,Sách Học Ngoại Ngữ,1856.0,Sách Học Tiếng Anh,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,887.0,Sách Học Ngoại Ngữ,1524.0,Sách Học Tiếng Nhật,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,887.0,Sách Học Ngoại Ngữ,1526.0,Sách Học Tiếng Hàn,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,887.0,Sách Học Ngoại Ngữ,1881.0,Sách Học Tiếng Hoa,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,887.0,Sách Học Ngoại Ngữ,1527.0,Ngoại Ngữ Khác,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2320.0,Sách Tham Khảo,2248.0,Sách tham khảo cấp I,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2320.0,Sách Tham Khảo,2249.0,Sách tham khảo cấp II,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2320.0,Sách Tham Khảo,2250.0,Sách tham khảo cấp III,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2320.0,Sách Tham Khảo,7971.0,Sách Luyện Thi Đại Học - Cao Đẳng,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2320.0,Sách Tham Khảo,9997.0,Thẻ luyện thi,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,2320.0,Sách Tham Khảo,18372.0,Sách chuyên đề,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,897.0,Từ Điển,898.0,Từ Điển Tiếng Anh,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,897.0,Từ Điển,900.0,Từ Điển Tiếng Trung,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,897.0,Từ Điển,899.0,Từ Điển Tiếng Hàn,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,897.0,Từ Điển,901.0,Từ Điển Tiếng Nhật,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,897.0,Từ Điển,902.0,Từ Điển Tiếng Pháp,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,897.0,Từ Điển,903.0,Từ Điển Tiếng Việt,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,897.0,Từ Điển,904.0,Từ Điển Ngôn Ngữ Khác,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,873.0,Sách Kiến Thức Tổng Hợp,9733.0,Kiến Thức Bách Khoa,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,873.0,Sách Kiến Thức Tổng Hợp,886.0,Lĩnh vực khác,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,873.0,Sách Kiến Thức Tổng Hợp,7671.0,Sách Chiêm Tinh - Horoscope,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,873.0,Sách Kiến Thức Tổng Hợp,877.0,Sách giáo dục,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,873.0,Sách Kiến Thức Tổng Hợp,867.0,Sách Phong Thủy - Kinh Dịch,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,873.0,Sách Kiến Thức Tổng Hợp,9120.0,Triết Học,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,879.0,Sách Khoa Học - Kỹ Thuật,67882.0,Sách khoa học,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,879.0,Sách Khoa Học - Kỹ Thuật,67883.0,Sách kỹ thuật,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,880.0,Sách Lịch sử,9724.0,Lịch Sử Việt Nam,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,880.0,Sách Lịch sử,9725.0,Lịch Sử Thế Giới,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,881.0,Điện Ảnh - Nhạc - Họa,9727.0,Âm Nhạc - Điện Ảnh,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,881.0,Điện Ảnh - Nhạc - Họa,9728.0,Mỹ Thuật - Kiến Trúc,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,881.0,Điện Ảnh - Nhạc - Họa,4142.0,Sách Tô Màu Dành Cho Người Lớn,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,1084.0,"Truyện Tranh, Manga, Comic",1084.0,"Truyện Tranh, Manga, Comic",0.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,861.0,Sách Tôn Giáo - Tâm Linh,67978.0,Công Giáo,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,861.0,Sách Tôn Giáo - Tâm Linh,67979.0,Phật giáo,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,861.0,Sách Tôn Giáo - Tâm Linh,67980.0,Tôn Giáo - Tâm Linh Khác,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,857.0,Sách Văn Hóa - Địa Lý - Du Lịch,858.0,Sách Danh Nhân,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,857.0,Sách Văn Hóa - Địa Lý - Du Lịch,859.0,Sách Địa Danh - Du Lịch,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,857.0,Sách Văn Hóa - Địa Lý - Du Lịch,6992.0,Sách Phong Tục - Tập Quán,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,875.0,Sách Chính Trị - Pháp Lý,6993.0,Lý Luận Chính Trị,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,875.0,Sách Chính Trị - Pháp Lý,883.0,Luật - Văn Bản Luật,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,882.0,Sách Nông - Lâm - Ngư Nghiệp,882.0,Sách Nông - Lâm - Ngư Nghiệp,0.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,876.0,Sách Công Nghệ Thông Tin,9721.0,Tin Học Văn Phòng,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,876.0,Sách Công Nghệ Thông Tin,9723.0,Lập Trình,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,876.0,Sách Công Nghệ Thông Tin,9722.0,Thiết Kế - Đồ Họa,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,885.0,Sách Y Học,68001.0,Sách Y Học Cổ Truyền,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,885.0,Sách Y Học,68002.0,Sách Y Học Hiện Đại,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,885.0,Sách Y Học,68003.0,Sách Y Học Khác,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,1468.0,Tạp Chí - Catalogue,1468.0,Tạp Chí - Catalogue,0.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,868.0,Sách Tâm lý - Giới tính,6994.0,Sách Hôn Nhân - Giới Tính,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,868.0,Sách Tâm lý - Giới tính,850.0,Sách Tâm Lý Tuổi Teen,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,862.0,Sách Thường Thức - Gia Đình,863.0,Chăm sóc sức khỏe,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,862.0,Sách Thường Thức - Gia Đình,6989.0,May - Thêu - Thời Trang,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,862.0,Sách Thường Thức - Gia Đình,4902.0,Sách Làm Đẹp,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,862.0,Sách Thường Thức - Gia Đình,865.0,Sách Nấu ăn,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,6905.0,Thể Dục - Thể Thao,68004.0,Chạy bộ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,6905.0,Thể Dục - Thể Thao,68005.0,Đối Kháng,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,6905.0,Thể Dục - Thể Thao,68006.0,Thể dục - thể thao - khác,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,6905.0,Thể Dục - Thể Thao,68007.0,Thể thao chơi vợt,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,6905.0,Thể Dục - Thể Thao,68008.0,Thể thao trí tuệ,1.0
+8322,Nhà Sách Tiki,316,Sách tiếng Việt,6905.0,Thể Dục - Thể Thao,68009.0,Yoga,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,1860.0,File Hồ Sơ - Bìa Hồ Sơ,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,1864.0,Bút Viết Văn Phòng,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,1861.0,Đồ Bấm - Kim Kẹp,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,3897.0,Kẹp Bướm,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,3898.0,Băng keo,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,9601.0,Kéo,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,3899.0,Kệ Đựng Hồ Sơ,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,3900.0,Cắm Viết Các Loại,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,3486.0,Bảng viết văn phòng,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,1863.0,Máy tính văn phòng,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,3901.0,Mực Các Loại,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,7992.0,Máy Hủy Giấy,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,24870.0,Con dấu,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,18380.0,Dụng cụ văn phòng khác,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,68256.0,Dao rọc giấy,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,68257.0,Dây đeo thẻ,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,68258.0,Dụng cụ cắt băng keo,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1862.0,Dụng Cụ Văn Phòng,68263.0,Keo Hồ,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1868.0,Bút mực - Bút máy,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1869.0,Bút bi - Ruột bút bi,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1870.0,Bút chì - Ruột bút chì,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1872.0,Bút cao cấp,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1873.0,Bút lông kim,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1875.0,Bút lông - Ruột bút lông bảng,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1874.0,Bút dạ quang,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1876.0,Bút sơn,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1879.0,Bút chuyên dụng,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,9216.0,Bút gel - Bút nước,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,1871.0,Bút xóa - Xóa kéo,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,11118.0,Bút vẽ kỹ thuật,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,11119.0,Bút vẽ trên vải,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,11120.0,Bút viết thư pháp,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1858.0,Bút - Viết các loại,15464.0,Bút viết học sinh,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2538.0,Bút Chì Màu - Bút Lông Màu - Sáp Màu,2539.0,Cọ Vẽ,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2538.0,Bút Chì Màu - Bút Lông Màu - Sáp Màu,4261.0,Bút chì màu,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2538.0,Bút Chì Màu - Bút Lông Màu - Sáp Màu,8934.0,Bút Lông Màu,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2538.0,Bút Chì Màu - Bút Lông Màu - Sáp Màu,15448.0,Sáp - Chì màu cho bé,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2538.0,Bút Chì Màu - Bút Lông Màu - Sáp Màu,68216.0,Sáp màu,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2538.0,Bút Chì Màu - Bút Lông Màu - Sáp Màu,68221.0,Màu nước,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,3986.0,Bao Tập - Bao Sách,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,2450.0,Sản Phẩm Giáo Dục Điện Tử,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,1880.0,Bóp Viết - Hộp Bút,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,2376.0,Bảng viết học sinh,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,2456.0,Tập Học Sinh,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,6401.0,Vỉ - Bộ Dụng Cụ Học Sinh,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,9283.0,Gọt bút chì,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,9603.0,Compa,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,24734.0,Sáp nặn,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,24868.0,Dụng cụ học sinh khác,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,68227.0,Gôm tẩy,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2365.0,Dụng Cụ Học Sinh,68232.0,Thước kẻ,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1910.0,Flashcards,4734.0,Flashcard Tiếng Anh,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1910.0,Flashcards,4735.0,Flashcard Tiếng Nhật,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1910.0,Flashcards,6105.0,Flashcard Tiếng Trung,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1910.0,Flashcards,9176.0,Flashcards Cho Bé,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1910.0,Flashcards,15466.0,Flashcard Luyện Thi Tiếng Anh,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1910.0,Flashcards,18382.0,Flashcard Tiếng Hàn,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1910.0,Flashcards,67389.0,Flashcard trắng trơn,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1899.0,Sổ Tay Các Loại,67402.0,Sổ tay bìa da,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1899.0,Sổ Tay Các Loại,67403.0,Sổ tay dán gáy,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1899.0,Sổ Tay Các Loại,67404.0,Sổ tay gáy lò xo,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1907.0,Tập vở các loại ,24872.0,Tập 4 ô ly,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1907.0,Tập vở các loại ,24874.0,Tập 5 ô ly,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,1907.0,Tập vở các loại ,24876.0,Tập kẻ ngang,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2333.0,Văn Hóa Phẩm,2369.0,Đĩa Nhạc,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2333.0,Văn Hóa Phẩm,2370.0,Đĩa Phim,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2333.0,Văn Hóa Phẩm,11926.0,Bao lì xì,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2333.0,Văn Hóa Phẩm,2375.0,Thể Loại Khác,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,6210.0,Thiết Bị Giáo Dục Trường Học,6210.0,Thiết Bị Giáo Dục Trường Học,0.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,5674.0,Balo Học Sinh - Cặp học sinh,5674.0,Balo Học Sinh - Cặp học sinh,0.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2452.0,Máy Tính Điện Tử,1923.0,Máy tính điện tử để bàn,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2452.0,Máy Tính Điện Tử,1925.0,Máy tính bỏ túi,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2452.0,Máy Tính Điện Tử,1922.0,Máy Tính Khoa Học,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2452.0,Máy Tính Điện Tử,4645.0,Phụ Kiện Trang Trí Máy Tính,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,3892.0,Lịch,4313.0,Lịch Bloc,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,3892.0,Lịch,4315.0,Sổ Agenda,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,3892.0,Lịch,4314.0,Lịch Bàn,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,3892.0,Lịch,3893.0,Lịch Tờ - Lịch Lò Xo,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,16458.0,Bút Kỹ Thuật,16458.0,Bút Kỹ Thuật,0.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2368.0,Sản phẩm về giấy,18390.0,Giấy các loại,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2368.0,Sản phẩm về giấy,18388.0,Hộp và thùng lưu trữ,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,2368.0,Sản phẩm về giấy,67405.0,Giấy in,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18398.0,Thiết bị văn phòng,18400.0,Bàn cắt giấy,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18398.0,Thiết bị văn phòng,18402.0,Máy đóng gáy lò xo,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18398.0,Thiết bị văn phòng,18404.0,Máy ép plastic,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18398.0,Thiết bị văn phòng,18406.0,Thiết bị văn phòng khác,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18378.0,Phấn - Bảng viết - Lau bảng,67393.0,Bảng con học sinh,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18378.0,Phấn - Bảng viết - Lau bảng,67394.0,Bảng Flipchart,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18378.0,Phấn - Bảng viết - Lau bảng,67395.0,Bảng Ghim - Bảng treo tường,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18378.0,Phấn - Bảng viết - Lau bảng,67396.0,Bảng từ trắng viết bút lông,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18378.0,Phấn - Bảng viết - Lau bảng,67397.0,Bảng xanh viết phấn,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18378.0,Phấn - Bảng viết - Lau bảng,67398.0,Lau bảng,1.0
+8322,Nhà Sách Tiki,7741,Văn phòng phẩm,18378.0,Phấn - Bảng viết - Lau bảng,67399.0,Phấn viết bảng,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,4624.0,Thú Nhồi Bông,4624.0,Thú Nhồi Bông,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6225.0,Bookmark,67407.0,Bookmark giấy,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6225.0,Bookmark,67408.0,Bookmark kim loại,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6225.0,Bookmark,67409.0,Bookmark nhựa,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6541.0,Bưu ảnh - Postcard,6541.0,Bưu ảnh - Postcard,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18330.0,Quà tặng trang sức,18330.0,Quà tặng trang sức,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,8264.0,Album,68194.0,Album ảnh dán,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,8264.0,Album,68195.0,Album sưu tầm,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,8264.0,Album,68201.0,Photo Album,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18332.0,Mô hình trang trí,18332.0,Mô hình trang trí,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18334.0,Sticker - Decal trang trí,18334.0,Sticker - Decal trang trí,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6246.0,Ly - Cốc,6246.0,Ly - Cốc,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6226.0,Kẹp Ảnh Gỗ,6226.0,Kẹp Ảnh Gỗ,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18346.0,Hộp quà,18346.0,Hộp quà,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6215.0,Tượng,6215.0,Tượng,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,8265.0,Móc Khóa,8265.0,Móc Khóa,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6212.0,Đồng Hồ Cát,6212.0,Đồng Hồ Cát,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6213.0,Quả Cầu Tuyết,6213.0,Quả Cầu Tuyết,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6214.0,Hộp Nhạc,67414.0,Style cổ điển,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,6214.0,Hộp Nhạc,67415.0,Style hiện đại,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18342.0,Phụ kiện - Vật liệu trang trí,67416.0,Đồ decor nhà cửa,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18342.0,Phụ kiện - Vật liệu trang trí,67417.0,Giấy rơm lót hộp quà,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18342.0,Phụ kiện - Vật liệu trang trí,67418.0,Hạt xốp lót hộp quà,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18342.0,Phụ kiện - Vật liệu trang trí,67419.0,Mô hình trang trí,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18342.0,Phụ kiện - Vật liệu trang trí,67420.0,Phụ kiện - vật liệu trang trí - khác,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18342.0,Phụ kiện - Vật liệu trang trí,67421.0,Trang trí giáng sinh,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18342.0,Phụ kiện - Vật liệu trang trí,67422.0,Trang trí sinh nhật,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18342.0,Phụ kiện - Vật liệu trang trí,67423.0,Trang trí Tết,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,18344.0,Quà tặng trang trí khác,18344.0,Quà tặng trang trí khác,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,25706.0,Gương mini,25706.0,Gương mini,0.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,68202.0,Khung hình,68203.0,Khung để bàn,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,68202.0,Khung hình,68204.0,Khung treo tường,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,68205.0,Thiệp,68206.0,Thiệp chúc mừng,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,68205.0,Thiệp,68207.0,Thiệp mời,1.0
+8322,Nhà Sách Tiki,18328,Quà lưu niệm,68208.0,Túi Quà,68208.0,Túi Quà,0.0
+1789,Điện Thoại - Máy Tính Bảng,1795,Điện thoại Smartphone,9271.0,OPPO,9271.0,OPPO,0.0
+1789,Điện Thoại - Máy Tính Bảng,1794,Máy tính bảng,,,,,0.0
+1789,Điện Thoại - Máy Tính Bảng,28856,Máy đọc sách,,,,,0.0
+1789,Điện Thoại - Máy Tính Bảng,1796,Điện thoại phổ thông,,,,,0.0
+1789,Điện Thoại - Máy Tính Bảng,8061,Điện thoại bàn,,,,,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8095,Laptop,29010.0,Laptop Truyền Thống,29010.0,Laptop Truyền Thống,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8095,Laptop,2458.0,Macbook,2458.0,Macbook,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8095,Laptop,5584.0,Laptop Gaming,5584.0,Laptop Gaming,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8095,Laptop,29008.0,Laptop 2 trong 1,29008.0,Laptop 2 trong 1,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8095,Laptop,29012.0,Chromebooks,29012.0,Chromebooks,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2665.0,Màn Hình Máy Tính,28932.0,Màn Hình Phổ Thông,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2665.0,Màn Hình Máy Tính,12672.0,Màn Hình Gaming,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2665.0,Màn Hình Máy Tính,28934.0,Màn Hình Di Động,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2665.0,Màn Hình Máy Tính,28930.0,Màn Hình Đồ Họa,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2308.0,Máy In - Photocopy,6556.0,Máy In Laser,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2308.0,Máy In - Photocopy,6561.0,Máy In Phun,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2308.0,Máy In - Photocopy,8089.0,Máy In Ảnh,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2308.0,Máy In - Photocopy,28936.0,"Máy In Nhãn, Hóa Đơn",1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2308.0,Máy In - Photocopy,28938.0,Máy In Kim,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2308.0,Máy In - Photocopy,8087.0,Máy Photocopy,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2308.0,Máy In - Photocopy,28940.0,Linh Kiện và Phụ Kiện Máy In,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,6255.0,Phần Mềm Máy Tính,6255.0,Phần Mềm Máy Tính,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,4532.0,Mực In và Toner,28942.0,Mực In Màu,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,4532.0,Mực In và Toner,28944.0,Drums và Toner Cho Máy In Laser,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,4542.0,Máy Scan Tài Liệu,4542.0,Máy Scan Tài Liệu,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,8086.0,Giấy In,28946.0,Nhãn In,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,8086.0,Giấy In,28948.0,Giấy In Hóa Đơn - Giấy In Tem,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,8086.0,Giấy In,28950.0,Giấy In Ảnh,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2664.0,Máy Chiếu và Phụ Kiện Máy Chiếu,28952.0,Máy chiếu,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2664.0,Máy Chiếu và Phụ Kiện Máy Chiếu,28960.0,Phụ kiện máy chiếu,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,2664.0,Máy Chiếu và Phụ Kiện Máy Chiếu,29002.0,Màn hình ghép - Màn hình LED,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,30020.0,Máy Scan Mã Vạch,30020.0,Máy Scan Mã Vạch,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,10089.0,Máy Hủy Tài Liệu,10089.0,Máy Hủy Tài Liệu,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,12886.0,Máy Chấm Công,12886.0,Máy Chấm Công,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,8088.0,Máy Fax,8088.0,Máy Fax,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,29006.0,Máy Đếm Tiền,29006.0,Máy Đếm Tiền,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,12884,Thiết Bị Văn Phòng - Thiết Bị Ngoại Vi,12890.0,Thiết Bị Truyền Thông Hội Nghị,12890.0,Thiết Bị Truyền Thông Hội Nghị,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8060,Thiết Bị Lưu Trữ,28844.0,Ổ Cứng Gắn Trong,4051.0,Ổ Cứng HDD,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8060,Thiết Bị Lưu Trữ,28844.0,Ổ Cứng Gắn Trong,2146.0,Ổ Cứng SSD,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8060,Thiết Bị Lưu Trữ,1827.0,Ổ Cứng Di Động,28840.0,Ổ Cứng SSD Di Động,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8060,Thiết Bị Lưu Trữ,1827.0,Ổ Cứng Di Động,28842.0,Ổ Cứng HDD Di Động,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8060,Thiết Bị Lưu Trữ,5350.0,Case Ổ Cứng- Hộp Đựng HDD Box - Dock Ổ Cứng,5350.0,Case Ổ Cứng- Hộp Đựng HDD Box - Dock Ổ Cứng,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8060,Thiết Bị Lưu Trữ,5349.0,Thiết Bị Lưu Trữ Qua Mạng NAS,5349.0,Thiết Bị Lưu Trữ Qua Mạng NAS,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8060,Thiết Bị Lưu Trữ,1828.0,USB,1828.0,USB,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8060,Thiết Bị Lưu Trữ,28838.0,Đĩa Trắng - Băng Cuộn,28838.0,Đĩa Trắng - Băng Cuộn,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,13150.0,Thiết Bị Phát Sóng Wifi,4316.0,Access Point - Điểm Truy Cập,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,13150.0,Thiết Bị Phát Sóng Wifi,4293.0,Router Wifi,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,13150.0,Thiết Bị Phát Sóng Wifi,4294.0,USB Wifi,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,4343.0,Bộ Kích Sóng Wifi,4343.0,Bộ Kích Sóng Wifi,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,4345.0,Bộ Phát Wifi Di Động 3G/4G - Mifi,4345.0,Bộ Phát Wifi Di Động 3G/4G - Mifi,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,4454.0,Bộ Chia Mạng - Switch,4454.0,Bộ Chia Mạng - Switch,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,4642.0,Phụ Kiện Thiết Bị Mạng,4642.0,Phụ Kiện Thiết Bị Mạng,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,28894.0,Bộ Chuyển Đổi - Transceivers,28894.0,Bộ Chuyển Đổi - Transceivers,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,4346.0,Mở Rộng Mạng Qua Đường Điện - Powerline Ethernet,4346.0,Mở Rộng Mạng Qua Đường Điện - Powerline Ethernet,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,7361.0,Card Mạng,7361.0,Card Mạng,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,28896.0,Ăng-Ten Mạng,28896.0,Ăng-Ten Mạng,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,2663,Thiết Bị Mạng,4585.0,Modem ADSL,4585.0,Modem ADSL,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8093,PC - Máy Tính Bộ,8094.0,Máy Tính All in one,8094.0,Máy Tính All in one,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8093,PC - Máy Tính Bộ,7369.0,Mini PC,7369.0,Mini PC,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8093,PC - Máy Tính Bộ,5172.0,Máy Tính Để Bàn Lắp Ráp,67081.0,PC Gaming,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8093,PC - Máy Tính Bộ,29014.0,Towers - Máy Chủ - Server,29014.0,Towers - Máy Chủ - Server,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8093,PC - Máy Tính Bộ,29016.0,Máy Tính Bộ Thương Hiệu,29016.0,Máy Tính Bộ Thương Hiệu,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28900.0,Nguồn Máy Tính,28900.0,Nguồn Máy Tính,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,11964.0,Bộ Lưu Điện - UPS,11964.0,Bộ Lưu Điện - UPS,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,11956.0,Mainboard - Board Mạch Chủ,11956.0,Mainboard - Board Mạch Chủ,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,11962.0,Bộ Vi Xử Lý CPU,11962.0,Bộ Vi Xử Lý CPU,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,11960.0,Vỏ Case - Thùng Máy,11960.0,Vỏ Case - Thùng Máy,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28902.0,Hệ Thống Tản Nhiệt,28904.0,Quạt Tản Nhiệt,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28902.0,Hệ Thống Tản Nhiệt,28906.0,Keo - Pad Tản Nhiệt,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,11958.0,Card Màn Hình - VGA,11958.0,Card Màn Hình - VGA,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,11966.0,Sound Card - Card Âm Thanh,11966.0,Sound Card - Card Âm Thanh,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,2680.0,RAM Máy Tính,2679.0,RAM Laptop,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,2680.0,RAM Máy Tính,12298.0,RAM Desktop,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28908.0,Ổ Đĩa Quang,28908.0,Ổ Đĩa Quang,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28910.0,I/O Port Cards,28910.0,I/O Port Cards,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28914.0,Thiết Bị Streaming và Capture Cards,28914.0,Thiết Bị Streaming và Capture Cards,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28916.0,KVM Switches - Switch HDMI,28916.0,KVM Switches - Switch HDMI,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,11968.0,Linh Kiện Máy Tính Khác,11968.0,Linh Kiện Máy Tính Khác,0.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28918.0,Linh Kiện Thay Thế Cho Laptop,28920.0,Adapter Sạc Laptop,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28918.0,Linh Kiện Thay Thế Cho Laptop,28922.0,Bàn Phím Thay Thế Laptop,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28918.0,Linh Kiện Thay Thế Cho Laptop,28924.0,Pin Thay Thế Laptop,1.0
+1846,Laptop - Máy Vi Tính - Linh kiện,8129,Linh Kiện Máy Tính - Phụ Kiện Máy Tính,28918.0,Linh Kiện Thay Thế Cho Laptop,28926.0,Linh Kiện Thay Thế Laptop Khác,1.0
