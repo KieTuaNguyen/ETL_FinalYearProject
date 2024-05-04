@@ -1,467 +1,83 @@
-SubCategoryID,CategoryID,Name
-625.0,623,Architecture
-5770.0,623,Graphic Design
-626.0,623,"Religion, Culture"
-9423.0,623,Photography
-112.0,623,Decorative Arts & Design
-97.0,623,Other Arts
-18358.0,623,Drawing & Painting
-18360.0,623,Fashion
-18362.0,623,History - Criticism
-18364.0,623,Sculpture
-126.0,623,Music
-101.0,623,Performing Arts
-18366.0,623,"Collections, Catalogs & Exhibitions"
-68040.0,623,Study & Teaching
-201.0,27,Business Leaders
-203.0,27,Celebrities & Famous People
-205.0,27,Family & Childhood
-202.0,27,"Historical, Political & Military"
-204.0,27,Autobiography & Memoirs
-181.0,27,Travelers & Explorers
-15658.0,27,Arts & Literature
-15660.0,27,True Crime
-18368.0,27,Sports & Outdoor
-68041.0,27,Reference & Collections
-68042.0,27,Survival
-68043.0,27,Travelers & Explorers
-47.0,4,Finance
-15410.0,4,Economics
-20.0,4,Investment
-50.0,4,Job - Career
-13.0,4,Management - Leadership
-43.0,4,Marketing - Sales
-59.0,4,Personal Finance
-9882.0,4,Processes & Infrastructure
-56.0,4,Skills
-68044.0,4,Business and Entrepreneurship
-9900.0,614,Communication & Social Skills
-334.0,614,Creativity
-10999.0,614,Emotions
-9902.0,614,Motivational
-247.0,614,Personal Improvement
-10998.0,614,Relationship
-248.0,614,Religion - Spirituality
-9899.0,614,Stress Management
-249.0,614,Success
-68097.0,614,Anxieties & Phobias
-68098.0,614,Art Therapy & Relaxation
-68099.0,614,Happiness
-80.0,7,Baby - Toddler
-9885.0,7,"Colouring, Sticker & Activity"
-11020.0,7,Early Learning
-11019.0,7,Education & Reference
-11018.0,7,Picture & Storybooks
-9896.0,7,"Science, Nature & How It Works"
-9897.0,7,Growing Up & Facts of Life
-11014.0,7,"History, Geography & Cultures"
-11015.0,7,Literature & Fiction
-14810.0,7,Series Books
-14864.0,282,English Language Dictionary
-14866.0,282,Bilingual Dictionary
-14652.0,282,Children's & School Dictionary
-14870.0,5308,Teaching - Learning
-14872.0,5308,ELTs
-14896.0,5308,"Grammar, vocabulary & skills"
-14898.0,5308,Graded Readers
-14900.0,5308,Test Preparation
-142.0,9,Children's Action & Adventure
-139.0,9,Classic
-140.0,9,Contemporary
-10997.0,9,Dramas & Plays
-141.0,9,Historical Fiction
-73.0,9,Humor & Satire
-10996.0,9,Literary
-8.0,9,"Mystery, Thriller & Suspense"
-9864.0,9,Mythology & Folk Tales
-9422.0,9,Romance
-10995.0,9,Short Stories & Anthologies
-145.0,9,Poetry
-110.0,9,History - Criticism
-14920.0,9,Comics & Graphic Novels
-14922.0,9,Women's Fiction
-11016.0,9,Science Fiction & Fantasy
-68095.0,9,Ancient & Medieval Literature
-68096.0,9,World Literature
-,6445,
-68100.0,218,Basic Medical Sciences
-68101.0,218,Dentistry
-68102.0,218,Medical Research
-68103.0,218,Medicine
-68104.0,218,Nursing
-178.0,28,Marriage & Adult Relationships
-210.0,28,Pregnancy & Childbirth
-9911.0,28,"Babysitting, Day Care & Child Care"
-209.0,28,Parenting
-211.0,28,Family Health & Relationship
-193.0,5309,Crafts & Hobbies
-11027.0,5309,"Health, Fitness & Sports"
-11026.0,5309,Home Living
-162.0,5309,Psychology
-29.0,5309,Professions
-15714.0,5309,Atlases - Encyclopedia
-15716.0,5309,Gardening
-68111.0,5309,Almanacs & Yearbooks
-68112.0,5309,Consumer Guides
-68113.0,5309,Foreign Language Reference
-68114.0,5309,Jobs & Careers
-68115.0,5309,Quotation Reference Books
-11030.0,269,Archaeology
-11031.0,269,Astronomy & Space Science
-242.0,269,Agriculture & Forestry
-11032.0,269,Environment
-11034.0,269,Mathematics
-11035.0,269,Nature & Ecology
-11028.0,269,Human & Biology Science
-10.0,269,Internet - Computers
-24732.0,269,Others
-68127.0,269,Chemistry
-68128.0,269,Earth Sciences
-68129.0,269,Physics
-11021.0,632,Anthropology
-11022.0,632,Philosophy
-11023.0,632,Politics & Current Affairs
-11024.0,632,Social Sciences
-11025.0,632,Sociology
-24.0,632,History
-158.0,632,Religion and Spirituality
-274.0,32,Americas
-271.0,32,Asia
-272.0,32,Australia & South Pacific
-273.0,32,Europe
-276.0,32,Vietnam
-275.0,32,Guidebook series
-14924.0,32,Discovery & Exploration
-51186.0,32,Sách Tiếng Anh Mùa Giáng Sinh (Christmas - Santa Claus)
-68130.0,32,Food & Lodging Travel Reference
-68131.0,32,Travel Tips
-161.0,21,Diets - Weight Loss - Nutrition
-159.0,21,Drinks & Beverages
-163.0,21,"Ingredients, Methods & Appliances"
-14858.0,21,Regional - International
-14860.0,21,Baking - Desserts
-14862.0,21,Vegetarian & Vegan
-68078.0,21,Beverages & Wine
-68088.0,21,Cooking Education & Reference
-68089.0,21,Main Courses & Side Dishes
-68090.0,21,Outdoor Cooking
-68091.0,21,Professional Cooking
-4933.0,839,Du ký
-7358.0,839,Light novel
-5244.0,839,Phê Bình - Lý Luận Văn Học
-5245.0,839,Phóng sự - Ký sự - Bút ký
-842.0,839,Tác phẩm kinh điển
-446.0,839,Thơ
-843.0,839,Tiểu sử - Hồi ký
-844.0,839,Tiểu Thuyết
-8973.0,839,Tranh Truyện
-10079.0,839,Truyện cổ tích - Ngụ ngôn
-444.0,839,Truyện cười
-6750.0,839,Truyện dài
-1367.0,839,Truyện đam mỹ
-840.0,839,Truyện Giả tưởng - Huyền Bí - Phiêu Lưu
-639.0,839,Truyện kiếm hiệp
-665.0,839,Truyện kinh dị
-845.0,839,Truyện ngắn - Tản văn - Tạp Văn
-1521.0,839,Truyện ngôn tình
-664.0,839,Truyện trinh thám
-26904.0,839,Ca Dao - Tục Ngữ - Thành ngữ
-26902.0,839,Sách ảnh
-847.0,846,Bài học kinh doanh
-483.0,846,Sách doanh nhân
-372.0,846,Sách khởi nghiệp
-593.0,846,Sách kinh tế học
-385.0,846,Sách kỹ năng làm việc
-848.0,846,Sách Marketing - Bán hàng 
-849.0,846,"Sách quản trị, lãnh đạo"
-4144.0,846,Sách quản trị nhân lực
-67904.0,846,Sách tài chính
-852.0,393,Đạo đức - Kỹ năng sống
-853.0,393,Kiến thức - Bách khoa
-856.0,393,Tô màu - Luyện chữ  
-1753.0,393,Truyện cổ tích
-854.0,393,Truyện kể cho bé
-6040.0,393,Truyện tranh Ehon
-855.0,393,Truyện tranh thiếu nhi
-1754.0,393,Văn học thiếu nhi
-67953.0,393,Sách chuyển động -Tương tác
-871.0,870,Sách tư duy - Kỹ năng sống
-716.0,870,Sách hướng nghiệp
-67929.0,870,Sách kỹ năng mềm
-67945.0,870,Sách tâm lý học
-6138.0,2527,Sách Thai Giáo
-3271.0,2527,Sách Kiến Thức - Kỹ Năng Cho Trẻ
-3320.0,2527,Cẩm nang làm cha mẹ
-3272.0,2527,Sách Dinh Dưỡng - Sức Khỏe Cho Bé
-68020.0,2527,Giáo dục tuổi teen
-68021.0,2527,Phương pháp giáo dục trẻ
-16660.0,2321,Sách Giáo Khoa Cấp 1
-16662.0,2321,Sách Giáo Khoa Cấp 2
-16664.0,2321,Sách Giáo Khoa Cấp 3
-6991.0,2321,Giáo Trình Đại Học - Cao Đẳng
-1856.0,887,Sách Học Tiếng Anh
-1524.0,887,Sách Học Tiếng Nhật
-1526.0,887,Sách Học Tiếng Hàn
-1881.0,887,Sách Học Tiếng Hoa
-1527.0,887,Ngoại Ngữ Khác
-2248.0,2320,Sách tham khảo cấp I
-2249.0,2320,Sách tham khảo cấp II
-2250.0,2320,Sách tham khảo cấp III
-7971.0,2320,Sách Luyện Thi Đại Học - Cao Đẳng
-9997.0,2320,Thẻ luyện thi
-18372.0,2320,Sách chuyên đề
-898.0,897,Từ Điển Tiếng Anh
-900.0,897,Từ Điển Tiếng Trung
-899.0,897,Từ Điển Tiếng Hàn
-901.0,897,Từ Điển Tiếng Nhật
-902.0,897,Từ Điển Tiếng Pháp
-903.0,897,Từ Điển Tiếng Việt
-904.0,897,Từ Điển Ngôn Ngữ Khác
-9733.0,873,Kiến Thức Bách Khoa
-886.0,873,Lĩnh vực khác
-7671.0,873,Sách Chiêm Tinh - Horoscope
-877.0,873,Sách giáo dục
-867.0,873,Sách Phong Thủy - Kinh Dịch
-9120.0,873,Triết Học
-67882.0,879,Sách khoa học
-67883.0,879,Sách kỹ thuật
-9724.0,880,Lịch Sử Việt Nam
-9725.0,880,Lịch Sử Thế Giới
-9727.0,881,Âm Nhạc - Điện Ảnh
-9728.0,881,Mỹ Thuật - Kiến Trúc
-4142.0,881,Sách Tô Màu Dành Cho Người Lớn
-,1084,
-67978.0,861,Công Giáo
-67979.0,861,Phật giáo
-67980.0,861,Tôn Giáo - Tâm Linh Khác
-858.0,857,Sách Danh Nhân
-859.0,857,Sách Địa Danh - Du Lịch
-6992.0,857,Sách Phong Tục - Tập Quán
-6993.0,875,Lý Luận Chính Trị
-883.0,875,Luật - Văn Bản Luật
-,882,
-9721.0,876,Tin Học Văn Phòng
-9723.0,876,Lập Trình
-9722.0,876,Thiết Kế - Đồ Họa
-68001.0,885,Sách Y Học Cổ Truyền
-68002.0,885,Sách Y Học Hiện Đại
-68003.0,885,Sách Y Học Khác
-,1468,
-6994.0,868,Sách Hôn Nhân - Giới Tính
-850.0,868,Sách Tâm Lý Tuổi Teen
-863.0,862,Chăm sóc sức khỏe
-6989.0,862,May - Thêu - Thời Trang
-4902.0,862,Sách Làm Đẹp
-865.0,862,Sách Nấu ăn
-68004.0,6905,Chạy bộ
-68005.0,6905,Đối Kháng
-68006.0,6905,Thể dục - thể thao - khác
-68007.0,6905,Thể thao chơi vợt
-68008.0,6905,Thể thao trí tuệ
-68009.0,6905,Yoga
-1860.0,1862,File Hồ Sơ - Bìa Hồ Sơ
-1864.0,1862,Bút Viết Văn Phòng
-1861.0,1862,Đồ Bấm - Kim Kẹp
-3897.0,1862,Kẹp Bướm
-3898.0,1862,Băng keo
-9601.0,1862,Kéo
-3899.0,1862,Kệ Đựng Hồ Sơ
-3900.0,1862,Cắm Viết Các Loại
-3486.0,1862,Bảng viết văn phòng
-1863.0,1862,Máy tính văn phòng
-3901.0,1862,Mực Các Loại
-7992.0,1862,Máy Hủy Giấy
-24870.0,1862,Con dấu
-18380.0,1862,Dụng cụ văn phòng khác
-68256.0,1862,Dao rọc giấy
-68257.0,1862,Dây đeo thẻ
-68258.0,1862,Dụng cụ cắt băng keo
-68263.0,1862,Keo Hồ
-1868.0,1858,Bút mực - Bút máy
-1869.0,1858,Bút bi - Ruột bút bi
-1870.0,1858,Bút chì - Ruột bút chì
-1872.0,1858,Bút cao cấp
-1873.0,1858,Bút lông kim
-1875.0,1858,Bút lông - Ruột bút lông bảng
-1874.0,1858,Bút dạ quang
-1876.0,1858,Bút sơn
-1879.0,1858,Bút chuyên dụng
-9216.0,1858,Bút gel - Bút nước
-1871.0,1858,Bút xóa - Xóa kéo
-11118.0,1858,Bút vẽ kỹ thuật
-11119.0,1858,Bút vẽ trên vải
-11120.0,1858,Bút viết thư pháp
-15464.0,1858,Bút viết học sinh
-2539.0,2538,Cọ Vẽ
-4261.0,2538,Bút chì màu
-8934.0,2538,Bút Lông Màu
-15448.0,2538,Sáp - Chì màu cho bé
-68216.0,2538,Sáp màu
-68221.0,2538,Màu nước
-3986.0,2365,Bao Tập - Bao Sách
-2450.0,2365,Sản Phẩm Giáo Dục Điện Tử
-1880.0,2365,Bóp Viết - Hộp Bút
-2376.0,2365,Bảng viết học sinh
-2456.0,2365,Tập Học Sinh
-6401.0,2365,Vỉ - Bộ Dụng Cụ Học Sinh
-9283.0,2365,Gọt bút chì
-9603.0,2365,Compa
-24734.0,2365,Sáp nặn
-24868.0,2365,Dụng cụ học sinh khác
-68227.0,2365,Gôm tẩy
-68232.0,2365,Thước kẻ
-4734.0,1910,Flashcard Tiếng Anh
-4735.0,1910,Flashcard Tiếng Nhật
-6105.0,1910,Flashcard Tiếng Trung
-9176.0,1910,Flashcards Cho Bé
-15466.0,1910,Flashcard Luyện Thi Tiếng Anh
-18382.0,1910,Flashcard Tiếng Hàn
-67389.0,1910,Flashcard trắng trơn
-67402.0,1899,Sổ tay bìa da
-67403.0,1899,Sổ tay dán gáy
-67404.0,1899,Sổ tay gáy lò xo
-24872.0,1907,Tập 4 ô ly
-24874.0,1907,Tập 5 ô ly
-24876.0,1907,Tập kẻ ngang
-2369.0,2333,Đĩa Nhạc
-2370.0,2333,Đĩa Phim
-11926.0,2333,Bao lì xì
-2375.0,2333,Thể Loại Khác
-,6210,
-,5674,
-1923.0,2452,Máy tính điện tử để bàn
-1925.0,2452,Máy tính bỏ túi
-1922.0,2452,Máy Tính Khoa Học
-4645.0,2452,Phụ Kiện Trang Trí Máy Tính
-4313.0,3892,Lịch Bloc
-4315.0,3892,Sổ Agenda
-4314.0,3892,Lịch Bàn
-3893.0,3892,Lịch Tờ - Lịch Lò Xo
-,16458,
-18390.0,2368,Giấy các loại
-18388.0,2368,Hộp và thùng lưu trữ
-67405.0,2368,Giấy in
-18400.0,18398,Bàn cắt giấy
-18402.0,18398,Máy đóng gáy lò xo
-18404.0,18398,Máy ép plastic
-18406.0,18398,Thiết bị văn phòng khác
-67393.0,18378,Bảng con học sinh
-67394.0,18378,Bảng Flipchart
-67395.0,18378,Bảng Ghim - Bảng treo tường
-67396.0,18378,Bảng từ trắng viết bút lông
-67397.0,18378,Bảng xanh viết phấn
-67398.0,18378,Lau bảng
-67399.0,18378,Phấn viết bảng
-,4624,
-67407.0,6225,Bookmark giấy
-67408.0,6225,Bookmark kim loại
-67409.0,6225,Bookmark nhựa
-,6541,
-,18330,
-68194.0,8264,Album ảnh dán
-68195.0,8264,Album sưu tầm
-68201.0,8264,Photo Album
-,18332,
-,18334,
-,6246,
-,6226,
-,18346,
-,6215,
-,8265,
-,6212,
-,6213,
-67414.0,6214,Style cổ điển
-67415.0,6214,Style hiện đại
-67416.0,18342,Đồ decor nhà cửa
-67417.0,18342,Giấy rơm lót hộp quà
-67418.0,18342,Hạt xốp lót hộp quà
-67419.0,18342,Mô hình trang trí
-67420.0,18342,Phụ kiện - vật liệu trang trí - khác
-67421.0,18342,Trang trí giáng sinh
-67422.0,18342,Trang trí sinh nhật
-67423.0,18342,Trang trí Tết
-,18344,
-,25706,
-68203.0,68202,Khung để bàn
-68204.0,68202,Khung treo tường
-68206.0,68205,Thiệp chúc mừng
-68207.0,68205,Thiệp mời
-,68208,
-,9271,
-,29010,
-,2458,
-,5584,
-,29008,
-,29012,
-28932.0,2665,Màn Hình Phổ Thông
-12672.0,2665,Màn Hình Gaming
-28934.0,2665,Màn Hình Di Động
-28930.0,2665,Màn Hình Đồ Họa
-6556.0,2308,Máy In Laser
-6561.0,2308,Máy In Phun
-8089.0,2308,Máy In Ảnh
-28936.0,2308,"Máy In Nhãn, Hóa Đơn"
-28938.0,2308,Máy In Kim
-8087.0,2308,Máy Photocopy
-28940.0,2308,Linh Kiện và Phụ Kiện Máy In
-,6255,
-28942.0,4532,Mực In Màu
-28944.0,4532,Drums và Toner Cho Máy In Laser
-,4542,
-28946.0,8086,Nhãn In
-28948.0,8086,Giấy In Hóa Đơn - Giấy In Tem
-28950.0,8086,Giấy In Ảnh
-28952.0,2664,Máy chiếu
-28960.0,2664,Phụ kiện máy chiếu
-29002.0,2664,Màn hình ghép - Màn hình LED
-,30020,
-,10089,
-,12886,
-,8088,
-,29006,
-,12890,
-4051.0,28844,Ổ Cứng HDD
-2146.0,28844,Ổ Cứng SSD
-28840.0,1827,Ổ Cứng SSD Di Động
-28842.0,1827,Ổ Cứng HDD Di Động
-,5350,
-,5349,
-,1828,
-,28838,
-4316.0,13150,Access Point - Điểm Truy Cập
-4293.0,13150,Router Wifi
-4294.0,13150,USB Wifi
-,4343,
-,4345,
-,4454,
-,4642,
-,28894,
-,4346,
-,7361,
-,28896,
-,4585,
-,8094,
-,7369,
-67081.0,5172,PC Gaming
-,29014,
-,29016,
-,28900,
-,11964,
-,11956,
-,11962,
-,11960,
-28904.0,28902,Quạt Tản Nhiệt
-28906.0,28902,Keo - Pad Tản Nhiệt
-,11958,
-,11966,
-2679.0,2680,RAM Laptop
-12298.0,2680,RAM Desktop
-,28908,
-,28910,
-,28914,
-,28916,
-,11968,
-28920.0,28918,Adapter Sạc Laptop
-28922.0,28918,Bàn Phím Thay Thế Laptop
-28924.0,28918,Pin Thay Thế Laptop
-28926.0,28918,Linh Kiện Thay Thế Laptop Khác
+﻿SubCategoryID,CategoryID,Name,isSubCategory
+1795.0,1795.0,Điện thoại Smartphone,0
+1794.0,1794.0,Máy tính bảng,0
+28856.0,28856.0,Máy đọc sách,0
+1796.0,1796.0,Điện thoại phổ thông,0
+8061.0,8061.0,Điện thoại bàn,0
+29010.0,29010.0,Laptop Truyền Thống,0
+2458.0,2458.0,Macbook,0
+5584.0,5584.0,Laptop Gaming,0
+29008.0,29008.0,Laptop 2 trong 1,0
+29012.0,29012.0,Chromebooks,0
+28932.0,2665.0,Màn Hình Phổ Thông,1
+12672.0,2665.0,Màn Hình Gaming,1
+28934.0,2665.0,Màn Hình Di Động,1
+28930.0,2665.0,Màn Hình Đồ Họa,1
+6556.0,2308.0,Máy In Laser,1
+6561.0,2308.0,Máy In Phun,1
+8089.0,2308.0,Máy In Ảnh,1
+28936.0,2308.0,"Máy In Nhãn, Hóa Đơn",1
+28938.0,2308.0,Máy In Kim,1
+8087.0,2308.0,Máy Photocopy,1
+28940.0,2308.0,Linh Kiện và Phụ Kiện Máy In,1
+6255.0,6255.0,Phần Mềm Máy Tính,0
+28942.0,4532.0,Mực In Màu,1
+28944.0,4532.0,Drums và Toner Cho Máy In Laser,1
+4542.0,4542.0,Máy Scan Tài Liệu,0
+28946.0,8086.0,Nhãn In,1
+28948.0,8086.0,Giấy In Hóa Đơn - Giấy In Tem,1
+28950.0,8086.0,Giấy In Ảnh,1
+28952.0,2664.0,Máy chiếu,1
+28960.0,2664.0,Phụ kiện máy chiếu,1
+29002.0,2664.0,Màn hình ghép - Màn hình LED,1
+30020.0,30020.0,Máy Scan Mã Vạch,0
+10089.0,10089.0,Máy Hủy Tài Liệu,0
+12886.0,12886.0,Máy Chấm Công,0
+8088.0,8088.0,Máy Fax,0
+29006.0,29006.0,Máy Đếm Tiền,0
+12890.0,12890.0,Thiết Bị Truyền Thông Hội Nghị,0
+4051.0,28844.0,Ổ Cứng HDD,1
+2146.0,28844.0,Ổ Cứng SSD,1
+28840.0,1827.0,Ổ Cứng SSD Di Động,1
+28842.0,1827.0,Ổ Cứng HDD Di Động,1
+5350.0,5350.0,Case Ổ Cứng- Hộp Đựng HDD Box - Dock Ổ Cứng,0
+5349.0,5349.0,Thiết Bị Lưu Trữ Qua Mạng NAS,0
+1828.0,1828.0,USB,0
+28838.0,28838.0,Đĩa Trắng - Băng Cuộn,0
+4316.0,13150.0,Access Point - Điểm Truy Cập,1
+4293.0,13150.0,Router Wifi,1
+4294.0,13150.0,USB Wifi,1
+4343.0,4343.0,Bộ Kích Sóng Wifi,0
+4345.0,4345.0,Bộ Phát Wifi Di Động 3G/4G - Mifi,0
+4454.0,4454.0,Bộ Chia Mạng - Switch,0
+4642.0,4642.0,Phụ Kiện Thiết Bị Mạng,0
+28894.0,28894.0,Bộ Chuyển Đổi - Transceivers,0
+4346.0,4346.0,Mở Rộng Mạng Qua Đường Điện - Powerline Ethernet,0
+7361.0,7361.0,Card Mạng,0
+28896.0,28896.0,Ăng-Ten Mạng,0
+4585.0,4585.0,Modem ADSL,0
+8094.0,8094.0,Máy Tính All in one,0
+7369.0,7369.0,Mini PC,0
+67081.0,5172.0,PC Gaming,1
+29014.0,29014.0,Towers - Máy Chủ - Server,0
+29016.0,29016.0,Máy Tính Bộ Thương Hiệu,0
+28900.0,28900.0,Nguồn Máy Tính,0
+11964.0,11964.0,Bộ Lưu Điện - UPS,0
+11956.0,11956.0,Mainboard - Board Mạch Chủ,0
+11962.0,11962.0,Bộ Vi Xử Lý CPU,0
+11960.0,11960.0,Vỏ Case - Thùng Máy,0
+28904.0,28902.0,Quạt Tản Nhiệt,1
+28906.0,28902.0,Keo - Pad Tản Nhiệt,1
+11958.0,11958.0,Card Màn Hình - VGA,0
+11966.0,11966.0,Sound Card - Card Âm Thanh,0
+2679.0,2680.0,RAM Laptop,1
+12298.0,2680.0,RAM Desktop,1
+28908.0,28908.0,Ổ Đĩa Quang,0
+28910.0,28910.0,I/O Port Cards,0
+28914.0,28914.0,Thiết Bị Streaming và Capture Cards,0
+28916.0,28916.0,KVM Switches - Switch HDMI,0
+11968.0,11968.0,Linh Kiện Máy Tính Khác,0
+28920.0,28918.0,Adapter Sạc Laptop,1
+28922.0,28918.0,Bàn Phím Thay Thế Laptop,1
+28924.0,28918.0,Pin Thay Thế Laptop,1
+28926.0,28918.0,Linh Kiện Thay Thế Laptop Khác,1
