@@ -1,0 +1,1 @@
+brands = ['Apple', 'Samsung', 'Dell', 'HP']
