@@ -142,22 +142,22 @@ for group_id, group_name in zip(group_df["GroupID"], group_df["Name"]):
                                 else:
                                     category_list.append([group_id, group_name, parent_id, parent_name, child_id, child_name, None, None])
 
-category_df = pd.DataFrame(category_list, columns=["GroupID", "GroupName", "MasterCategoryID", "MasterCategoryName", "CategoryID", "CategoryName", "SubCategoryID", "SubCategoryName"])
-cleaned_df = remove_single_category(category_df)
-category_df[['MasterCategoryID', 'MasterCategoryName', 'CategoryID', 'CategoryName', 'isCategory', 'SubCategoryID', 'SubCategoryName', 'isSubCategory']] = category_df.apply(transform_category, axis=1, result_type='expand')
-category_df["GroupID"] = category_df["GroupID"].astype(int)
-category_df["MasterCategoryID"] = category_df["MasterCategoryID"].astype(int)
-category_df["CategoryID"] = category_df["CategoryID"].astype(int)
-category_df["SubCategoryID"] = category_df["SubCategoryID"].astype(int)
+category = pd.DataFrame(category_list, columns=["GroupID", "GroupName", "MasterCategoryID", "MasterCategoryName", "CategoryID", "CategoryName", "SubCategoryID", "SubCategoryName"])
+cleaned_df = remove_single_category(category)
+category[['MasterCategoryID', 'MasterCategoryName', 'CategoryID', 'CategoryName', 'isCategory', 'SubCategoryID', 'SubCategoryName', 'isSubCategory']] = category.apply(transform_category, axis=1, result_type='expand')
+category["GroupID"] = category["GroupID"].astype(int)
+category["MasterCategoryID"] = category["MasterCategoryID"].astype(int)
+category["CategoryID"] = category["CategoryID"].astype(int)
+category["SubCategoryID"] = category["SubCategoryID"].astype(int)
 
 # master_category df
-master_category_df = category_df[["MasterCategoryID", "GroupID", "MasterCategoryName"]].drop_duplicates()
+master_category_df = category[["MasterCategoryID", "GroupID", "MasterCategoryName"]].drop_duplicates()
 master_category_df = master_category_df.rename(columns={"MasterCategoryName": "Name"})
 # category df
-category_df = category_df[["CategoryID", "MasterCategoryID", "CategoryName", "isCategory"]].drop_duplicates()
+category_df = category[["CategoryID", "MasterCategoryID", "CategoryName", "isCategory"]].drop_duplicates()
 category_df = category_df.rename(columns={"CategoryName": "Name"})
 # sub_category df
-sub_category_df = category_df[["SubCategoryID", "CategoryID", "SubCategoryName", "isSubCategory"]].drop_duplicates()
+sub_category_df = category[["SubCategoryID", "CategoryID", "SubCategoryName", "isSubCategory"]].drop_duplicates()
 sub_category_df = sub_category_df.rename(columns={"SubCategoryName": "Name"})
 
 # EXTRACT product ids
