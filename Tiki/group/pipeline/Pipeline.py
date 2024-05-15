@@ -4,11 +4,9 @@ import requests
 import random
 import time
 from datetime import datetime
-
-
 # Parameters
 GroupID = ['1846', '1789']
-
+brands = ['Apple']
 # Define functions
 def remove_single_category(df):
     category_counts = df.groupby('MasterCategoryID')['CategoryID'].nunique()
@@ -64,9 +62,6 @@ def retrieve_product_ids(id):
             product_data.append({"product_id": product_id, "brand_name": brand_name})
 
     return product_data
-
-
-
 # Set up header
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0",
@@ -159,7 +154,6 @@ category_df = category_df.rename(columns={"CategoryName": "Name"})
 # sub_category df
 sub_category_df = category[["SubCategoryID", "CategoryID", "SubCategoryName", "isSubCategory"]].drop_duplicates()
 sub_category_df = sub_category_df.rename(columns={"SubCategoryName": "Name"})
-
 # EXTRACT product ids
 product_ids = []
 for sub_category_id in sub_category_df["SubCategoryID"]:
@@ -169,13 +163,7 @@ for sub_category_id in sub_category_df["SubCategoryID"]:
 
 print(f"Success fetching data for {len(product_ids)} product ids")
 product_ids = pd.DataFrame(product_ids, columns=["SubCategoryID", "ProductID", "BrandName"])
-
-
-
-
-
 # EXTRACT produt id by brand /// Apple
-brands = ['Apple']
 product_ids = product_ids[product_ids['BrandName'].isin(brands)]
 
 # EXTRACT product information based on product_ids
@@ -219,11 +207,6 @@ for _, row in product_ids.iterrows():
 
 print(f"Success fetching data for {len(product_data_list)} products")
 product_df = pd.DataFrame(product_data_list, columns=['product_id', 'product_name', 'product_url', 'pricing_current', 'pricing_original', 'product_image_url', 'inventory_status', 'inventory_type', 'created_date', 'quantity_sold', 'brand_id', 'brand_name', 'brand_slug', 'seller_id', 'seller_name', 'seller_link', 'seller_image_url', 'category_id', 'sub_category_id', 'brand_name'])
-
-
-
-
-
 # EXTRACT feedback data
 feedback_data_list = []
 
@@ -274,111 +257,121 @@ for _, row in product_df.iterrows():
 
 print(f"Success fetching data for {len(feedback_data_list)} feedbacks")
 feedback_df = pd.DataFrame(feedback_data_list, columns=["OneStarCount", "TwoStarCount", "ThreeStarCount", "FourStarCount", "FiveStarCount", "reviews_count", "review_id", "review_title", "review_content", "review_upvote", "review_rating", "review_created_at", "user_id", "username", "joined_time", "total_reviews", "total_upvotes"])
-
-
-
 # TRANSFORM data
 # product df
-product_df = product_df[["product_id", 
-                         "brand_id", 
-                         "seller_id", 
-                         "sub_category_id", 
-                         "product_name", 
-                         "product_url", 
-                         "product_image_url", 
-                         "created_date", 
+product = product_df[["product_id",
+                         "brand_id",
+                         "seller_id",
+                         "sub_category_id",
+                         "product_name",
+                         "product_url",
+                         "product_image_url",
+                         "created_date",
                          "quantity_sold"]]
-product_df = product_df.rename(columns={"product_id": "ProductID", 
-                                        "brand_id": "BrandID", 
-                                        "seller_id": "SellerID", 
-                                        "sub_category_id": "SubCategoryID", 
-                                        "product_name": "Name", 
-                                        "product_url": "URL", 
-                                        "product_image_url": "ImageURL", 
-                                        "created_date": "CreatedDate", 
+product = product.rename(columns={"product_id": "ProductID",
+                                        "brand_id": "BrandID",
+                                        "seller_id": "SellerID",
+                                        "sub_category_id": "SubCategoryID",
+                                        "product_name": "Name",
+                                        "product_url": "URL",
+                                        "product_image_url": "ImageURL",
+                                        "created_date": "CreatedDate",
                                         "quantity_sold": "QuantitySold"})
-product_df["PricingID"] = range(1, len(product_df) + 1)
-product_df["InventoryID"] = range(1, len(product_df) + 1)
 
 # inventory df
-inventory_df = product_df[["InventoryID", 
-                           "inventory_status", 
-                           "inventory_type"]]
-inventory_df = inventory_df.rename(columns={"inventory_status": "Status", 
-                                            "inventory_type": "Type"})
-inventory_df["LastUpdated"] = datetime.now()
+inventory = pd.DataFrame({
+    "InventoryID": range(1, len(product_df) + 1),
+    "ProductID": product_df["ProductID"],
+    "Status": product_df["inventory_status"],
+    "Type": product_df["inventory_type"],
+    "LastUpdated": datetime.now()
+})
 
 # pricing df
-pricing_df = product_df[["PricingID", 
-                         "pricing_current", 
-                         "pricing_original"]]
-pricing_df = pricing_df.rename(columns={"pricing_current": "CurrentPrice", 
-                                        "pricing_original": "OriginalPrice"})
-pricing_df["LastUpdated"] = datetime.now()
+pricing = pd.DataFrame({
+    "PricingID": range(1, len(product_df) + 1),
+    "ProductID": product_df["ProductID"],
+    "CurrentPrice": product_df["pricing_current"],
+    "OriginalPrice": product_df["pricing_original"],
+    "LastUpdated": datetime.now()
+})
 
 # brand df
-brand_df = product_df[["BrandID", 
-                       "brand_name", 
+brand = product_df[["BrandID",
+                       "brand_name",
                        "brand_slug"]]
-brand_df = brand_df.rename(columns={"brand_name": "Name", 
+brand = brand.rename(columns={"brand_name": "Name",
                                     "brand_slug": "Slug"})
-brand_df = brand_df.drop_duplicates()
+brand = brand.drop_duplicates()
 
 # seller df
-seller_df = product_df[["SellerID", 
-                        "seller_name", 
-                        "seller_link", 
+seller = product_df[["SellerID",
+                        "seller_name",
+                        "seller_link",
                         "seller_image_url"]]
-seller_df = seller_df.rename(columns={"seller_name": "Name", 
-                                      "seller_link": "Link", 
+seller = seller.rename(columns={"seller_name": "Name",
+                                      "seller_link": "Link",
                                       "seller_image_url": "ImageURL"})
-seller_df = seller_df.drop_duplicates()
+seller = seller.drop_duplicates()
 
 # user df
-user_df = feedback_df[["user_id", 
-                       "username", 
-                       "joined_time", 
-                       "total_reviews", 
+user = feedback_df[["user_id",
+                       "username",
+                       "joined_time",
+                       "total_reviews",
                        "total_upvotes"]]
-user_df = user_df.rename(columns={"user_id": "UserID", 
-                                  "username": "Name", 
-                                  "joined_time": "JoinedDate", 
-                                  "total_reviews": "TotalReview", 
+user = user.rename(columns={"user_id": "UserID",
+                                  "username": "Name",
+                                  "joined_time": "JoinedDate",
+                                  "total_reviews": "TotalReview",
                                   "total_upvotes": "TotalUpvote"})
-user_df = user_df.drop_duplicates()
+user = user.drop_duplicates()
 
 # general_feedback df
-general_feedback_df = feedback_df[["review_id", 
-                                   "OneStarCount", 
-                                   "TwoStarCount", 
-                                   "ThreeStarCount", 
-                                   "FourStarCount", 
-                                   "FiveStarCount", 
+general_feedback = feedback_df[["review_id",
+                                   "OneStarCount",
+                                   "TwoStarCount",
+                                   "ThreeStarCount",
+                                   "FourStarCount",
+                                   "FiveStarCount",
                                    "reviews_count"]]
-general_feedback_df = general_feedback_df.rename(columns={"review_id": "GeneralFeedbackID", 
-                                                          "OneStarCount": "OneStar", 
-                                                          "TwoStarCount": "TwoStar", 
-                                                          "ThreeStarCount": "ThreeStar", 
-                                                          "FourStarCount": "FourStar", 
-                                                          "FiveStarCount": "FiveStar", 
+general_feedback = general_feedback.rename(columns={"review_id": "GeneralFeedbackID",
+                                                          "OneStarCount": "OneStar",
+                                                          "TwoStarCount": "TwoStar",
+                                                          "ThreeStarCount": "ThreeStar",
+                                                          "FourStarCount": "FourStar",
+                                                          "FiveStarCount": "FiveStar",
                                                           "reviews_count": "ReviewCount"})
-general_feedback_df["LastUpdated"] = datetime.now()
-general_feedback_df = general_feedback_df.drop_duplicates()
+general_feedback["LastUpdated"] = datetime.now()
+general_feedback = general_feedback.drop_duplicates()
 
 # FeedbackDetail df
-feedback_detail_df = feedback_df[["review_id", 
-                                  "review_title", 
-                                  "review_content", 
-                                  "review_upvote", 
-                                  "review_rating", 
-                                  "review_created_at", 
+feedback_detail = feedback_df[["review_id",
+                                  "review_title",
+                                  "review_content",
+                                  "review_upvote",
+                                  "review_rating",
+                                  "review_created_at",
                                   "user_id"]]
-feedback_detail_df = feedback_detail_df.rename(columns={"review_id": "GeneralFeedbackID", 
-                                                        "review_title": "Title", 
-                                                        "review_content": "Content", 
-                                                        "review_upvote": "Upvote", 
-                                                        "review_rating": "Rating", 
-                                                        "review_created_at": "CreatedDate", 
+feedback_detail = feedback_detail.rename(columns={"review_id": "GeneralFeedbackID",
+                                                        "review_title": "Title",
+                                                        "review_content": "Content",
+                                                        "review_upvote": "Upvote",
+                                                        "review_rating": "Rating",
+                                                        "review_created_at": "CreatedDate",
                                                         "user_id": "UserID"})
-feedback_detail_df["ProductID"] = product_df["ProductID"]
-feedback_detail_df["FeedbackDetailID"] = range(1, len(feedback_detail_df) + 1)
+feedback_detail["ProductID"] = product_df["ProductID"]
+feedback_detail["FeedbackDetailID"] = range(1, len(feedback_detail) + 1)
+group_df 
+master_category_df 
+category_df 
+sub_category_df 
+product_df 
+inventory_df 
+pricing_df 
+brand_df 
+seller_df 
+user_df 
+general_feedback_df 
+feedback_detail_df 
+product_df
