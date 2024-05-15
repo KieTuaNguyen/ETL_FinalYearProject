@@ -281,7 +281,7 @@ product = product.rename(columns={"product_id": "ProductID",
 # inventory df
 inventory = pd.DataFrame({
     "InventoryID": range(1, len(product_df) + 1),
-    "ProductID": product_df["ProductID"],
+    "ProductID": product_df["product_id"],
     "Status": product_df["inventory_status"],
     "Type": product_df["inventory_type"],
     "LastUpdated": datetime.now()
@@ -290,14 +290,14 @@ inventory = pd.DataFrame({
 # pricing df
 pricing = pd.DataFrame({
     "PricingID": range(1, len(product_df) + 1),
-    "ProductID": product_df["ProductID"],
+    "ProductID": product_df["product_id"],
     "CurrentPrice": product_df["pricing_current"],
     "OriginalPrice": product_df["pricing_original"],
     "LastUpdated": datetime.now()
 })
 
 # brand df
-brand = product_df[["BrandID",
+brand = product_df[["brand_id",
                        "brand_name",
                        "brand_slug"]]
 brand = brand.rename(columns={"brand_name": "Name",
@@ -305,7 +305,7 @@ brand = brand.rename(columns={"brand_name": "Name",
 brand = brand.drop_duplicates()
 
 # seller df
-seller = product_df[["SellerID",
+seller = product_df[["seller_id",
                         "seller_name",
                         "seller_link",
                         "seller_image_url"]]
@@ -360,18 +360,20 @@ feedback_detail = feedback_detail.rename(columns={"review_id": "GeneralFeedbackI
                                                         "review_rating": "Rating",
                                                         "review_created_at": "CreatedDate",
                                                         "user_id": "UserID"})
-feedback_detail["ProductID"] = product_df["ProductID"]
+
+feedback_detail["ProductID"] = product_df["product_id"]
 feedback_detail["FeedbackDetailID"] = range(1, len(feedback_detail) + 1)
-group_df 
+
+# LOAD data
+group_df
 master_category_df 
 category_df 
 sub_category_df 
-product_df 
-inventory_df 
-pricing_df 
-brand_df 
-seller_df 
-user_df 
-general_feedback_df 
-feedback_detail_df 
-product_df
+product
+inventory
+pricing 
+brand
+seller
+user
+general_feedback
+feedback_detail
