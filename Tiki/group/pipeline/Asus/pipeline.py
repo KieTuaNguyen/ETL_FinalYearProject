@@ -72,7 +72,6 @@ HEADERS = {
     "af-ac-enc-dat": "",
     "x-api-source": "pc"
 }
-
 # EXTRACT group of categories
 URL = "https://api.tiki.vn/raiden/v2/menu-config?platform=desktop"
 
@@ -94,7 +93,6 @@ if response.status_code == 200:
       
 # group df    
 group_df = pd.DataFrame(group_list, columns=["GroupID", "Name"])
-
 # EXTRACT categories
 category_list = []
 for group_id, group_name in zip(group_df["GroupID"], group_df["Name"]):
@@ -165,7 +163,6 @@ print(f"Success fetching data for {len(product_ids)} product ids")
 product_ids = pd.DataFrame(product_ids, columns=["SubCategoryID", "ProductID", "BrandName"])
 # EXTRACT produt id by brand /// Asus
 product_ids = product_ids[product_ids['BrandName'].isin(brands)]
-
 # EXTRACT product information based on product_ids
 product_data_list = []
 for _, row in product_ids.iterrows():
@@ -366,15 +363,15 @@ feedback_detail["ProductID"] = product_df["product_id"]
 feedback_detail["FeedbackDetailID"] = range(1, len(feedback_detail) + 1)
 
 # LOAD data
-group_df.to_csv("group.csv", index=False, encode="utf-8-sig")
-master_category_df("master_category.csv", index=False, encode="utf-8-sig")
-category_df.to_csv("category.csv", index=False, encode="utf-8-sig")
-sub_category_df.to_csv("sub_category.csv", index=False, encode="utf-8-sig")
-product.to_csv("product.csv", index=False, encode="utf-8-sig")
-inventory.to_csv("inventory.csv", index=False, encode="utf-8-sig")
-pricing.to_csv("pricing.csv", index=False, encode="utf-8-sig")
-brand.to_csv("brand.csv", index=False, encode="utf-8-sig")
-seller.to_csv("seller.csv", index=False, encode="utf-8-sig")
-user.to_csv("user.csv", index=False, encode="utf-8-sig")
-general_feedback.to_csv("general_feedback.csv", index=False, encode="utf-8-sig")
-feedback_detail.to_csv("feedback_detail.csv", index=False, encode="utf-8-sig")
+group_df
+master_category_df 
+category_df 
+sub_category_df 
+product
+inventory
+pricing 
+brand
+seller
+user
+general_feedback
+feedback_detail
