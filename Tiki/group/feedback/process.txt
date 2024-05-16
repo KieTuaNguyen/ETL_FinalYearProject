@@ -1,0 +1,20 @@
+PROCESS
+Feedback -> Categorization -> Classification -> Sentimental Analysis -> Overview
+
+STEP:
+1. From that feedback, apply categorization techniques.
+2. Specifically, count how much feedback there is about the product and how many services there are.
+3. Next from each of those categories, classify how many positive reviews there are, how many negative reviews there are using classification as well as sentimental problems.
+4. From the above reviews, please provide an overview of the product.
+
+SOLUTION:
+STEP:
++ Categorization: Use the K-Means algorithm to categorize the feedback.
++ Classification: Use the Naive Bayes algorithm to classify the feedback.
++ Sentimental Analysis: Use the TextBlob library to analyze the feedback.
++ Overview: Summarize the feedback using the TextRank algorithm.
+TECHNIC:
+* Build a model to classify the feedback.
+* Use the NLP (Natural Language Processing) technique to analyze the feedback.
+* Use the TextBlob library to analyze the feedback.
+* Use the NLTK (Natural Language Toolkit) library to analyze the feedback.
