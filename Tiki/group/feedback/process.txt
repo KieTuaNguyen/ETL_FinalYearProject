@@ -33,3 +33,9 @@ TECHNIC:
 * Use the NLP (Natural Language Processing) technique to analyze the feedback.
 * Use the TextBlob library to analyze the feedback.
 * Use the NLTK (Natural Language Toolkit) library to analyze the feedback.
+
+KEYWORDS:
++ Categorization: K-Means, Logistic Regression, Decision Trees.
++ Classification: Naive Bayes, TextBlob, VADER.
++ Sentiment Analysis: TextBlob, VADER.
++ Overview: TextRank, Summarization.
