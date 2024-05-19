@@ -72,7 +72,6 @@ HEADERS = {
     "af-ac-enc-dat": "",
     "x-api-source": "pc"
 }
-
 # EXTRACT group of categories
 URL = "https://api.tiki.vn/raiden/v2/menu-config?platform=desktop"
 
@@ -153,7 +152,6 @@ category_df = category_df.rename(columns={"CategoryName": "Name"})
 # sub_category df
 sub_category_df = category[["SubCategoryID", "CategoryID", "SubCategoryName", "isSubCategory"]].drop_duplicates()
 sub_category_df = sub_category_df.rename(columns={"SubCategoryName": "Name"})
-
 # EXTRACT product ids
 product_ids = []
 for sub_category_id in sub_category_df["SubCategoryID"]:
@@ -259,7 +257,7 @@ for _, row in product_df.iterrows():
                 total_reviews = 0
                 total_upvotes = 0
 
-            feedback_data_list.append([OneStarCount, TwoStarCount, 
+            feedback_data_list.append([product_id, OneStarCount, TwoStarCount, 
                                        ThreeStarCount, FourStarCount, 
                                        FiveStarCount, reviews_count, 
                                        review_id, review_title, 
@@ -270,7 +268,7 @@ for _, row in product_df.iterrows():
 
 
 print(f"Success fetching data for {len(feedback_data_list)} feedbacks")
-feedback_df = pd.DataFrame(feedback_data_list, columns=["OneStarCount", "TwoStarCount", "ThreeStarCount", "FourStarCount", "FiveStarCount", "reviews_count", "review_id", "review_title", "review_content", "review_upvote", "review_rating", "review_created_at", "user_id", "username", "joined_time", "total_reviews", "total_upvotes"])
+feedback_df = pd.DataFrame(feedback_data_list, columns=["ProductID", "OneStarCount", "TwoStarCount", "ThreeStarCount", "FourStarCount", "FiveStarCount", "reviews_count", "review_id", "review_title", "review_content", "review_upvote", "review_rating", "review_created_at", "user_id", "username", "joined_time", "total_reviews", "total_upvotes"])
 # TRANSFORM data
 # product df
 product = product_df[["product_id",
@@ -360,32 +358,31 @@ general_feedback["LastUpdated"] = datetime.now()
 general_feedback = general_feedback.drop_duplicates()
 
 # FeedbackDetail df
-feedback_detail = feedback_df[["review_id",
-                                  "review_title",
-                                  "review_content",
-                                  "review_upvote",
-                                  "review_rating",
-                                  "review_created_at",
-                                  "user_id"]]
+feedback_detail = feedback_df[["ProductID",
+                               "user_id",
+                               "review_id",
+                               "review_title",
+                               "review_content",
+                               "review_upvote",
+                               "review_rating",
+                               "review_created_at"]]
 feedback_detail = feedback_detail.rename(columns={"review_id": "GeneralFeedbackID",
+                                                        "user_id": "UserID",
                                                         "review_title": "Title",
                                                         "review_content": "Content",
                                                         "review_upvote": "Upvote",
                                                         "review_rating": "Rating",
-                                                        "review_created_at": "CreatedDate",
-                                                        "user_id": "UserID"})
+                                                        "review_created_at": "CreatedDate"})
 
-feedback_detail["ProductID"] = product_df["product_id"]
 feedback_detail["FeedbackDetailID"] = range(1, len(feedback_detail) + 1)
-
 # LOAD data
 group_df
-master_category_df 
-category_df 
-sub_category_df 
+master_category_df
+category_df
+sub_category_df
 product
 inventory
-pricing 
+pricing
 brand
 seller
 user
