@@ -161,7 +161,7 @@ for sub_category_id in sub_category_df["SubCategoryID"]:
 
 print(f"Success fetching data for {len(product_ids)} product ids")
 product_ids = pd.DataFrame(product_ids, columns=["SubCategoryID", "ProductID", "BrandName"])
-# EXTRACT produt id by brand /// Asus
+# EXTRACT produt id by brand
 product_ids = product_ids[product_ids['BrandName'].isin(brands)]
 # EXTRACT product information based on product_ids
 product_data_list = []

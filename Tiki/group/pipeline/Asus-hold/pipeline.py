@@ -161,7 +161,7 @@ for sub_category_id in sub_category_df["SubCategoryID"]:
 
 print(f"Success fetching data for {len(product_ids)} product ids")
 product_ids = pd.DataFrame(product_ids, columns=["SubCategoryID", "ProductID", "BrandName"])
-# EXTRACT produt id by brand /// Asus
+# EXTRACT produt id by brand
 product_ids = product_ids[product_ids['BrandName'].isin(brands)]
 # EXTRACT product information based on product_ids
 product_data_list = []
@@ -196,7 +196,6 @@ for _, row in product_ids.iterrows():
         'seller_link': data.get('current_seller', {}).get('link', 0) if data.get('current_seller') else 0,
         'seller_image_url': data.get('current_seller', {}).get('logo', 0) if data.get('current_seller') else 0,
         'category_id': data['categories']['id'] if data['categories']['is_leaf'] else data['breadcrumbs'][-2]['category_id'],
-       #'category_id': data['categories']['id'] if data.get('categories') and data['categories'].get('is_leaf') else (data['breadcrumbs'][-2]['category_id'] if data.get('breadcrumbs') else None),
         'sub_category_id': sub_category_id,
         'brand_name': row['BrandName']
     }
@@ -244,17 +243,32 @@ for _, row in product_df.iterrows():
             review_rating = review.get("rating")
             review_created_at = review.get("created_at")
             reviewer = review.get("created_by", {})
-            user_id = reviewer.get("id")
-            username = reviewer.get("name")
-            joined_time = reviewer.get("created_time")
-            total_reviews = reviewer.get("contribute_info", {}).get("summary", {}).get("total_review", 0)
-            total_upvotes = reviewer.get("contribute_info", {}).get("summary", {}).get("total_thank", 0)
 
-            feedback_data_list.append([OneStarCount, TwoStarCount, ThreeStarCount, FourStarCount, FiveStarCount, reviews_count, review_id, review_title, review_content, review_upvote, review_rating, review_created_at, user_id, username, joined_time, total_reviews, total_upvotes])
+            if reviewer is not None:
+                user_id = reviewer.get("id")
+                username = reviewer.get("name")
+                joined_time = reviewer.get("created_time")
+                total_reviews = reviewer.get("contribute_info", {}).get("summary", {}).get("total_review", 0)
+                total_upvotes = reviewer.get("contribute_info", {}).get("summary", {}).get("total_thank", 0)
+            else:
+                user_id = None
+                username = None
+                joined_time = None
+                total_reviews = 0
+                total_upvotes = 0
+
+            feedback_data_list.append([product_id, OneStarCount, TwoStarCount, 
+                                       ThreeStarCount, FourStarCount, 
+                                       FiveStarCount, reviews_count, 
+                                       review_id, review_title, 
+                                       review_content, review_upvote, 
+                                       review_rating, review_created_at, 
+                                       user_id, username, joined_time, 
+                                       total_reviews, total_upvotes])
 
 
 print(f"Success fetching data for {len(feedback_data_list)} feedbacks")
-feedback_df = pd.DataFrame(feedback_data_list, columns=["OneStarCount", "TwoStarCount", "ThreeStarCount", "FourStarCount", "FiveStarCount", "reviews_count", "review_id", "review_title", "review_content", "review_upvote", "review_rating", "review_created_at", "user_id", "username", "joined_time", "total_reviews", "total_upvotes"])
+feedback_df = pd.DataFrame(feedback_data_list, columns=["ProductID", "OneStarCount", "TwoStarCount", "ThreeStarCount", "FourStarCount", "FiveStarCount", "reviews_count", "review_id", "review_title", "review_content", "review_upvote", "review_rating", "review_created_at", "user_id", "username", "joined_time", "total_reviews", "total_upvotes"])
 # TRANSFORM data
 # product df
 product = product_df[["product_id",
@@ -344,32 +358,31 @@ general_feedback["LastUpdated"] = datetime.now()
 general_feedback = general_feedback.drop_duplicates()
 
 # FeedbackDetail df
-feedback_detail = feedback_df[["review_id",
-                                  "review_title",
-                                  "review_content",
-                                  "review_upvote",
-                                  "review_rating",
-                                  "review_created_at",
-                                  "user_id"]]
+feedback_detail = feedback_df[["ProductID",
+                               "user_id",
+                               "review_id",
+                               "review_title",
+                               "review_content",
+                               "review_upvote",
+                               "review_rating",
+                               "review_created_at"]]
 feedback_detail = feedback_detail.rename(columns={"review_id": "GeneralFeedbackID",
+                                                        "user_id": "UserID",
                                                         "review_title": "Title",
                                                         "review_content": "Content",
                                                         "review_upvote": "Upvote",
                                                         "review_rating": "Rating",
-                                                        "review_created_at": "CreatedDate",
-                                                        "user_id": "UserID"})
+                                                        "review_created_at": "CreatedDate"})
 
-feedback_detail["ProductID"] = product_df["product_id"]
 feedback_detail["FeedbackDetailID"] = range(1, len(feedback_detail) + 1)
-
 # LOAD data
 group_df
-master_category_df 
-category_df 
-sub_category_df 
+master_category_df
+category_df
+sub_category_df
 product
 inventory
-pricing 
+pricing
 brand
 seller
 user
