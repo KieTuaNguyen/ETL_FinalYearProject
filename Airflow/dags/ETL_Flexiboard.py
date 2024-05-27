@@ -3,11 +3,27 @@ try:
   from datetime import timedelta, datetime
   from airflow.operators.python import PythonOperator
   
-  print("DAG modules were imported successfully")
+  print("Modules were imported successfully")
 except Exception as e:
-  print("Error  {} ".format(e))
+  print("Error {} ".format(e))
   
 # Define necessary functions
+def extract_sub_category_id_func():
+  print("Starting the ETL process")
+  print("This is task 1")
+def extract_all_product_id_func():
+  print("This is task 2")
+def extract_specify_product_id_func():
+  print("This is task 3")
+def extract_product_data_func():
+  print("This is task 4")
+def extract_feedback_data_func():
+  print("This is task 5")
+def transform_df_to_dataframes_func():
+  print("This is task 6")
+def load_data_func():
+  print("This is task 7")
+  print("ETL process completed")
 
 # Define default arguments
 default_args = {
@@ -18,7 +34,11 @@ default_args = {
 }
 
 # Define the DAG
-with DAG(dag_id="ETL_Flexiboard", default_args=default_args, schedule_interval="@daily", catchup=False) as f:
+with DAG(dag_id="ETL_Flexiboard", 
+         default_args=default_args, 
+         schedule_interval="@daily", 
+         catchup=False) as f:
+  
   # Define Tasks
   # Task 1: Extract sub-category IDs
   extract_sub_category_id = PythonOperator(
@@ -35,35 +55,35 @@ with DAG(dag_id="ETL_Flexiboard", default_args=default_args, schedule_interval="
   # Task 3: List of necessary brands
   list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
   
-  # Task 4: Extract specific product IDs for each brand
-  extract_specify_product_id = []
+  # Complex tasks for each brand
+  extract_specify_product_id_tasks = []
+  extract_product_data_tasks = []
+  extract_feedback_data_tasks = []
+
   for brand in list_of_brands:
-      task = PythonOperator(
-          task_id=f'extract_{brand.lower()}_product_id',
-          python_callable=extract_specify_product_id_func,
-          op_kwargs={'brand_name': brand}
-      )
-      extract_specify_product_id.append(task)
-  
-  # Task 5: Extract product data for each brand
-  extract_product_data = []
-  for brand in list_of_brands:
-      task = PythonOperator(
-          task_id=f'extract_{brand.lower()}_product_data',
-          python_callable=extract_product_data_func,
-          op_kwargs={'brand_name': brand}
-      )
-      extract_product_data.append(task)
-  
-  # Task 6: Extract feedback data for each brand
-  extract_feedback_data = []
-  for brand in list_of_brands:
-      task = PythonOperator(
-          task_id=f'extract_{brand.lower()}_feedback_data',
-          python_callable=extract_feedback_data_func,
-          op_kwargs={'brand_name': brand}
-      )
-      extract_feedback_data.append(task)
+    # Task 4: Extract specific product IDs for each brand
+    extract_specify_product_id_task = PythonOperator(
+        task_id=f'extract_{brand.lower()}_product_id',
+        python_callable=extract_specify_product_id_func,
+        op_kwargs={'brand_name': brand}
+    )
+    extract_specify_product_id_tasks.append(extract_specify_product_id_task)
+    
+    # Task 5: Extract product data for each brand
+    extract_product_data_task = PythonOperator(
+        task_id=f'extract_{brand.lower()}_product_data',
+        python_callable=extract_product_data_func,
+        op_kwargs={'brand_name': brand}
+    )
+    extract_product_data_tasks.append(extract_product_data_task)
+
+    # Task 6: Extract feedback data for each brand
+    extract_feedback_data_task = PythonOperator(
+        task_id=f'extract_{brand.lower()}_feedback_data',
+        python_callable=extract_feedback_data_func,
+        op_kwargs={'brand_name': brand}
+    )
+    extract_feedback_data_tasks.append(extract_feedback_data_task)
       
   # Task7: Transform data into dataframes
   transform_df_to_dataframes = PythonOperator(
@@ -78,4 +98,16 @@ with DAG(dag_id="ETL_Flexiboard", default_args=default_args, schedule_interval="
   )
   
   # Define the workflow
-  extract_sub_category_id >> extract_all_product_id >> extract_specify_product_id >> extract_product_data >> extract_feedback_data >> transform_df_to_dataframes >> load_data
+  extract_sub_category_id >> extract_all_product_id
+  extract_all_product_id >> extract_specify_product_id_tasks
+
+  for task in extract_specify_product_id_tasks:
+      task >> extract_product_data_tasks[extract_specify_product_id_tasks.index(task)]
+
+  for task in extract_product_data_tasks:
+      task >> extract_feedback_data_tasks[extract_product_data_tasks.index(task)]
+
+  for task in extract_feedback_data_tasks:
+      task >> transform_df_to_dataframes
+
+  transform_df_to_dataframes >> load_data
