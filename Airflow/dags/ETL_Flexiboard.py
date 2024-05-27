@@ -3,28 +3,14 @@ try:
   from datetime import timedelta, datetime
   from airflow.operators.python import PythonOperator
   
+  from extract import extract_sub_category_id_func, extract_all_product_id_func, extract_specify_product_id_func, extract_product_data_func, extract_feedback_data_func
+  from transform import transform_df_to_dataframes_func
+  from load import load_data_func
+  
   print("Modules were imported successfully")
 except Exception as e:
   print("Error {} ".format(e))
   
-# Define necessary functions
-def extract_sub_category_id_func():
-  print("Starting the ETL process")
-  print("This is task 1")
-def extract_all_product_id_func():
-  print("This is task 2")
-def extract_specify_product_id_func():
-  print("This is task 3")
-def extract_product_data_func():
-  print("This is task 4")
-def extract_feedback_data_func():
-  print("This is task 5")
-def transform_df_to_dataframes_func():
-  print("This is task 6")
-def load_data_func():
-  print("This is task 7")
-  print("ETL process completed")
-
 # Define default arguments
 default_args = {
   "owner": "airflow",
