@@ -160,24 +160,24 @@ def extract_sub_category_id_func():
     sub_category_df = sub_category_df.rename(columns={"SubCategoryName": "Name"})
     
     # cast to dict
-    master_category_df = master_category_df.to_dict('records')
-    category_df = category_df.to_dict('records')
-    sub_category_df = sub_category_df.to_dict('records')
+    master_category_list = master_category_df.to_dict('records')
+    category_list = category_df.to_dict('records')
+    sub_category_list = sub_category_df.to_dict('records')
     
-    return master_category_df, category_df, sub_category_df
+    return master_category_list, category_list, sub_category_list
   
-def extract_all_product_id_func(sub_category_df):
-  # EXTRACT product ids
-  product_ids = []
-  for sub_category in sub_category_df:
-      sub_category_id = sub_category["SubCategoryID"]
-      product_data = retrieve_product_ids(sub_category_id)
-      for product in product_data:
-          product_ids.append([sub_category_id, product["product_id"], product["brand_name"]])
+def extract_all_product_id_func(sub_category_list):
+    # EXTRACT product ids
+    product_ids = []
+    for sub_category in sub_category_list[2]:  # Access the third element of the tuple
+        sub_category_id = sub_category["SubCategoryID"]
+        product_data = retrieve_product_ids(sub_category_id)
+        for product in product_data:
+            product_ids.append([sub_category_id, product["product_id"], product["brand_name"]])
 
-  print(f"Success fetching data for {len(product_ids)} product ids")
-  product_ids_df = pd.DataFrame(product_ids, columns=["SubCategoryID", "ProductID", "BrandName"])
-  return product_ids_df.to_dict('records')
+    print(f"Success fetching data for {len(product_ids)} product ids")
+    product_ids_df = pd.DataFrame(product_ids, columns=["SubCategoryID", "ProductID", "BrandName"])
+    return product_ids_df.to_dict('records')
   
 def extract_specify_product_id_func(product_ids_df, brands):
   product_ids_df = pd.DataFrame(product_ids_df)
