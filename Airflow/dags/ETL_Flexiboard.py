@@ -29,17 +29,16 @@ with DAG(dag_id="ETL_Flexiboard",
   # Define Tasks
   # Task 1: Extract sub-category IDs
   extract_sub_category_id = PythonOperator(
-    task_id='extract_sub_category_id',
-    python_callable=extract_sub_category_id_func
+      task_id='extract_sub_category_id',
+      python_callable=extract_sub_category_id_func
   )
-  
+
   # Task 2: Extract all products IDs
   extract_all_product_id = PythonOperator(
-    task_id='extract_all_product_id',
-    python_callable=extract_all_product_id_func,
-    op_args=[XComArg(extract_sub_category_id, key='return_value')]
+      task_id='extract_all_product_id',
+      python_callable=extract_all_product_id_func
   )
-  
+
   # Task 3: List of necessary brands
   # list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
   list_of_brands = ['JOYO']
