@@ -52,7 +52,7 @@ with DAG(dag_id="ETL_Flexiboard",
       extract_specify_product_id_task = PythonOperator(
           task_id=f'extract_{brand.lower()}_product_id',
           python_callable=extract_specify_product_id_func,
-          op_args=[XComArg(extract_all_product_id, key='return_value'), brand]
+          op_kwargs={'brand': brand}
       )
       extract_specify_product_id_tasks.append(extract_specify_product_id_task)
 
@@ -60,15 +60,14 @@ with DAG(dag_id="ETL_Flexiboard",
       extract_product_data_task = PythonOperator(
           task_id=f'extract_{brand.lower()}_product_data',
           python_callable=extract_product_data_func,
-          op_args=[XComArg(extract_specify_product_id_task, key='return_value')]
+          op_kwargs={'brand': brand}
       )
       extract_product_data_tasks.append(extract_product_data_task)
 
       # Task 6: Extract feedback data for each brand
       extract_feedback_data_task = PythonOperator(
           task_id=f'extract_{brand.lower()}_feedback_data',
-          python_callable=extract_feedback_data_func,
-          op_args=[XComArg(extract_product_data_task, key='return_value')]
+          python_callable=extract_feedback_data_func
       )
       extract_feedback_data_tasks.append(extract_feedback_data_task)
 
