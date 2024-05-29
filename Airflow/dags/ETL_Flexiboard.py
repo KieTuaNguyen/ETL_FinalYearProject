@@ -40,8 +40,8 @@ with DAG(dag_id="ETL_Flexiboard",
   )
 
   # Task 3: List of necessary brands
-  # list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
-  list_of_brands = ['JOYO']
+  list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
+#   list_of_brands = ['JOYO']
   
   # Complex tasks for each brand
   extract_specify_product_id_tasks = []
@@ -67,14 +67,16 @@ with DAG(dag_id="ETL_Flexiboard",
       # Task 6: Extract feedback data for each brand
       extract_feedback_data_task = PythonOperator(
           task_id=f'extract_{brand.lower()}_feedback_data',
-          python_callable=extract_feedback_data_func
+          python_callable=extract_feedback_data_func,
+          op_kwargs={'brand': brand}
       )
       extract_feedback_data_tasks.append(extract_feedback_data_task)
 
   # Task 7: Transform data into dataframes
   transform_df_to_dataframes = PythonOperator(
       task_id='transform_df_to_dataframes',
-      python_callable=transform_df_to_dataframes_func
+      python_callable=transform_df_to_dataframes_func,
+      op_kwargs={'list_of_brands': list_of_brands}
   )
 
   # Task 8: Load data

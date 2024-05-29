@@ -19,6 +19,7 @@ def extract_sub_category_id_func(**context):
     # Push the CSV string as an XCom value
     context['task_instance'].xcom_push(key='return_value', value=csv_data)
     print("Success set up the initial dataframe")
+    print("The cols of this DataFrame: ", df.columns)
 
 def extract_all_product_id_func(**context):
     # Retrieve the CSV string from XCom
@@ -30,7 +31,7 @@ def extract_all_product_id_func(**context):
     # Push the CSV string as an XCom value
     context['task_instance'].xcom_push(key='return_value', value=csv_data)
 
-    print("Extracting all SubCategoryID")
+    print("The cols of this DataFrame: ", df.columns)
     print("The following are the unique SubCategoryIDs: ", df['SubCategoryID'].unique())
 
 def extract_specify_product_id_func(brand, **context):
@@ -48,7 +49,8 @@ def extract_specify_product_id_func(brand, **context):
 
     # Push the CSV string as an XCom value
     context['task_instance'].xcom_push(key='return_value', value=csv_data)
-
+    
+    print("The cols of this DataFrame: ", df.columns)
     print("The following are the unique SubCategoryIDs: ", df['SubCategoryID'].unique())
     print("The following are the BrandNames: ", df['BrandName'])
     print("First 2 rows of the DataFrame: ", df.head(2))
@@ -62,8 +64,10 @@ def extract_product_data_func(brand, **context):
     df_1 = pd.read_csv(io.StringIO(csv_data_1))
     df_2 = pd.read_csv(io.StringIO(csv_data_2))
 
-    # Merge the two DataFrames
-    df = pd.merge(df_1, df_2, on='SubCategoryID')
+    # Merge the two DataFrames, selecting the desired columns
+    df = pd.merge(df_1[['MasterCategoryID', 'MasterCategoryName', 'CategoryID', 'CategoryName', 'SubCategoryID', 'SubCategoryName']],
+                  df_2[['SubCategoryID', 'BrandName']],
+                  on='SubCategoryID')
 
     # Modify the BrandName column with the brand name
     df['BrandName'] = f'{brand} Co.'
@@ -74,11 +78,29 @@ def extract_product_data_func(brand, **context):
     # Push the CSV string as an XCom value
     context['task_instance'].xcom_push(key='return_value', value=csv_data)
 
+    print("The cols of this DataFrame: ", df.columns)
     print("First 3 rows of the DataFrame: ", df.head(3))
-  
-def extract_feedback_data_func():
-  print("You're in task 6")
-  
+      
+def extract_feedback_data_func(brand, **context):
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids=f'extract_{brand.lower()}_product_data', key='return_value')
+
+    # Deserialize the CSV string to a DataFrame
+    df = pd.read_csv(io.StringIO(csv_data))
+
+    # Delete all columns except 'MasterCategoryID' and 'BrandName'
+    df = df[['MasterCategoryID', 'BrandName']]
+
+    # Serialize the DataFrame to a CSV string
+    csv_data = df.to_csv(index=False)
+
+    # Push the CSV string as an XCom value
+    context['task_instance'].xcom_push(key='return_value', value=csv_data)
+    
+    print("The cols of this DataFrame: ", df.columns)
+    print("First 10 rows of the DataFrame: ", df.head(15))
+    print("Successfully extracted feedback data, length: ", len(df))
+      
 # # FILE
 # import pandas as pd
 # import requests
