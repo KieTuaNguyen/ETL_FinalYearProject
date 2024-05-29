@@ -1,30 +1,33 @@
-import pandas as pd
-import io
+def transform_df_to_dataframes_func():
+  print("Nêed to modify")
 
-def transform_df_to_dataframes_func(list_of_brands, **context):
-    # Initialize an empty list to store the DataFrames
-    dfs = []
+# import pandas as pd
+# import io
 
-    # Iterate over the list of brands
-    for brand in list_of_brands:
-        # Retrieve the CSV string from XCom for each brand
-        csv_data = context['task_instance'].xcom_pull(task_ids=f'extract_{brand.lower()}_feedback_data', key='return_value')
+# def transform_df_to_dataframes_func(list_of_brands, **context):
+#     # Initialize an empty list to store the DataFrames
+#     dfs = []
 
-        # Deserialize the CSV string to a DataFrame
-        df = pd.read_csv(io.StringIO(csv_data))
+#     # Iterate over the list of brands
+#     for brand in list_of_brands:
+#         # Retrieve the CSV string from XCom for each brand
+#         csv_data = context['task_instance'].xcom_pull(task_ids=f'extract_{brand.lower()}_feedback_data', key='return_value')
 
-        # Append the DataFrame to the list
-        dfs.append(df)
+#         # Deserialize the CSV string to a DataFrame
+#         df = pd.read_csv(io.StringIO(csv_data))
 
-    # Concatenate all the DataFrames vertically
-    merged_df = pd.concat(dfs, ignore_index=True)
+#         # Append the DataFrame to the list
+#         dfs.append(df)
 
-    # Serialize the merged DataFrame to a CSV string
-    csv_data = merged_df.to_csv(index=False)
+#     # Concatenate all the DataFrames vertically
+#     merged_df = pd.concat(dfs, ignore_index=True)
 
-    # Push the CSV string as an XCom value
-    context['task_instance'].xcom_push(key='return_value', value=csv_data)
+#     # Serialize the merged DataFrame to a CSV string
+#     csv_data = merged_df.to_csv(index=False)
 
-    print(f"Distinct values of the 'brand' column in the merged DataFrame: {merged_df['BrandName'].unique()}")
-    print("First 60 rows of the merged DataFrame:")
-    print(merged_df.head(60))
+#     # Push the CSV string as an XCom value
+#     context['task_instance'].xcom_push(key='return_value', value=csv_data)
+
+#     print(f"Distinct values of the 'brand' column in the merged DataFrame: {merged_df['BrandName'].unique()}")
+#     print("First 60 rows of the merged DataFrame:")
+#     print(merged_df.head(60))
