@@ -202,7 +202,11 @@ def extract_specify_product_id_func(brands, **context):
 
   # Deserialize the CSV string to a DataFrame
   product_ids_df = pd.read_csv(io.StringIO(csv_data))
-  
+
+  # Convert brands to a list if it's a single brand
+  if isinstance(brands, str):
+      brands = [brands]
+
   # Filter the DataFrame based on the specified brands
   product_ids_df = product_ids_df[product_ids_df['BrandName'].isin(brands)]
 
@@ -213,7 +217,7 @@ def extract_specify_product_id_func(brands, **context):
   context['task_instance'].xcom_push(key='return_value', value=csv_data)
 
   return None
-
+  
 def extract_product_data_func(**context):
   # Retrieve the CSV string from XCom
   csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_id", key='return_value')

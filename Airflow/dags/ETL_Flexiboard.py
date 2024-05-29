@@ -41,8 +41,8 @@ with DAG(dag_id="ETL_Flexiboard",
     )
 
     # Task 3: List of necessary brands
-    # list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
-    list_of_brands = ['JOYO']
+    list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
+    # list_of_brands = ['JOYO']
     
     # Complex tasks for each brand
     extract_specify_product_id_tasks = []
@@ -53,7 +53,7 @@ with DAG(dag_id="ETL_Flexiboard",
         extract_specify_product_id_task = PythonOperator(
             task_id=f'extract_{brand.lower()}_product_id',
             python_callable=extract_specify_product_id_func,
-            op_kwargs={'product_ids_df': XComArg(extract_all_product_id), 'brands': brand}
+            op_kwargs={'product_ids_df': XComArg(extract_all_product_id), 'brands': [brand]}
         )
         extract_specify_product_id_tasks.append(extract_specify_product_id_task)
 
