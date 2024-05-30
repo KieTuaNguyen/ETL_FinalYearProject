@@ -292,78 +292,76 @@ def extract_feedback_data_func(**context):
 
   feedback_data_list = []
   for _, row in product_df.iterrows():
-      sub_category_id = row['sub_category_id']
-      product_id = row['product_id']
-      URL = "https://tiki.vn/api/v2/reviews"
-      PARAMS = {"limit": 20, 
-                "spid": sub_category_id, 
-                "product_id": product_id}
+    sub_category_id = row['sub_category_id']
+    product_id = row['product_id']
+    URL = "https://tiki.vn/api/v2/reviews"
+    PARAMS = {"limit": 20, 
+              "spid": sub_category_id, 
+              "product_id": product_id}
 
+    response = requests.get(URL, headers=HEADERS, params=PARAMS)
+    data = response.json()
+    total_pages = data.get("paging", {}).get("last_page", 1)
+
+    # Fetch data from each page
+    for page in range(1, total_pages + 1):
+      PARAMS["page"] = page
       response = requests.get(URL, headers=HEADERS, params=PARAMS)
+      time.sleep(random.uniform(3.2, 4.7))
       data = response.json()
-      total_pages = data.get("paging", {}).get("last_page", 1)
 
-      # Fetch data from each page
-      for page in range(1, total_pages + 1):
-          PARAMS["page"] = page
-          response = requests.get(URL, headers=HEADERS, params=PARAMS)
-          time.sleep(random.uniform(3.2, 4.7))
-          data = response.json()
+      stars = data.get("stars", {})
+      OneStarCount = stars.get("1", {}).get("count", 0)
+      TwoStarCount = stars.get("2", {}).get("count", 0)
+      ThreeStarCount = stars.get("3", {}).get("count", 0)
+      FourStarCount = stars.get("4", {}).get("count", 0)
+      FiveStarCount = stars.get("5", {}).get("count", 0)
+      reviews_count = data.get("reviews_count", 0)
+      review_data = data.get("data", [])
 
-          stars = data.get("stars", {})
-          OneStarCount = stars.get("1", {}).get("count", 0)
-          TwoStarCount = stars.get("2", {}).get("count", 0)
-          ThreeStarCount = stars.get("3", {}).get("count", 0)
-          FourStarCount = stars.get("4", {}).get("count", 0)
-          FiveStarCount = stars.get("5", {}).get("count", 0)
-          reviews_count = data.get("reviews_count", 0)
-          review_data = data.get("data", [])
+      for review in review_data:
+        review_id = review.get("id")
+        review_title = review.get("title")
+        review_content = review.get("content")
+        review_upvote = review.get("thank_count", 0)
+        review_rating = review.get("rating")
+        review_created_at = review.get("created_at")
+        reviewer = review.get("created_by", {})
 
-          for review in review_data:
-              review_id = review.get("id")
-              review_title = review.get("title")
-              review_content = review.get("content")
-              review_upvote = review.get("thank_count", 0)
-              review_rating = review.get("rating")
-              review_created_at = review.get("created_at")
-              reviewer = review.get("created_by", {})
+        if reviewer is not None:
+            user_id = reviewer.get("id")
+            username = reviewer.get("name")
+            joined_time = reviewer.get("created_time")
+            total_reviews = reviewer.get("contribute_info", {}).get("summary", {}).get("total_review", 0)
+            total_upvotes = reviewer.get("contribute_info", {}).get("summary", {}).get("total_thank", 0)
+        else:
+            user_id = None
+            username = None
+            joined_time = None
+            total_reviews = 0
+            total_upvotes = 0
 
-              if reviewer is not None:
-                  user_id = reviewer.get("id")
-                  username = reviewer.get("name")
-                  joined_time = reviewer.get("created_time")
-                  total_reviews = reviewer.get("contribute_info", {}).get("summary", {}).get("total_review", 0)
-                  total_upvotes = reviewer.get("contribute_info", {}).get("summary", {}).get("total_thank", 0)
-              else:
-                  user_id = None
-                  username = None
-                  joined_time = None
-                  total_reviews = 0
-                  total_upvotes = 0
-
-              feedback_data_list.append({
-                  "ProductID": product_id,
-                  "OneStarCount": OneStarCount,
-                  "TwoStarCount": TwoStarCount,
-                  "ThreeStarCount": ThreeStarCount,
-                  "FourStarCount": FourStarCount,
-                  "FiveStarCount": FiveStarCount,
-                  "reviews_count": reviews_count,
-                  "review_id": review_id,
-                  "review_title": review_title,
-                  "review_content": review_content,
-                  "review_upvote": review_upvote,
-                  "review_rating": review_rating,
-                  "review_created_at": review_created_at,
-                  "user_id": user_id,
-                  "username": username,
-                  "joined_time": joined_time,
-                  "total_reviews": total_reviews,
-                  "total_upvotes": total_upvotes
-              })
-
-  print(f"Success fetching data for {len(feedback_data_list)} feedbacks")
-  
+        feedback_data_list.append({
+            "ProductID": product_id,
+            "OneStarCount": OneStarCount,
+            "TwoStarCount": TwoStarCount,
+            "ThreeStarCount": ThreeStarCount,
+            "FourStarCount": FourStarCount,
+            "FiveStarCount": FiveStarCount,
+            "reviews_count": reviews_count,
+            "review_id": review_id,
+            "review_title": review_title,
+            "review_content": review_content,
+            "review_upvote": review_upvote,
+            "review_rating": review_rating,
+            "review_created_at": review_created_at,
+            "user_id": user_id,
+            "username": username,
+            "joined_time": joined_time,
+            "total_reviews": total_reviews,
+            "total_upvotes": total_upvotes
+        })
+          
   # Convert the feedback data list to a DataFrame
   feedback_data_df = pd.DataFrame(feedback_data_list)
   
