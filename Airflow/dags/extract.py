@@ -158,6 +158,10 @@ def extract_sub_category_id_func(**context):
   sub_category_df = category[["SubCategoryID", "CategoryID", "SubCategoryName", "isSubCategory"]].drop_duplicates()
   sub_category_df = sub_category_df.rename(columns={"SubCategoryName": "Name"})
 
+  print(f"Success fetching data for {len(master_category_df)} master categories")
+  print(f"Success fetching data for {len(category_df)} categories")
+  print(f"Success fetching data for {len(sub_category_df)} sub categories")
+
   # Serialize the DataFrames to CSV strings
   master_category_csv = master_category_df.to_csv(index=False)
   category_csv = category_df.to_csv(index=False)
@@ -185,7 +189,8 @@ def extract_all_product_id_func(**context):
       for product in product_data:
           product_ids.append([sub_category_id, product["product_id"], product["brand_name"]])
 
-  print(f"Success fetching data for {len(product_ids)} product ids")
+  print(f"Success fetching data {len(product_ids)} product ids for all sub categories")
+  
   product_ids_df = pd.DataFrame(product_ids, columns=["SubCategoryID", "ProductID", "BrandName"])
 
   # Serialize the DataFrame to a CSV string
@@ -210,6 +215,8 @@ def extract_specify_product_id_func(brands, **context):
   # Filter the DataFrame based on the specified brands
   product_ids_df = product_ids_df[product_ids_df['BrandName'].isin(brands)]
 
+  print(f"Success fetching data for {len(product_ids_df)} product ids for {brands}")
+  
   # Serialize the filtered DataFrame to a CSV string
   csv_data = product_ids_df.to_csv(index=False)
 
@@ -256,14 +263,14 @@ def extract_product_data_func(**context):
           'seller_name': data.get('current_seller', {}).get('name', 0) if data.get('current_seller') else 0,
           'seller_link': data.get('current_seller', {}).get('link', 0) if data.get('current_seller') else 0,
           'seller_image_url': data.get('current_seller', {}).get('logo', 0) if data.get('current_seller') else 0,
-          'category_id': data['categories']['id'] if data['categories']['is_leaf'] else data['breadcrumbs'][-2]['category_id'],
+          'category_id': data['categories']['id'] if 'categories' in data and data['categories'].get('is_leaf', False) else data['breadcrumbs'][-2]['category_id'] if 'breadcrumbs' in data and len(data['breadcrumbs']) >= 2 else None,
           'sub_category_id': sub_category_id,
           'brand_name': row['BrandName']
       }
 
       product_data_list.append(product_data)
 
-  print(f"Success fetching data for {len(product_data_list)} products")
+  print(f"Success fetching data for {len(product_data_list)} products for {context['brand']}")
 
   # Convert the product data list to a DataFrame
   product_data_df = pd.DataFrame(product_data_list)
@@ -359,6 +366,8 @@ def extract_feedback_data_func(**context):
   
   # Convert the feedback data list to a DataFrame
   feedback_data_df = pd.DataFrame(feedback_data_list)
+  
+  print(f"Success fetching data for {len(feedback_data_df)} feedbacks for {context['brand']}")
   
   # Serialize the DataFrame to a CSV string
   csv_data = feedback_data_df.to_csv(index=False)
