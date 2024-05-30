@@ -23,7 +23,7 @@ default_args = {
 # Define the DAG
 with DAG(dag_id="ETL_Flexiboard", 
          default_args=default_args, 
-         schedule_interval="@daily", 
+         schedule_interval=None, 
          catchup=False) as f:
     
     # Define Tasks
