@@ -1,5 +1,12 @@
-# dags
-logs
-# plugins
+# Credential Configuration (Compulsory)
 .env
+/configs/config.prod.json/
+
+# Batch file
+/dags/__pycache__/
+logs
+
+# Document (Optional)
+DAG.md
 syntax.txt
+process.txt
