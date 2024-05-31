@@ -1,9 +1,4 @@
-import pandas as pd
-import requests
-import random
-import time
-from datetime import datetime
-import io
+from dependencies import *
 
 # Set up header
 HEADERS = {

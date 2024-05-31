@@ -1,6 +1,8 @@
 # Credential Configuration (Compulsory)
 .env
 /configs/config.prod.json
+/dags/dependencies.py
+requirements.txt
 
 # Batch file
 /dags/__pycache__
