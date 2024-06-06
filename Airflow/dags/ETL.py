@@ -3,6 +3,7 @@ try:
     from datetime import timedelta, datetime
     from airflow.operators.python import PythonOperator
     from airflow.models.xcom_arg import XComArg
+    from datetime import datetime, timedelta, date
     
     print("Modules were imported successfully")
 except Exception as e:
@@ -16,19 +17,48 @@ default_args = {
     "start_date": datetime(2024, 3, 1)
 }
 
+# Get the current date
+current_date = date.today()
+# Get the day of the month
+day = current_date.day
+
 def extract_sub_category_id_func():
+    if day == 1:
+        print("Handle logic code")
+    else:
+        print("Retrieve from Azure database")
     return 0
-def transform_data_func():
-    return 0
-def load_data_func():
-    return 0
+
 def extract_all_product_id_func():
+    if day == 1 or day == 15:
+        print("Handle logic code")
+    else:
+        print("Retrieve from Azure database")
     return 0
+
 def extract_specify_product_id_func():
+    # Daily
+    print("Handle logic code")
     return 0
+
 def extract_product_data_func():
+    # Daily
+    print("Handle logic code")
     return 0
+
 def extract_feedback_data_func():
+    # Daily
+    print("Handle logic code")
+    return 0
+
+def transform_data_func():
+    # Daily
+    print("Handle logic code")
+    return 0
+
+def load_data_func():
+    # Daily
+    print("Handle logic code")
     return 0
 
 # Define the DAG
