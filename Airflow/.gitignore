@@ -2,8 +2,11 @@
 .env
 /configs/config.prod.json
 /configs/dependencies.py
+/dags/configs/config.prod.json
+/dags/configs/dependencies.py
 
 # Batch file
+/dags/configs/__pycache__
 /configs/__pycache__
 /dags/__pycache__
 /dags/dependencies.py
