@@ -48,6 +48,24 @@ default_args = {
     "start_date": datetime(2024, 3, 1)
 }
 
+config = get_config('DevDB')
+print("[SUCCESS] Server, Database, Username, Password, Driver are loaded")
+# Configuration for the SQL Server connection
+server = config['server']
+database = config['database']
+username = config['username']
+password = config['password']
+driver = config['driver']
+# Connection string
+conn_str = (
+    f"DRIVER={driver};"
+    f"SERVER={server};"
+    f"DATABASE={database};"
+    f"UID={username};"
+    f"PWD={password};"
+    f"Timeout=60"
+)
+
 # Default functions
 def remove_single_category(df):
   category_counts = df.groupby('MasterCategoryID')['CategoryID'].nunique()
@@ -82,6 +100,25 @@ def transform_category(row):
     master_category_id, master_category_name, category_id, category_name,
     is_category, sub_category_id, sub_category_name, is_sub_category
   ])
+
+def retrieve_product_ids(id):
+    base_url = "https://tiki.vn/api/personalish/v1/blocks/listings"
+    PARAMS = {"category": id, "page": 1}
+    response = requests.get(base_url, headers=HEADERS, params=PARAMS)
+    time.sleep(random.uniform(3.2, 8.7))
+    data = response.json()
+    total_page = data["paging"]["last_page"]
+    product_data = []
+    for page in range(1, total_page + 1):
+        PARAMS = {"category": id, "page": page}
+        response = requests.get(base_url, headers=HEADERS, params=PARAMS)
+        time.sleep(random.uniform(3.2, 8.7))
+        data = response.json()
+        for item in data["data"]:
+            product_id = item["id"]
+            brand_name = item.get("brand_name", None)
+            product_data.append({"sub_category_id": id, "product_id": product_id, "brand_name": brand_name})
+    return product_data
 
 # Get the current date
 current_date = date.today()
@@ -182,23 +219,6 @@ def extract_sub_category_id_func(**context):
         context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
     else:
         print("[NOTICE] Extracting sub-category IDs from Azure")
-        config = get_config('DevDB')
-        print("[SUCCESS] Server, Database, Username, Password, Driver are loaded")
-        # Configuration for the SQL Server connection
-        server = config['server']
-        database = config['database']
-        username = config['username']
-        password = config['password']
-        driver = config['driver']
-        # Connection string
-        conn_str = (
-            f"DRIVER={driver};"
-            f"SERVER={server};"
-            f"DATABASE={database};"
-            f"UID={username};"
-            f"PWD={password};"
-            f"Timeout=60"
-        )
         # Establish the connection
         conn = pyodbc.connect(conn_str)
         print("[SUCCESS] Connection is established")
@@ -224,11 +244,53 @@ def extract_sub_category_id_func(**context):
         context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
     return None
 
-def extract_all_product_id_func():
+def extract_all_product_id_func(**context):
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='sub_category_df')
+    # Deserialize the CSV string to a DataFrame
+    sub_category_df = pd.read_csv(io.StringIO(csv_data))
+    # Convert to Dataframe
+    sub_category_df = pd.DataFrame(sub_category_df)
+    print(f"[SUCCESS] Extracted {len(sub_category_df)} sub-categories records")
     if day == 1 or day == 15:
-        print("Handle logic code")
+        product_ids = []
+        for sub_category_id in sub_category_df["SubCategoryID"]:
+            product_data = retrieve_product_ids(sub_category_id)
+            product_ids.extend(product_data)
+        reference_product = pd.DataFrame(product_ids)
+        # Create ReferenceID by combining SubCategoryID and ProductID
+        reference_product["ReferenceID"] = reference_product["sub_category_id"].astype(str) + reference_product["product_id"].astype(str)
+        # Modify the dataframe
+        reference_product = reference_product[["ReferenceID", "sub_category_id", "product_id", "brand_name"]]
+        # Rename columns
+        reference_product.columns = ["ReferenceID", "SubCategoryID", "ProductID", "BrandName"]
     else:
         print("Retrieve from Azure database")
+        # print("[NOTICE] Extracting sub-category IDs from Azure")
+        # # Establish the connection
+        # conn = pyodbc.connect(conn_str)
+        # print("[SUCCESS] Connection is established")
+        # # Execute the queries
+        # master_category_df = pd.read_sql("SELECT * FROM MasterCategory", conn)
+        # category_df = pd.read_sql("SELECT * FROM Category", conn)
+        # sub_category_df = pd.read_sql("SELECT * FROM SubCategory", conn)
+        # # Cast to df
+        # master_category_df = pd.DataFrame(master_category_df)
+        # category_df = pd.DataFrame(category_df)
+        # sub_category_df = pd.DataFrame(sub_category_df)
+        # # Print out notification
+        # print(f"[SUCCESS] Extracted {len(master_category_df)} master categories records")
+        # print(f"[SUCCESS] Extracted {len(category_df)} categories records")
+        # print(f"[SUCCESS] Extracted {len(sub_category_df)} sub-categories records")
+        # # Serialize the DataFrames to CSV strings
+        # master_category_csv = master_category_df.to_csv(index=False)
+        # category_csv = category_df.to_csv(index=False)
+        # sub_category_csv = sub_category_df.to_csv(index=False)
+        # # Push the CSV strings as XCom values
+        # context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
+        # context['task_instance'].xcom_push(key='category_df', value=category_csv)
+        # context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
+
     return 0
 
 def extract_specify_product_id_func():
