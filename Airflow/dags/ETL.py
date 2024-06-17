@@ -145,7 +145,7 @@ def extract_sub_category_id_func(**context):
 
                 if group_id in GroupID:
                     group_list.append([group_id, text])
-
+                    
         # group df    
         group_df = pd.DataFrame(group_list, columns=["GroupID", "Name"])
         # EXTRACT categories
@@ -264,32 +264,27 @@ def extract_all_product_id_func(**context):
         reference_product = reference_product[["ReferenceID", "sub_category_id", "product_id", "brand_name"]]
         # Rename columns
         reference_product.columns = ["ReferenceID", "SubCategoryID", "ProductID", "BrandName"]
+        # Print out notification
+        print(f"[SUCCESS] Extracted {len(reference_product)} reference product id records")
+        # Serialize the DataFrames to CSV strings
+        master_category_csv = reference_product.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='reference_product', value=master_category_csv)
     else:
-        print("Retrieve from Azure database")
-        # print("[NOTICE] Extracting sub-category IDs from Azure")
-        # # Establish the connection
-        # conn = pyodbc.connect(conn_str)
-        # print("[SUCCESS] Connection is established")
-        # # Execute the queries
-        # master_category_df = pd.read_sql("SELECT * FROM MasterCategory", conn)
-        # category_df = pd.read_sql("SELECT * FROM Category", conn)
-        # sub_category_df = pd.read_sql("SELECT * FROM SubCategory", conn)
-        # # Cast to df
-        # master_category_df = pd.DataFrame(master_category_df)
-        # category_df = pd.DataFrame(category_df)
-        # sub_category_df = pd.DataFrame(sub_category_df)
-        # # Print out notification
-        # print(f"[SUCCESS] Extracted {len(master_category_df)} master categories records")
-        # print(f"[SUCCESS] Extracted {len(category_df)} categories records")
-        # print(f"[SUCCESS] Extracted {len(sub_category_df)} sub-categories records")
-        # # Serialize the DataFrames to CSV strings
-        # master_category_csv = master_category_df.to_csv(index=False)
-        # category_csv = category_df.to_csv(index=False)
-        # sub_category_csv = sub_category_df.to_csv(index=False)
-        # # Push the CSV strings as XCom values
-        # context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
-        # context['task_instance'].xcom_push(key='category_df', value=category_csv)
-        # context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
+        print("[NOTICE] Extracting reference product IDs from Azure")
+        # Establish the connection
+        conn = pyodbc.connect(conn_str)
+        print("[SUCCESS] Connection is established")
+        # Execute the queries
+        reference_product = pd.read_sql("SELECT * FROM ReferenceProduct", conn)
+        # Cast to df
+        reference_product = pd.DataFrame(reference_product)
+        # Print out notification
+        print(f"[SUCCESS] Extracted {len(reference_product)} reference product id records")
+        # Serialize the DataFrames to CSV strings
+        master_category_csv = reference_product.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='reference_product', value=master_category_csv)
 
     return 0
 
