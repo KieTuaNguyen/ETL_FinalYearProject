@@ -288,9 +288,22 @@ def extract_all_product_id_func(**context):
 
     return 0
 
-def extract_specify_product_id_func():
-    # Daily
-    print("Handle logic code")
+def extract_specify_product_id_func(brands, **context):
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product')
+    # Deserialize the CSV string to a DataFrame
+    specify_product_ids = pd.read_csv(io.StringIO(csv_data))
+    # Convert brands to a list if it's a single brand
+    if isinstance(brands, str):
+        brands = [brands]
+    # Filter the DataFrame based on the specified brands
+    specify_product_ids = specify_product_ids[specify_product_ids['BrandName'].isin(brands)]
+    # Print out notification
+    print(f"[SUCCESS] Extracted {len(specify_product_ids)} records for {brands}")
+    # Serialize the filtered DataFrame to a CSV string
+    specify_product_ids = specify_product_ids.to_csv(index=False)
+    # Push the CSV string as an XCom value
+    context['task_instance'].xcom_push(key='return_value', value=specify_product_ids) 
     return 0
 
 def extract_product_data_func():
