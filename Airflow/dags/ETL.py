@@ -267,9 +267,9 @@ def extract_all_product_id_func(**context):
         # Print out notification
         print(f"[SUCCESS] Extracted {len(reference_product)} reference product id records")
         # Serialize the DataFrames to CSV strings
-        master_category_csv = reference_product.to_csv(index=False)
+        reference_product_csv = reference_product.to_csv(index=False)
         # Push the CSV strings as XCom values
-        context['task_instance'].xcom_push(key='reference_product', value=master_category_csv)
+        context['task_instance'].xcom_push(key='reference_product_id', value=reference_product_csv)
     else:
         print("[NOTICE] Extracting reference product IDs from Azure")
         # Establish the connection
@@ -282,15 +282,14 @@ def extract_all_product_id_func(**context):
         # Print out notification
         print(f"[SUCCESS] Extracted {len(reference_product)} reference product id records")
         # Serialize the DataFrames to CSV strings
-        master_category_csv = reference_product.to_csv(index=False)
+        reference_product_csv = reference_product.to_csv(index=False)
         # Push the CSV strings as XCom values
-        context['task_instance'].xcom_push(key='reference_product', value=master_category_csv)
-
+        context['task_instance'].xcom_push(key='reference_product_id', value=reference_product_csv)
     return 0
 
 def extract_specify_product_id_func(brands, **context):
     # Retrieve the CSV string from XCom
-    csv_data = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product')
+    csv_data = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_id')
     # Deserialize the CSV string to a DataFrame
     specify_product_ids = pd.read_csv(io.StringIO(csv_data))
     # Convert brands to a list if it's a single brand
@@ -299,16 +298,64 @@ def extract_specify_product_id_func(brands, **context):
     # Filter the DataFrame based on the specified brands
     specify_product_ids = specify_product_ids[specify_product_ids['BrandName'].isin(brands)]
     # Print out notification
-    print(f"[SUCCESS] Extracted {len(specify_product_ids)} records for {brands}")
+    print(f"[SUCCESS] Extracted {len(specify_product_ids)} product ids for {brands}")
     # Serialize the filtered DataFrame to a CSV string
-    specify_product_ids = specify_product_ids.to_csv(index=False)
+    specify_product_ids_csv = specify_product_ids.to_csv(index=False)
     # Push the CSV string as an XCom value
-    context['task_instance'].xcom_push(key='return_value', value=specify_product_ids) 
+    context['task_instance'].xcom_push(key='specify_product_ids', value=specify_product_ids_csv) 
     return 0
 
-def extract_product_data_func():
-    # Daily
-    print("Handle logic code")
+def extract_product_data_func(**context):
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_id", key='specify_product_ids')
+    # Deserialize the CSV string to a DataFrame
+    product_ids_df = pd.read_csv(io.StringIO(csv_data))
+
+    product_data_list = []
+    for _, row in product_ids_df.iterrows():
+        sub_category_id = row['SubCategoryID']
+        product_id = row['ProductID']
+
+        URL = f"https://tiki.vn/api/v2/products/{product_id}"
+        PARAMS = {}
+
+        response = requests.get(URL, headers=HEADERS, params=PARAMS)
+        time.sleep(random.uniform(3.2, 4.7))
+
+        data = response.json()
+
+        product_data = {
+            'product_id': data['id'],
+            'product_name': data.get('name', None),
+            'product_url': data.get('short_url', None),
+            'pricing_current': data.get('price', None),
+            'pricing_original': data.get('original_price', None),
+            'product_image_url': data.get('thumbnail_url', None),
+            'inventory_status': data.get('inventory_status', None),
+            'inventory_type': data.get('inventory_type', None),
+            'created_date': data.get('day_ago_created', None),
+            'quantity_sold': data.get('all_time_quantity_sold', None),
+            'brand_id': data.get('brand', {}).get('id', None),
+            'brand_name': data.get('brand', {}).get('name', None),
+            'brand_slug': data.get('brand', {}).get('slug', None),
+            'seller_id': data.get('current_seller', {}).get('id', 0) if data.get('current_seller') else 0,
+            'seller_name': data.get('current_seller', {}).get('name', 0) if data.get('current_seller') else 0,
+            'seller_link': data.get('current_seller', {}).get('link', 0) if data.get('current_seller') else 0,
+            'seller_image_url': data.get('current_seller', {}).get('logo', 0) if data.get('current_seller') else 0,
+            'category_id': data['categories']['id'] if 'categories' in data and data['categories'].get('is_leaf', False) else data['breadcrumbs'][-2]['category_id'] if 'breadcrumbs' in data and len(data['breadcrumbs']) >= 2 else None,
+            'sub_category_id': sub_category_id,
+            'brand_name': row['BrandName']
+        }
+
+        product_data_list.append(product_data)
+    # Print out notification
+    print(f"[SUCCESS] Extracted {len(product_data_list)} product dataframes for {context['brand']}")
+    # Convert the product data list to a DataFrame
+    product_data_df = pd.DataFrame(product_data_list)
+    # Serialize the DataFrame to a CSV string
+    product_data_csv = product_data_df.to_csv(index=False)
+    # Push the CSV string as an XCom value
+    context['task_instance'].xcom_push(key='product_data', value=product_data_csv)
     return 0
 
 def extract_feedback_data_func():
