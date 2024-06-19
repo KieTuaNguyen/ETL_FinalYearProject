@@ -447,9 +447,22 @@ def extract_feedback_data_func(**context):
     context['task_instance'].xcom_push(key='feedback_data', value=feedback_data_csv)
     return 0
 
-def transform_data_func():
+def transform_data_func(**context):
     # Daily
     print("Handle logic code")
+    
+    #  # Available data
+    #  # Retrieve the CSV string from XCom
+    # sub_category_df = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='sub_category_df')
+    # # Retrieve the CSV string from XCom
+    # reference_product_id = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_id')
+    
+    # # Retrieve the CSV string from XCom
+    # specify_product_ids = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_id", key='specify_product_ids')
+    # # Retrieve the CSV string from XCom
+    # product_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_data", key='product_data')
+    # # Retrieve the CSV string from XCom
+    # feedback_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_feedback_data", key='feedback_data')
     return 0
 
 def load_data_func():
