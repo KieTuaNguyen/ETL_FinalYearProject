@@ -468,7 +468,32 @@ def transform_all_product_func(**context):
         context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
     return 0
 
-def load_all_product_func():
+def load_all_product_func(**context):
+    # Retrieve the CSV string from XCom
+    reference_product_df = context['task_instance'].xcom_pull(task_ids='transform_data_all_product', key='reference_product_df')
+    # Deserialize the CSV string to a DataFrame
+    reference_product_df = pd.read_csv(io.StringIO(reference_product_df))
+    # Convert to Dataframe
+    reference_product_df = pd.DataFrame(reference_product_df)
+    if day == 1 or day == 15:
+        # Establish the connection
+        conn = pyodbc.connect(conn_str)
+        cursor = conn.cursor()
+        print("[SUCCESS] Connection is established")
+
+        # For ReferenceProduct
+        reference_product_df
+        table_name = 'ReferenceProduct'
+        check_columns = ['ReferenceID', 'SubCategoryID', 'ProductID', 'BrandName']
+        result = upsert_data(table_name, reference_product_df, check_columns, conn)
+        print(result)
+
+        cursor.close()
+        conn.close()
+    else:
+        print("[NOTICE] Skipping loading for reference products")
+        # Print out notification
+        print(f"[SUCCESS] Loaded {len(reference_product_df)} reference product records")
     return 0
 
 def extract_specify_product_id_func(brands, **context):
