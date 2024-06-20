@@ -256,7 +256,7 @@ def extract_sub_category_id_func(**context):
     return None
 
     # # Retrieve the CSV string from XCom
-    # reference_product_id = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_id')
+    # reference_product_df = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_df')
     
     # # Retrieve the CSV string from XCom
     # specify_product_ids = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_id", key='specify_product_ids')
@@ -419,7 +419,7 @@ def extract_all_product_id_func(**context):
         # Serialize the DataFrames to CSV strings
         reference_product_csv = reference_product.to_csv(index=False)
         # Push the CSV strings as XCom values
-        context['task_instance'].xcom_push(key='reference_product_id', value=reference_product_csv)
+        context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
     else:
         print("[NOTICE] Extracting reference product IDs from Azure")
         # Establish the connection
@@ -434,17 +434,46 @@ def extract_all_product_id_func(**context):
         # Serialize the DataFrames to CSV strings
         reference_product_csv = reference_product.to_csv(index=False)
         # Push the CSV strings as XCom values
-        context['task_instance'].xcom_push(key='reference_product_id', value=reference_product_csv)
+        context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
     return 0
 
-def transform_all_product_func():
+def transform_all_product_func(**context):
+    # Retrieve the CSV string from XCom
+    reference_product_df = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_df')
+    # Deserialize the CSV string to a DataFrame
+    reference_product_df = pd.read_csv(io.StringIO(reference_product_df))
+    # Convert to Dataframe
+    reference_product_df = pd.DataFrame(reference_product_df)
+    
+    if day == 1 or day == 15:
+        # Drop duplicates
+        reference_product_df = reference_product_df.drop_duplicates()
+        # Cast to suitable datatype
+        reference_product_df["ReferenceID"] = reference_product_df["ReferenceID"].astype(int)
+        reference_product_df["SubCategoryID"] = reference_product_df["SubCategoryID"].astype(int)
+        reference_product_df["ProductID"] = reference_product_df["ProductID"].astype(int)
+        # Print out notification
+        print(f"[SUCCESS] Transformed {len(reference_product_df)} reference product records")
+        # Serialize the DataFrames to CSV strings
+        reference_product_csv = reference_product_df.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
+    else:
+        print("[NOTICE] Skipping transformation for reference product")
+        # Print out notification
+        print(f"[SUCCESS] Transformed {len(reference_product_df)} reference product records")
+        # Serialize the DataFrames to CSV strings
+        reference_product_csv = reference_product_df.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
     return 0
+
 def load_all_product_func():
     return 0
 
 def extract_specify_product_id_func(brands, **context):
     # Retrieve the CSV string from XCom
-    csv_data = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_id')
+    csv_data = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_df')
     # Deserialize the CSV string to a DataFrame
     specify_product_ids = pd.read_csv(io.StringIO(csv_data))
     # Convert brands to a list if it's a single brand
