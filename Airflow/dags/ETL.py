@@ -27,6 +27,7 @@ except Exception as e:
 from datetime import datetime, timedelta, date  
 from dependencies import *
 from configs.config_manager import get_config
+from function import upsert_data
 
 # Set up header
 HEADERS = {
@@ -330,6 +331,67 @@ def transform_sub_category_func(**context):
     return 0
 
 def load_sub_category_func(**context):
+    # Retrieve the CSV string from XCom
+    group_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='group_df')
+    master_category_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='master_category_df')
+    category_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='category_df')
+    sub_category_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='sub_category_df')
+    
+    # Deserialize the CSV string to a DataFrame
+    group_df = pd.read_csv(io.StringIO(group_df))
+    master_category_df = pd.read_csv(io.StringIO(master_category_df))
+    category_df = pd.read_csv(io.StringIO(category_df))
+    sub_category_df = pd.read_csv(io.StringIO(sub_category_df))
+    
+    # Convert to Dataframe
+    group_df = pd.DataFrame(group_df)
+    master_category_df = pd.DataFrame(master_category_df)
+    category_df = pd.DataFrame(category_df)
+    sub_category_df = pd.DataFrame(sub_category_df)
+
+    if day == 1:
+        # Establish the connection
+        conn = pyodbc.connect(conn_str)
+        cursor = conn.cursor()
+        print("[SUCCESS] Connection is established")
+
+        # For Group
+        group_df
+        table_name = 'Group'
+        check_columns = ['GroupID', 'Name']
+        result = upsert_data(table_name, group_df, check_columns, conn)
+        print(result)
+
+        # For MasterCategory
+        master_category_df
+        table_name = 'MasterCategory'
+        check_columns = ['MasterCategoryID', 'GroupID', 'Name']
+        result = upsert_data(table_name, master_category_df, check_columns, conn)
+        print(result)
+
+        # For Category
+        category_df
+        table_name = 'Category'
+        check_columns = ['CategoryID', 'MasterCategoryID', 'Name', 'isCategory']
+        result = upsert_data(table_name, category_df, check_columns, conn)
+        print(result)
+
+        # For SubCategory
+        sub_category_df
+        table_name = 'SubCategory'
+        check_columns = ['SubCategoryID', 'CategoryID', 'Name', 'isSubCategory']
+        result = upsert_data(table_name, sub_category_df, check_columns, conn)
+        print(result)
+
+        cursor.close()
+        conn.close()
+    else:
+        print("[NOTICE] Skipping loading for group, master category, category, and sub-category")
+        # Print out notification
+        print(f"[SUCCESS] Loaded {len(group_df)} group records")
+        print(f"[SUCCESS] Loaded {len(master_category_df)} master categories records")
+        print(f"[SUCCESS] Loaded {len(category_df)} categories records")
+        print(f"[SUCCESS] Loaded {len(sub_category_df)} sub-categories records")
     return 0
 
 def extract_all_product_id_func(**context):
@@ -375,9 +437,9 @@ def extract_all_product_id_func(**context):
         context['task_instance'].xcom_push(key='reference_product_id', value=reference_product_csv)
     return 0
 
-def transform_all_product_func(**context):
+def transform_all_product_func():
     return 0
-def load_all_product_func(**context):
+def load_all_product_func():
     return 0
 
 def extract_specify_product_id_func(brands, **context):
