@@ -567,6 +567,86 @@ def extract_product_data_func(**context):
     context['task_instance'].xcom_push(key='product_data', value=product_data_csv)
     return 0
 
+def transform_specify_product_func(**context):
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_data", key='product_data')
+    # Deserialize the CSV string to a DataFrame
+    product_df = pd.read_csv(io.StringIO(csv_data))
+    
+    # TRANSFORM data
+    # product df
+    product = product_df[["product_id",
+                             "brand_id",
+                             "seller_id",
+                             "sub_category_id",
+                             "product_name",
+                             "product_url",
+                             "product_image_url",
+                             "created_date",
+                             "quantity_sold"]]
+    product = product.rename(columns={"product_id": "ProductID",
+                                            "brand_id": "BrandID",
+                                            "seller_id": "SellerID",
+                                            "sub_category_id": "SubCategoryID",
+                                            "product_name": "Name",
+                                            "product_url": "URL",
+                                            "product_image_url": "ImageURL",
+                                            "created_date": "CreatedDate",
+                                            "quantity_sold": "QuantitySold"})
+    product = product.drop_duplicates()
+    
+    # inventory df
+    inventory = pd.DataFrame({
+        "InventoryID": range(1, len(product_df) + 1),
+        "ProductID": product_df["product_id"],
+        "Status": product_df["inventory_status"],
+        "Type": product_df["inventory_type"],
+        "LastUpdated": datetime.now()
+    })
+    inventory = inventory.drop_duplicates()
+
+    # pricing df
+    pricing = pd.DataFrame({
+        "PricingID": range(1, len(product_df) + 1),
+        "ProductID": product_df["product_id"],
+        "CurrentPrice": product_df["pricing_current"],
+        "OriginalPrice": product_df["pricing_original"],
+        "LastUpdated": datetime.now()
+    })
+    pricing = pricing.drop_duplicates()
+
+    # brand df
+    brand = product_df[["brand_id",
+                           "brand_name",
+                           "brand_slug"]]
+    brand = brand.rename(columns={"brand_name": "Name",
+                                  "brand_slug": "Slug"})
+    brand = brand.drop_duplicates()
+
+    # seller df
+    seller = product_df[["seller_id",
+                            "seller_name",
+                            "seller_link",
+                            "seller_image_url"]]
+    seller = seller.rename(columns={"seller_name": "Name",
+                                    "seller_link": "Link",
+                                    "seller_image_url": "ImageURL"})
+    seller = seller.drop_duplicates()
+    
+    # Print out notification
+    print(f"[SUCCESS] Transformed {len(product)} product records")
+    print(f"[SUCCESS] Transformed {len(inventory)} inventory records")
+    print(f"[SUCCESS] Transformed {len(pricing)} pricing records")
+    print(f"[SUCCESS] Transformed {len(brand)} brand records")
+    print(f"[SUCCESS] Transformed {len(seller)} seller records")
+
+    # Serialize the DataFrame to a CSV string
+    # Push the CSV string as an XCom value
+    return 0
+
+def load_specify_product_func(**context):
+    return 0
+
 def extract_feedback_data_func(**context):
     # Retrieve the CSV string from XCom
     csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_data", key='product_data')
@@ -656,17 +736,74 @@ def extract_feedback_data_func(**context):
     context['task_instance'].xcom_push(key='feedback_data', value=feedback_data_csv)
     return 0
 
-def transform_data_func():
-
+def transform_specify_feedback_func(**context):
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_feedback_data", key='feedback_data')
+    # Deserialize the CSV string to a DataFrame
+    feedback_df = pd.read_csv(io.StringIO(csv_data))
+    
+    # TRANSFORM data
+    # user df
+    user = feedback_df[["user_id",
+                           "username",
+                           "joined_time",
+                           "total_reviews",
+                           "total_upvotes"]]
+    user = user.rename(columns={"user_id": "UserID",
+                                      "username": "Name",
+                                      "joined_time": "JoinedDate",
+                                      "total_reviews": "TotalReview",
+                                      "total_upvotes": "TotalUpvote"})
+    user = user.drop_duplicates()
+    
+    # general_feedback df
+    general_feedback = feedback_df[["review_id",
+                                    "OneStarCount",
+                                    "TwoStarCount",
+                                    "ThreeStarCount",
+                                    "FourStarCount",
+                                    "FiveStarCount",
+                                    "reviews_count"]]
+    general_feedback = general_feedback.rename(columns={"review_id": "GeneralFeedbackID",
+                                                        "OneStarCount": "OneStar",
+                                                        "TwoStarCount": "TwoStar",
+                                                        "ThreeStarCount": "ThreeStar",
+                                                        "FourStarCount": "FourStar",
+                                                        "FiveStarCount": "FiveStar",
+                                                        "reviews_count": "ReviewCount"})
+    general_feedback["LastUpdated"] = datetime.now()
+    general_feedback = general_feedback.drop_duplicates()
+    
+    # feedback_detail df
+    feedback_detail = feedback_df[["ProductID",
+                                   "user_id",
+                                   "review_id",
+                                   "review_title",
+                                   "review_content",
+                                   "review_upvote",
+                                   "review_rating",
+                                   "review_created_at"]]
+    feedback_detail = feedback_detail.rename(columns={"review_id": "GeneralFeedbackID",
+                                                      "user_id": "UserID",
+                                                      "review_title": "Title",
+                                                      "review_content": "Content",
+                                                      "review_upvote": "Upvote",
+                                                      "review_rating": "Rating",
+                                                      "review_created_at": "CreatedDate"})
+    feedback_detail["FeedbackDetailID"] = range(1, len(feedback_detail) + 1)
+    feedback_detail = feedback_detail.drop_duplicates()
+    
+    # Print out notification
+    print(f"[SUCCESS] Transformed {len(user)} user records")
+    print(f"[SUCCESS] Transformed {len(general_feedback)} general feedback records")
+    print(f"[SUCCESS] Transformed {len(feedback_detail)} feedback detail records")
+    
+    # Serialize the DataFrame to a CSV string
+    # Push the CSV string as an XCom value
     return 0
 
-def load_data_func():
-    # Daily
-    print("Handle logic code")
+def load_specify_feedback_func(**context):
     return 0
-
-
-
 
 
 
@@ -723,7 +860,9 @@ with DAG(dag_id="ETL",
         python_callable=load_all_product_func
     )
 
-    list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
+    # list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
+    # Testing
+    list_of_brands = ['Asus']
     
     # Complex tasks for each brand
     extract_specify_product_id_tasks = {}
@@ -742,12 +881,28 @@ with DAG(dag_id="ETL",
         )
         extract_specify_product_id_tasks[brand] = extract_specify_product_id_task
 
+
+
         extract_product_data_task = PythonOperator(
             task_id=f'extract_{brand.lower()}_product_data',
             python_callable=extract_product_data_func,
             op_kwargs={'brand': brand}
         )
         extract_product_data_tasks[brand] = extract_product_data_task
+
+        transform_data_product_task = PythonOperator(
+            task_id=f'transform_data_product_{brand.lower()}',
+            python_callable=transform_specify_product_func
+        )
+        transform_data_product_tasks[brand] = transform_data_product_task
+
+        load_data_product_task = PythonOperator(
+            task_id=f'load_data_product_{brand.lower()}',
+            python_callable=load_specify_product_func
+        )
+        load_data_product_tasks[brand] = load_data_product_task
+
+
 
         extract_feedback_data_task = PythonOperator(
             task_id=f'extract_{brand.lower()}_feedback_data',
@@ -756,27 +911,16 @@ with DAG(dag_id="ETL",
         )
         extract_feedback_data_tasks[brand] = extract_feedback_data_task
 
-        transform_data_product_task = PythonOperator(
-            task_id=f'transform_data_product_{brand.lower()}',
-            python_callable=transform_data_func
-        )
-        transform_data_product_tasks[brand] = transform_data_product_task
-
-        load_data_product_task = PythonOperator(
-            task_id=f'load_data_product_{brand.lower()}',
-            python_callable=load_data_func
-        )
-        load_data_product_tasks[brand] = load_data_product_task
 
         transform_data_feedback_task = PythonOperator(
             task_id=f'transform_data_feedback_{brand.lower()}',
-            python_callable=transform_data_func
+            python_callable=transform_specify_feedback_func
         )
         transform_data_feedback_tasks[brand] = transform_data_feedback_task
 
         load_data_feedback_task = PythonOperator(
             task_id=f'load_data_feedback_{brand.lower()}',
-            python_callable=load_data_func
+            python_callable=load_specify_feedback_func
         )
         load_data_feedback_tasks[brand] = load_data_feedback_task
 
