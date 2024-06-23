@@ -641,10 +641,78 @@ def transform_specify_product_func(**context):
     print(f"[SUCCESS] Transformed {len(seller)} seller records")
 
     # Serialize the DataFrame to a CSV string
+    product_csv = product.to_csv(index=False)
+    inventory_csv = inventory.to_csv(index=False)
+    pricing_csv = pricing.to_csv(index=False)
+    brand_csv = brand.to_csv(index=False)
+    seller_csv = seller.to_csv(index=False)
     # Push the CSV string as an XCom value
+    context['task_instance'].xcom_push(key='product_df', value=product_csv)
+    context['task_instance'].xcom_push(key='inventory_df', value=inventory_csv)
+    context['task_instance'].xcom_push(key='pricing_df', value=pricing_csv)
+    context['task_instance'].xcom_push(key='brand_df', value=brand_csv)
+    context['task_instance'].xcom_push(key='seller_df', value=seller_csv)
     return 0
 
 def load_specify_product_func(**context):
+    # Retrieve the CSV string from XCom
+    product_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='product_df')
+    inventory_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='inventory_df')
+    pricing_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='pricing_df')
+    brand_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='brand_df')
+    seller_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='seller_df')
+    
+    # Deserialize the CSV string to a DataFrame
+    product_df = pd.read_csv(io.StringIO(product_df))
+    inventory_df = pd.read_csv(io.StringIO(inventory_df))
+    pricing_df = pd.read_csv(io.StringIO(pricing_df))
+    brand_df = pd.read_csv(io.StringIO(brand_df))
+    seller_df = pd.read_csv(io.StringIO(seller_df))
+    
+    # Convert to Dataframe
+    product_df = pd.DataFrame(product_df)
+    inventory_df = pd.DataFrame(inventory_df)
+    pricing_df = pd.DataFrame(pricing_df)
+    brand_df = pd.DataFrame(brand_df)
+    seller_df = pd.DataFrame(seller_df)
+    
+    # Establish the connection
+    conn = pyodbc.connect(conn_str)
+    cursor = conn.cursor()
+    print("[SUCCESS] Connection is established")
+
+    # For Product
+    table_name = 'Product'
+    check_columns = ['ProductID', 'BrandID', 'SellerID', 'SubCategoryID', 'Name', 'URL', 'ImageURL', 'CreatedDate', 'QuantitySold']
+    result = upsert_data(table_name, product_df, check_columns, conn)
+    print(result)
+    
+    # For Inventory
+    table_name = 'Inventory'
+    check_columns = ['InventoryID', 'ProductID', 'Status', 'Type', 'LastUpdated']
+    result = upsert_data(table_name, inventory_df, check_columns, conn)
+    print(result)
+    
+    # For Pricing 
+    table_name = 'Pricing'
+    check_columns = ['PricingID', 'ProductID', 'CurrentPrice', 'OriginalPrice', 'LastUpdated']
+    result = upsert_data(table_name, pricing_df, check_columns, conn)
+    print(result)
+    
+    # For Brand
+    table_name = 'Brand'
+    check_columns = ['BrandID', 'Name', 'Slug']
+    result = upsert_data(table_name, brand_df, check_columns, conn)
+    print(result)
+    
+    # For Seller
+    table_name = 'Seller'
+    check_columns = ['SellerID', 'Name', 'Link', 'ImageURL']
+    result = upsert_data(table_name, seller_df, check_columns, conn)
+    print(result)
+    
+    cursor.close()
+    conn.close()
     return 0
 
 def extract_feedback_data_func(**context):
@@ -799,10 +867,56 @@ def transform_specify_feedback_func(**context):
     print(f"[SUCCESS] Transformed {len(feedback_detail)} feedback detail records")
     
     # Serialize the DataFrame to a CSV string
+    user_csv = user.to_csv(index=False)
+    general_feedback_csv = general_feedback.to_csv(index=False)
+    feedback_detail_csv = feedback_detail.to_csv(index=False)
     # Push the CSV string as an XCom value
+    context['task_instance'].xcom_push(key='user_df', value=user_csv)
+    context['task_instance'].xcom_push(key='general_feedback_df', value=general_feedback_csv)
+    context['task_instance'].xcom_push(key='feedback_detail_df', value=feedback_detail_csv)
     return 0
 
 def load_specify_feedback_func(**context):
+    # Retrieve the CSV string from XCom
+    user_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_feedback_{context['brand'].lower()}", key='user_df')
+    general_feedback_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_feedback_{context['brand'].lower()}", key='general_feedback_df')
+    feedback_detail_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_feedback_{context['brand'].lower()}", key='feedback_detail_df')
+    
+    # Deserialize the CSV string to a DataFrame
+    user_df = pd.read_csv(io.StringIO(user_df))
+    general_feedback_df = pd.read_csv(io.StringIO(general_feedback_df))
+    feedback_detail_df = pd.read_csv(io.StringIO(feedback_detail_df))
+    
+    # Convert to Dataframe
+    user_df = pd.DataFrame(user_df)
+    general_feedback_df = pd.DataFrame(general_feedback_df)
+    feedback_detail_df = pd.DataFrame(feedback_detail_df)
+    
+    # Establish the connection
+    conn = pyodbc.connect(conn_str)
+    cursor = conn.cursor()
+    print("[SUCCESS] Connection is established")
+    
+    # For User
+    table_name = 'User'
+    check_columns = ['UserID', 'Name', 'JoinedDate', 'TotalReview', 'TotalUpvote']
+    result = upsert_data(table_name, user_df, check_columns, conn)
+    print(result)
+    
+    # For GeneralFeedback
+    table_name = 'GeneralFeedback'
+    check_columns = ['GeneralFeedbackID', 'OneStar', 'TwoStar', 'ThreeStar', 'FourStar', 'FiveStar', 'ReviewCount', 'LastUpdated']
+    result = upsert_data(table_name, general_feedback_df, check_columns, conn)
+    print(result)
+    
+    # For FeedbackDetail
+    table_name = 'FeedbackDetail'
+    check_columns = ['FeedbackDetailID', 'GeneralFeedbackID', 'ProductID', 'UserID', 'Title', 'Content', 'Upvote', 'Rating', 'CreatedDate']
+    result = upsert_data(table_name, feedback_detail_df, check_columns, conn)
+    print(result)
+    
+    cursor.close()
+    conn.close()
     return 0
 
 
