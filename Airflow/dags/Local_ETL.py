@@ -210,7 +210,7 @@ def extract_sub_category_id_func(**context):
         context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
     else:
         print("[NOTICE] Extracting sub-category IDs from Local")
-                
+        # Config the path
         group_path = os.path.join(base_dir, 'category', 'Group.csv')
         master_category_path = os.path.join(base_dir, 'category', 'MasterCategory.csv')
         category_path = os.path.join(base_dir, 'category', 'Category.csv')
@@ -367,46 +367,43 @@ def load_sub_category_func(**context):
     return 0
 
 def extract_all_product_id_func(**context):
-#     # Retrieve the CSV string from XCom
-#     csv_data = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='sub_category_df')
-#     # Deserialize the CSV string to a DataFrame
-#     sub_category_df = pd.read_csv(io.StringIO(csv_data))
-#     # Convert to Dataframe
-#     sub_category_df = pd.DataFrame(sub_category_df)
-#     print(f"[SUCCESS] Extracted {len(sub_category_df)} sub-categories records")
-#     if day == 1 or day == 15:
-#         product_ids = []
-#         for sub_category_id in sub_category_df["SubCategoryID"]:
-#             product_data = retrieve_product_ids(sub_category_id)
-#             product_ids.extend(product_data)
-#         reference_product = pd.DataFrame(product_ids)
-#         # Create ReferenceID by combining SubCategoryID and ProductID
-#         reference_product["ReferenceID"] = reference_product["sub_category_id"].astype(str) + reference_product["product_id"].astype(str)
-#         # Modify the dataframe
-#         reference_product = reference_product[["ReferenceID", "sub_category_id", "product_id", "brand_name"]]
-#         # Rename columns
-#         reference_product.columns = ["ReferenceID", "SubCategoryID", "ProductID", "BrandName"]
-#         # Print out notification
-#         print(f"[SUCCESS] Extracted {len(reference_product)} reference product id records")
-#         # Serialize the DataFrames to CSV strings
-#         reference_product_csv = reference_product.to_csv(index=False)
-#         # Push the CSV strings as XCom values
-#         context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
-#     else:
-#         print("[NOTICE] Extracting reference product IDs from Azure")
-#         # Establish the connection
-#         conn = pyodbc.connect(conn_str)
-#         print("[SUCCESS] Connection is established")
-#         # Execute the queries
-#         reference_product = pd.read_sql("SELECT * FROM ReferenceProduct", conn)
-#         # Cast to df
-#         reference_product = pd.DataFrame(reference_product)
-#         # Print out notification
-#         print(f"[SUCCESS] Extracted {len(reference_product)} reference product id records")
-#         # Serialize the DataFrames to CSV strings
-#         reference_product_csv = reference_product.to_csv(index=False)
-#         # Push the CSV strings as XCom values
-#         context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='sub_category_df')
+    # Deserialize the CSV string to a DataFrame
+    sub_category_df = pd.read_csv(io.StringIO(csv_data))
+    # Convert to Dataframe
+    sub_category_df = pd.DataFrame(sub_category_df)
+    print(f"[SUCCESS] Extracted {len(sub_category_df)} sub-categories records")
+    if day == 1 or day == 15:
+        product_ids = []
+        for sub_category_id in sub_category_df["SubCategoryID"]:
+            product_data = retrieve_product_ids(sub_category_id)
+            product_ids.extend(product_data)
+        reference_product = pd.DataFrame(product_ids)
+        # Create ReferenceID by combining SubCategoryID and ProductID
+        reference_product["ReferenceID"] = reference_product["sub_category_id"].astype(str) + reference_product["product_id"].astype(str)
+        # Modify the dataframe
+        reference_product = reference_product[["ReferenceID", "sub_category_id", "product_id", "brand_name"]]
+        # Rename columns
+        reference_product.columns = ["ReferenceID", "SubCategoryID", "ProductID", "BrandName"]
+        # Print out notification
+        print(f"[SUCCESS] Extracted {len(reference_product)} reference product id records")
+        # Serialize the DataFrames to CSV strings
+        reference_product_csv = reference_product.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
+    else:
+        print("[NOTICE] Extracting reference product IDs from Local")
+        # Config the path
+        reference_product_path = os.path.join(base_dir, 'product', 'ReferenceProduct.csv')
+        # Cast to df
+        reference_product = pd.DataFrame(pd.read_csv(reference_product_path))
+        # Print out notification
+        print(f"[SUCCESS] Extracted {len(reference_product)} reference product id records")
+        # Serialize the DataFrames to CSV strings
+        reference_product_csv = reference_product.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
     return 0
 
 def transform_all_product_func(**context):
