@@ -27,7 +27,7 @@ except Exception as e:
 from datetime import datetime, timedelta, date  
 from dependencies import *
 # from configs.config_manager import get_config
-# from function import upsert_data
+from Local_function import upsert_data
 
 # Set up header
 HEADERS = {
@@ -211,10 +211,10 @@ def extract_sub_category_id_func(**context):
     else:
         print("[NOTICE] Extracting sub-category IDs from Local")
                 
-        group_path = os.path.join(base_dir, 'category', 'group.csv')
-        master_category_path = os.path.join(base_dir, 'category', 'master_category.csv')
-        category_path = os.path.join(base_dir, 'category', 'category.csv')
-        sub_category_path = os.path.join(base_dir, 'category', 'sub_category.csv')
+        group_path = os.path.join(base_dir, 'category', 'Group.csv')
+        master_category_path = os.path.join(base_dir, 'category', 'MasterCategory.csv')
+        category_path = os.path.join(base_dir, 'category', 'Category.csv')
+        sub_category_path = os.path.join(base_dir, 'category', 'SubCategory.csv')
         
         # Cast to df
         group_df = pd.DataFrame(pd.read_csv(group_path))
@@ -307,67 +307,63 @@ def transform_sub_category_func(**context):
     return None
 
 def load_sub_category_func(**context):
-#     # Retrieve the CSV string from XCom
-#     group_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='group_df')
-#     master_category_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='master_category_df')
-#     category_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='category_df')
-#     sub_category_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='sub_category_df')
+    # Retrieve the CSV string from XCom
+    group_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='group_df')
+    master_category_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='master_category_df')
+    category_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='category_df')
+    sub_category_df = context['task_instance'].xcom_pull(task_ids='transform_data_sub_category', key='sub_category_df')
     
-#     # Deserialize the CSV string to a DataFrame
-#     group_df = pd.read_csv(io.StringIO(group_df))
-#     master_category_df = pd.read_csv(io.StringIO(master_category_df))
-#     category_df = pd.read_csv(io.StringIO(category_df))
-#     sub_category_df = pd.read_csv(io.StringIO(sub_category_df))
+    # Deserialize the CSV string to a DataFrame
+    group_df = pd.read_csv(io.StringIO(group_df))
+    master_category_df = pd.read_csv(io.StringIO(master_category_df))
+    category_df = pd.read_csv(io.StringIO(category_df))
+    sub_category_df = pd.read_csv(io.StringIO(sub_category_df))
     
-#     # Convert to Dataframe
-#     group_df = pd.DataFrame(group_df)
-#     master_category_df = pd.DataFrame(master_category_df)
-#     category_df = pd.DataFrame(category_df)
-#     sub_category_df = pd.DataFrame(sub_category_df)
+    # Convert to Dataframe
+    group_df = pd.DataFrame(group_df)
+    master_category_df = pd.DataFrame(master_category_df)
+    category_df = pd.DataFrame(category_df)
+    sub_category_df = pd.DataFrame(sub_category_df)
 
-#     if day == 1:
-#         # Establish the connection
-#         conn = pyodbc.connect(conn_str)
-#         cursor = conn.cursor()
-#         print("[SUCCESS] Connection is established")
+    if day == 24:
+        # Config the warehouse folder
+        warehouse = 'category'
 
-#         # For Group
-#         group_df
-#         table_name = 'Group'
-#         check_columns = ['GroupID', 'Name']
-#         result = upsert_data(table_name, group_df, check_columns, conn)
-#         print(result)
+        # For Group
+        group_df
+        database = 'Group.csv'
+        check_columns = ['GroupID']
+        result = upsert_data(base_dir, warehouse, database, group_df, check_columns)
+        print(result)
 
-#         # For MasterCategory
-#         master_category_df
-#         table_name = 'MasterCategory'
-#         check_columns = ['MasterCategoryID', 'GroupID', 'Name']
-#         result = upsert_data(table_name, master_category_df, check_columns, conn)
-#         print(result)
+        # For MasterCategory
+        master_category_df
+        database = 'MasterCategory.csv'
+        check_columns = ['MasterCategoryID']
+        result = upsert_data(base_dir, warehouse, database, master_category_df, check_columns)
+        print(result)
 
-#         # For Category
-#         category_df
-#         table_name = 'Category'
-#         check_columns = ['CategoryID', 'MasterCategoryID', 'Name', 'isCategory']
-#         result = upsert_data(table_name, category_df, check_columns, conn)
-#         print(result)
+        # For Category
+        category_df
+        database = 'Category.csv'
+        check_columns = ['CategoryID']
+        result = upsert_data(base_dir, warehouse, database, category_df, check_columns)
+        print(result)
 
-#         # For SubCategory
-#         sub_category_df
-#         table_name = 'SubCategory'
-#         check_columns = ['SubCategoryID', 'CategoryID', 'Name', 'isSubCategory']
-#         result = upsert_data(table_name, sub_category_df, check_columns, conn)
-#         print(result)
+        # For SubCategory
+        sub_category_df
+        database = 'SubCategory.csv'
+        check_columns = ['SubCategoryID']
+        result = upsert_data(base_dir, warehouse, database, sub_category_df, check_columns)
+        print(result)
 
-#         cursor.close()
-#         conn.close()
-#     else:
-#         print("[NOTICE] Skipping loading for group, master category, category, and sub-category")
-#         # Print out notification
-#         print(f"[SUCCESS] Loaded {len(group_df)} group records")
-#         print(f"[SUCCESS] Loaded {len(master_category_df)} master categories records")
-#         print(f"[SUCCESS] Loaded {len(category_df)} categories records")
-#         print(f"[SUCCESS] Loaded {len(sub_category_df)} sub-categories records")
+    else:
+        print("[NOTICE] Skipping loading for group, master category, category, and sub-category")
+        # Print out notification
+        print(f"[SUCCESS] Loaded {len(group_df)} group records")
+        print(f"[SUCCESS] Loaded {len(master_category_df)} master categories records")
+        print(f"[SUCCESS] Loaded {len(category_df)} categories records")
+        print(f"[SUCCESS] Loaded {len(sub_category_df)} sub-categories records")
     return 0
 
 def extract_all_product_id_func(**context):
@@ -459,9 +455,9 @@ def load_all_product_func(**context):
 
 #         # For ReferenceProduct
 #         reference_product_df
-#         table_name = 'ReferenceProduct'
+#         database = 'ReferenceProduct'
 #         check_columns = ['ReferenceID', 'SubCategoryID', 'ProductID', 'BrandName']
-#         result = upsert_data(table_name, reference_product_df, check_columns, conn)
+#         result = upsert_data(database, reference_product_df, check_columns, conn)
 #         print(result)
 
 #         cursor.close()
@@ -658,33 +654,33 @@ def load_specify_product_func(**context):
 #     print("[SUCCESS] Connection is established")
 
 #     # For Product
-#     table_name = 'Product'
+#     database = 'Product'
 #     check_columns = ['ProductID', 'BrandID', 'SellerID', 'SubCategoryID', 'Name', 'URL', 'ImageURL', 'CreatedDate', 'QuantitySold']
-#     result = upsert_data(table_name, product_df, check_columns, conn)
+#     result = upsert_data(database, product_df, check_columns, conn)
 #     print(result)
     
 #     # For Inventory
-#     table_name = 'Inventory'
+#     database = 'Inventory'
 #     check_columns = ['InventoryID', 'ProductID', 'Status', 'Type', 'LastUpdated']
-#     result = upsert_data(table_name, inventory_df, check_columns, conn)
+#     result = upsert_data(database, inventory_df, check_columns, conn)
 #     print(result)
     
 #     # For Pricing 
-#     table_name = 'Pricing'
+#     database = 'Pricing'
 #     check_columns = ['PricingID', 'ProductID', 'CurrentPrice', 'OriginalPrice', 'LastUpdated']
-#     result = upsert_data(table_name, pricing_df, check_columns, conn)
+#     result = upsert_data(database, pricing_df, check_columns, conn)
 #     print(result)
     
 #     # For Brand
-#     table_name = 'Brand'
+#     database = 'Brand'
 #     check_columns = ['BrandID', 'Name', 'Slug']
-#     result = upsert_data(table_name, brand_df, check_columns, conn)
+#     result = upsert_data(database, brand_df, check_columns, conn)
 #     print(result)
     
 #     # For Seller
-#     table_name = 'Seller'
+#     database = 'Seller'
 #     check_columns = ['SellerID', 'Name', 'Link', 'ImageURL']
-#     result = upsert_data(table_name, seller_df, check_columns, conn)
+#     result = upsert_data(database, seller_df, check_columns, conn)
 #     print(result)
     
 #     cursor.close()
@@ -874,21 +870,21 @@ def load_specify_feedback_func(**context):
 #     print("[SUCCESS] Connection is established")
     
 #     # For User
-#     table_name = 'User'
+#     database = 'User'
 #     check_columns = ['UserID', 'Name', 'JoinedDate', 'TotalReview', 'TotalUpvote']
-#     result = upsert_data(table_name, user_df, check_columns, conn)
+#     result = upsert_data(database, user_df, check_columns, conn)
 #     print(result)
     
 #     # For GeneralFeedback
-#     table_name = 'GeneralFeedback'
+#     database = 'GeneralFeedback'
 #     check_columns = ['GeneralFeedbackID', 'OneStar', 'TwoStar', 'ThreeStar', 'FourStar', 'FiveStar', 'ReviewCount', 'LastUpdated']
-#     result = upsert_data(table_name, general_feedback_df, check_columns, conn)
+#     result = upsert_data(database, general_feedback_df, check_columns, conn)
 #     print(result)
     
 #     # For FeedbackDetail
-#     table_name = 'FeedbackDetail'
+#     database = 'FeedbackDetail'
 #     check_columns = ['FeedbackDetailID', 'GeneralFeedbackID', 'ProductID', 'UserID', 'Title', 'Content', 'Upvote', 'Rating', 'CreatedDate']
-#     result = upsert_data(table_name, feedback_detail_df, check_columns, conn)
+#     result = upsert_data(database, feedback_detail_df, check_columns, conn)
 #     print(result)
     
 #     cursor.close()
