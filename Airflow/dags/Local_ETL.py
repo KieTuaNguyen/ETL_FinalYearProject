@@ -239,7 +239,6 @@ def extract_sub_category_id_func(**context):
         context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
         context['task_instance'].xcom_push(key='category_df', value=category_csv)
         context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
-    return None
 
 def transform_sub_category_func(**context):
     # Retrieve the CSV string from XCom
@@ -304,7 +303,6 @@ def transform_sub_category_func(**context):
         context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
         context['task_instance'].xcom_push(key='category_df', value=category_csv)
         context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
-    return None
 
 def load_sub_category_func(**context):
     # Retrieve the CSV string from XCom
@@ -325,7 +323,7 @@ def load_sub_category_func(**context):
     category_df = pd.DataFrame(category_df)
     sub_category_df = pd.DataFrame(sub_category_df)
 
-    if day == 24:
+    if day == 1:
         # Config the warehouse folder
         warehouse = 'category'
 
@@ -364,7 +362,6 @@ def load_sub_category_func(**context):
         print(f"[SUCCESS] Loaded {len(master_category_df)} master categories records")
         print(f"[SUCCESS] Loaded {len(category_df)} categories records")
         print(f"[SUCCESS] Loaded {len(sub_category_df)} sub-categories records")
-    return 0
 
 def extract_all_product_id_func(**context):
     # Retrieve the CSV string from XCom
@@ -404,38 +401,36 @@ def extract_all_product_id_func(**context):
         reference_product_csv = reference_product.to_csv(index=False)
         # Push the CSV strings as XCom values
         context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
-    return 0
 
 def transform_all_product_func(**context):
-#     # Retrieve the CSV string from XCom
-#     reference_product_df = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_df')
-#     # Deserialize the CSV string to a DataFrame
-#     reference_product_df = pd.read_csv(io.StringIO(reference_product_df))
-#     # Convert to Dataframe
-#     reference_product_df = pd.DataFrame(reference_product_df)
+    # Retrieve the CSV string from XCom
+    reference_product_df = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_df')
+    # Deserialize the CSV string to a DataFrame
+    reference_product_df = pd.read_csv(io.StringIO(reference_product_df))
+    # Convert to Dataframe
+    reference_product_df = pd.DataFrame(reference_product_df)
     
-#     if day == 1 or day == 15:
-#         # Drop duplicates
-#         reference_product_df = reference_product_df.drop_duplicates()
-#         # Cast to suitable datatype
-#         reference_product_df["ReferenceID"] = reference_product_df["ReferenceID"].astype(int)
-#         reference_product_df["SubCategoryID"] = reference_product_df["SubCategoryID"].astype(int)
-#         reference_product_df["ProductID"] = reference_product_df["ProductID"].astype(int)
-#         # Print out notification
-#         print(f"[SUCCESS] Transformed {len(reference_product_df)} reference product records")
-#         # Serialize the DataFrames to CSV strings
-#         reference_product_csv = reference_product_df.to_csv(index=False)
-#         # Push the CSV strings as XCom values
-#         context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
-#     else:
-#         print("[NOTICE] Skipping transformation for reference product")
-#         # Print out notification
-#         print(f"[SUCCESS] Transformed {len(reference_product_df)} reference product records")
-#         # Serialize the DataFrames to CSV strings
-#         reference_product_csv = reference_product_df.to_csv(index=False)
-#         # Push the CSV strings as XCom values
-#         context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
-    return 0
+    if day == 1 or day == 15:
+        # Drop duplicates
+        reference_product_df = reference_product_df.drop_duplicates()
+        # Cast to suitable datatype
+        reference_product_df["ReferenceID"] = reference_product_df["ReferenceID"].astype(int)
+        reference_product_df["SubCategoryID"] = reference_product_df["SubCategoryID"].astype(int)
+        reference_product_df["ProductID"] = reference_product_df["ProductID"].astype(int)
+        # Print out notification
+        print(f"[SUCCESS] Transformed {len(reference_product_df)} reference product records")
+        # Serialize the DataFrames to CSV strings
+        reference_product_csv = reference_product_df.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
+    else:
+        print("[NOTICE] Skipping transformation for reference product")
+        # Print out notification
+        print(f"[SUCCESS] Transformed {len(reference_product_df)} reference product records")
+        # Serialize the DataFrames to CSV strings
+        reference_product_csv = reference_product_df.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
 
 def load_all_product_func(**context):
 #     # Retrieve the CSV string from XCom
