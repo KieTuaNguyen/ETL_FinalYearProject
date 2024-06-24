@@ -26,8 +26,8 @@ except Exception as e:
     
 from datetime import datetime, timedelta, date  
 from dependencies import *
-from configs.config_manager import get_config
-from function import upsert_data
+# from configs.config_manager import get_config
+# from function import upsert_data
 
 # Set up header
 HEADERS = {
@@ -242,69 +242,69 @@ def extract_sub_category_id_func(**context):
     return None
 
 def transform_sub_category_func(**context):
-#     # Retrieve the CSV string from XCom
-#     group_df = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='group_df')
-#     master_category_df = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='master_category_df')
-#     category_df = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='category_df')
-#     sub_category_df = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='sub_category_df')
+    # Retrieve the CSV string from XCom
+    group_df = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='group_df')
+    master_category_df = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='master_category_df')
+    category_df = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='category_df')
+    sub_category_df = context['task_instance'].xcom_pull(task_ids='extract_sub_category_id', key='sub_category_df')
     
-#     # Deserialize the CSV string to a DataFrame
-#     group_df = pd.read_csv(io.StringIO(group_df))
-#     master_category_df = pd.read_csv(io.StringIO(master_category_df))
-#     category_df = pd.read_csv(io.StringIO(category_df))
-#     sub_category_df = pd.read_csv(io.StringIO(sub_category_df))
+    # Deserialize the CSV string to a DataFrame
+    group_df = pd.read_csv(io.StringIO(group_df))
+    master_category_df = pd.read_csv(io.StringIO(master_category_df))
+    category_df = pd.read_csv(io.StringIO(category_df))
+    sub_category_df = pd.read_csv(io.StringIO(sub_category_df))
     
-#     # Convert to Dataframe
-#     group_df = pd.DataFrame(group_df)
-#     master_category_df = pd.DataFrame(master_category_df)
-#     category_df = pd.DataFrame(category_df)
-#     sub_category_df = pd.DataFrame(sub_category_df)
+    # Convert to Dataframe
+    group_df = pd.DataFrame(group_df)
+    master_category_df = pd.DataFrame(master_category_df)
+    category_df = pd.DataFrame(category_df)
+    sub_category_df = pd.DataFrame(sub_category_df)
 
-#     if day == 1:
-#         # Drop duplicates
-#         group_df = group_df.drop_duplicates()
-#         master_category_df = master_category_df.drop_duplicates()
-#         category_df = category_df.drop_duplicates()
-#         sub_category_df = sub_category_df.drop_duplicates()
-#         # Cast to suitable datatype
-#         group_df["GroupID"] = group_df["GroupID"].astype(int)
-#         master_category_df["MasterCategoryID"] = master_category_df["MasterCategoryID"].astype(int)
-#         category_df["CategoryID"] = category_df["CategoryID"].astype(int)
-#         sub_category_df["SubCategoryID"] = sub_category_df["SubCategoryID"].astype(int)
+    if day == 1:
+        # Drop duplicates
+        group_df = group_df.drop_duplicates()
+        master_category_df = master_category_df.drop_duplicates()
+        category_df = category_df.drop_duplicates()
+        sub_category_df = sub_category_df.drop_duplicates()
+        # Cast to suitable datatype
+        group_df["GroupID"] = group_df["GroupID"].astype(int)
+        master_category_df["MasterCategoryID"] = master_category_df["MasterCategoryID"].astype(int)
+        category_df["CategoryID"] = category_df["CategoryID"].astype(int)
+        sub_category_df["SubCategoryID"] = sub_category_df["SubCategoryID"].astype(int)
         
-#         # Print out notification
-#         print(f"[SUCCESS] Transformed {len(group_df)} group records")
-#         print(f"[SUCCESS] Transformed {len(master_category_df)} master categories records")
-#         print(f"[SUCCESS] Transformed {len(category_df)} categories records")
-#         print(f"[SUCCESS] Transformed {len(sub_category_df)} sub-categories records")
-#         # Serialize the DataFrames to CSV strings
-#         group_csv = group_df.to_csv(index=False)
-#         master_category_csv = master_category_df.to_csv(index=False)
-#         category_csv = category_df.to_csv(index=False)
-#         sub_category_csv = sub_category_df.to_csv(index=False)
-#         # Push the CSV strings as XCom values
-#         context['task_instance'].xcom_push(key='group_df', value=group_csv)
-#         context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
-#         context['task_instance'].xcom_push(key='category_df', value=category_csv)
-#         context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
-#     else:
-#         print("[NOTICE] Skipping transformation for group, master category, category, and sub-category")
-#         # Print out notification
-#         print(f"[SUCCESS] Transformed {len(group_df)} group records")
-#         print(f"[SUCCESS] Transformed {len(master_category_df)} master categories records")
-#         print(f"[SUCCESS] Transformed {len(category_df)} categories records")
-#         print(f"[SUCCESS] Transformed {len(sub_category_df)} sub-categories records")
-#         # Serialize the DataFrames to CSV strings
-#         group_csv = group_df.to_csv(index=False)
-#         master_category_csv = master_category_df.to_csv(index=False)
-#         category_csv = category_df.to_csv(index=False)
-#         sub_category_csv = sub_category_df.to_csv(index=False)
-#         # Push the CSV strings as XCom values
-#         context['task_instance'].xcom_push(key='group_df', value=group_csv)
-#         context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
-#         context['task_instance'].xcom_push(key='category_df', value=category_csv)
-#         context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
-    return 0
+        # Print out notification
+        print(f"[SUCCESS] Transformed {len(group_df)} group records")
+        print(f"[SUCCESS] Transformed {len(master_category_df)} master categories records")
+        print(f"[SUCCESS] Transformed {len(category_df)} categories records")
+        print(f"[SUCCESS] Transformed {len(sub_category_df)} sub-categories records")
+        # Serialize the DataFrames to CSV strings
+        group_csv = group_df.to_csv(index=False)
+        master_category_csv = master_category_df.to_csv(index=False)
+        category_csv = category_df.to_csv(index=False)
+        sub_category_csv = sub_category_df.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='group_df', value=group_csv)
+        context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
+        context['task_instance'].xcom_push(key='category_df', value=category_csv)
+        context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
+    else:
+        print("[NOTICE] Skipping transformation for group, master category, category, and sub-category")
+        # Print out notification
+        print(f"[SUCCESS] Transformed {len(group_df)} group records")
+        print(f"[SUCCESS] Transformed {len(master_category_df)} master categories records")
+        print(f"[SUCCESS] Transformed {len(category_df)} categories records")
+        print(f"[SUCCESS] Transformed {len(sub_category_df)} sub-categories records")
+        # Serialize the DataFrames to CSV strings
+        group_csv = group_df.to_csv(index=False)
+        master_category_csv = master_category_df.to_csv(index=False)
+        category_csv = category_df.to_csv(index=False)
+        sub_category_csv = sub_category_df.to_csv(index=False)
+        # Push the CSV strings as XCom values
+        context['task_instance'].xcom_push(key='group_df', value=group_csv)
+        context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
+        context['task_instance'].xcom_push(key='category_df', value=category_csv)
+        context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
+    return None
 
 def load_sub_category_func(**context):
 #     # Retrieve the CSV string from XCom
