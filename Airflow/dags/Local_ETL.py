@@ -433,32 +433,31 @@ def transform_all_product_func(**context):
         context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
 
 def load_all_product_func(**context):
-#     # Retrieve the CSV string from XCom
-#     reference_product_df = context['task_instance'].xcom_pull(task_ids='transform_data_all_product', key='reference_product_df')
-#     # Deserialize the CSV string to a DataFrame
-#     reference_product_df = pd.read_csv(io.StringIO(reference_product_df))
-#     # Convert to Dataframe
-#     reference_product_df = pd.DataFrame(reference_product_df)
-#     if day == 1 or day == 15:
-#         # Establish the connection
-#         conn = pyodbc.connect(conn_str)
-#         cursor = conn.cursor()
-#         print("[SUCCESS] Connection is established")
-
-#         # For ReferenceProduct
-#         reference_product_df
-#         database = 'ReferenceProduct'
-#         check_columns = ['ReferenceID', 'SubCategoryID', 'ProductID', 'BrandName']
-#         result = upsert_data(database, reference_product_df, check_columns, conn)
-#         print(result)
-
-#         cursor.close()
-#         conn.close()
-#     else:
-#         print("[NOTICE] Skipping loading for reference products")
-#         # Print out notification
-#         print(f"[SUCCESS] Loaded {len(reference_product_df)} reference product records")
-    return 0
+    # Retrieve the CSV string from XCom
+    reference_product_df = context['task_instance'].xcom_pull(task_ids='transform_data_all_product', key='reference_product_df')
+    # Deserialize the CSV string to a DataFrame
+    reference_product_df = pd.read_csv(io.StringIO(reference_product_df))
+    # Convert to Dataframe
+    reference_product_df = pd.DataFrame(reference_product_df)
+    if day == 1 or day == 15:
+        # Config the warehouse folder
+        warehouse = 'product'
+        # For ReferenceProduct
+        reference_product_df
+        database = 'ReferenceProduct'
+        # Config the type of file
+        if not database.endswith('.csv'):
+            database += '.csv'
+        # Construct the full file path
+        full_path = os.path.join(base_dir, warehouse, database)
+        # Write updated data back to CSV
+        reference_product_df.to_csv(full_path, index=False)
+        print(f"[CREATE NEW] The file '{full_path}' created.")
+        return f"[INSERT] There are {len(reference_product_df)} records inserted."
+    else:
+        print("[NOTICE] Skipping loading for reference products")
+        # Print out notification
+        print(f"[SUCCESS] Loaded {len(reference_product_df)} reference product records")
 
 def extract_specify_product_id_func(brands, **context):
 #     # Retrieve the CSV string from XCom
