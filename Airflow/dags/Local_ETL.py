@@ -460,22 +460,21 @@ def load_all_product_func(**context):
         print(f"[SUCCESS] Loaded {len(reference_product_df)} reference product records")
 
 def extract_specify_product_id_func(brands, **context):
-#     # Retrieve the CSV string from XCom
-#     csv_data = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_df')
-#     # Deserialize the CSV string to a DataFrame
-#     specify_product_ids = pd.read_csv(io.StringIO(csv_data))
-#     # Convert brands to a list if it's a single brand
-#     if isinstance(brands, str):
-#         brands = [brands]
-#     # Filter the DataFrame based on the specified brands
-#     specify_product_ids = specify_product_ids[specify_product_ids['BrandName'].isin(brands)]
-#     # Print out notification
-#     print(f"[SUCCESS] Extracted {len(specify_product_ids)} product ids for {brands}")
-#     # Serialize the filtered DataFrame to a CSV string
-#     specify_product_ids_csv = specify_product_ids.to_csv(index=False)
-#     # Push the CSV string as an XCom value
-#     context['task_instance'].xcom_push(key='specify_product_ids', value=specify_product_ids_csv) 
-    return 0
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_df')
+    # Deserialize the CSV string to a DataFrame
+    specify_product_ids = pd.read_csv(io.StringIO(csv_data))
+    # Convert brands to a list if it's a single brand
+    if isinstance(brands, str):
+        brands = [brands]
+    # Filter the DataFrame based on the specified brands
+    specify_product_ids = specify_product_ids[specify_product_ids['BrandName'].isin(brands)]
+    # Print out notification
+    print(f"[SUCCESS] Extracted {len(specify_product_ids)} product ids for {brands}")
+    # Serialize the filtered DataFrame to a CSV string
+    specify_product_ids_csv = specify_product_ids.to_csv(index=False)
+    # Push the CSV string as an XCom value
+    context['task_instance'].xcom_push(key='specify_product_ids', value=specify_product_ids_csv) 
 
 def extract_product_data_func(**context):
 #     # Retrieve the CSV string from XCom
