@@ -528,92 +528,91 @@ def extract_product_data_func(**context):
     # Push the CSV string as an XCom value
     context['task_instance'].xcom_push(key='product_data', value=product_data_csv)
 
-def transform_specify_product_func(**context):
-#     # Retrieve the CSV string from XCom
-#     csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_data", key='product_data')
-#     # Deserialize the CSV string to a DataFrame
-#     product_df = pd.read_csv(io.StringIO(csv_data))
+def transform_specify_product_func(brand, **context):
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{brand.lower()}_product_data", key='product_data')
+    # Deserialize the CSV string to a DataFrame
+    product_df = pd.read_csv(io.StringIO(csv_data))
     
-#     # TRANSFORM data
-#     # product df
-#     product = product_df[["product_id",
-#                              "brand_id",
-#                              "seller_id",
-#                              "sub_category_id",
-#                              "product_name",
-#                              "product_url",
-#                              "product_image_url",
-#                              "created_date",
-#                              "quantity_sold"]]
-#     product = product.rename(columns={"product_id": "ProductID",
-#                                             "brand_id": "BrandID",
-#                                             "seller_id": "SellerID",
-#                                             "sub_category_id": "SubCategoryID",
-#                                             "product_name": "Name",
-#                                             "product_url": "URL",
-#                                             "product_image_url": "ImageURL",
-#                                             "created_date": "CreatedDate",
-#                                             "quantity_sold": "QuantitySold"})
-#     product = product.drop_duplicates()
+    # TRANSFORM data
+    # product df
+    product = product_df[["product_id",
+                             "brand_id",
+                             "seller_id",
+                             "sub_category_id",
+                             "product_name",
+                             "product_url",
+                             "product_image_url",
+                             "created_date",
+                             "quantity_sold"]]
+    product = product.rename(columns={"product_id": "ProductID",
+                                            "brand_id": "BrandID",
+                                            "seller_id": "SellerID",
+                                            "sub_category_id": "SubCategoryID",
+                                            "product_name": "Name",
+                                            "product_url": "URL",
+                                            "product_image_url": "ImageURL",
+                                            "created_date": "CreatedDate",
+                                            "quantity_sold": "QuantitySold"})
+    product = product.drop_duplicates()
     
-#     # inventory df
-#     inventory = pd.DataFrame({
-#         "InventoryID": range(1, len(product_df) + 1),
-#         "ProductID": product_df["product_id"],
-#         "Status": product_df["inventory_status"],
-#         "Type": product_df["inventory_type"],
-#         "LastUpdated": datetime.now()
-#     })
-#     inventory = inventory.drop_duplicates()
+    # inventory df
+    inventory = pd.DataFrame({
+        "InventoryID": range(1, len(product_df) + 1),
+        "ProductID": product_df["product_id"],
+        "Status": product_df["inventory_status"],
+        "Type": product_df["inventory_type"],
+        "LastUpdated": datetime.now()
+    })
+    inventory = inventory.drop_duplicates()
 
-#     # pricing df
-#     pricing = pd.DataFrame({
-#         "PricingID": range(1, len(product_df) + 1),
-#         "ProductID": product_df["product_id"],
-#         "CurrentPrice": product_df["pricing_current"],
-#         "OriginalPrice": product_df["pricing_original"],
-#         "LastUpdated": datetime.now()
-#     })
-#     pricing = pricing.drop_duplicates()
+    # pricing df
+    pricing = pd.DataFrame({
+        "PricingID": range(1, len(product_df) + 1),
+        "ProductID": product_df["product_id"],
+        "CurrentPrice": product_df["pricing_current"],
+        "OriginalPrice": product_df["pricing_original"],
+        "LastUpdated": datetime.now()
+    })
+    pricing = pricing.drop_duplicates()
 
-#     # brand df
-#     brand = product_df[["brand_id",
-#                            "brand_name",
-#                            "brand_slug"]]
-#     brand = brand.rename(columns={"brand_name": "Name",
-#                                   "brand_slug": "Slug"})
-#     brand = brand.drop_duplicates()
+    # brand df
+    brand = product_df[["brand_id",
+                           "brand_name",
+                           "brand_slug"]]
+    brand = brand.rename(columns={"brand_name": "Name",
+                                  "brand_slug": "Slug"})
+    brand = brand.drop_duplicates()
 
-#     # seller df
-#     seller = product_df[["seller_id",
-#                             "seller_name",
-#                             "seller_link",
-#                             "seller_image_url"]]
-#     seller = seller.rename(columns={"seller_name": "Name",
-#                                     "seller_link": "Link",
-#                                     "seller_image_url": "ImageURL"})
-#     seller = seller.drop_duplicates()
+    # seller df
+    seller = product_df[["seller_id",
+                            "seller_name",
+                            "seller_link",
+                            "seller_image_url"]]
+    seller = seller.rename(columns={"seller_name": "Name",
+                                    "seller_link": "Link",
+                                    "seller_image_url": "ImageURL"})
+    seller = seller.drop_duplicates()
     
-#     # Print out notification
-#     print(f"[SUCCESS] Transformed {len(product)} product records")
-#     print(f"[SUCCESS] Transformed {len(inventory)} inventory records")
-#     print(f"[SUCCESS] Transformed {len(pricing)} pricing records")
-#     print(f"[SUCCESS] Transformed {len(brand)} brand records")
-#     print(f"[SUCCESS] Transformed {len(seller)} seller records")
+    # Print out notification
+    print(f"[SUCCESS] Transformed {len(product)} product records")
+    print(f"[SUCCESS] Transformed {len(inventory)} inventory records")
+    print(f"[SUCCESS] Transformed {len(pricing)} pricing records")
+    print(f"[SUCCESS] Transformed {len(brand)} brand records")
+    print(f"[SUCCESS] Transformed {len(seller)} seller records")
 
-#     # Serialize the DataFrame to a CSV string
-#     product_csv = product.to_csv(index=False)
-#     inventory_csv = inventory.to_csv(index=False)
-#     pricing_csv = pricing.to_csv(index=False)
-#     brand_csv = brand.to_csv(index=False)
-#     seller_csv = seller.to_csv(index=False)
-#     # Push the CSV string as an XCom value
-#     context['task_instance'].xcom_push(key='product_df', value=product_csv)
-#     context['task_instance'].xcom_push(key='inventory_df', value=inventory_csv)
-#     context['task_instance'].xcom_push(key='pricing_df', value=pricing_csv)
-#     context['task_instance'].xcom_push(key='brand_df', value=brand_csv)
-#     context['task_instance'].xcom_push(key='seller_df', value=seller_csv)
-    return 0
+    # Serialize the DataFrame to a CSV string
+    product_csv = product.to_csv(index=False)
+    inventory_csv = inventory.to_csv(index=False)
+    pricing_csv = pricing.to_csv(index=False)
+    brand_csv = brand.to_csv(index=False)
+    seller_csv = seller.to_csv(index=False)
+    # Push the CSV string as an XCom value
+    context['task_instance'].xcom_push(key='product_df', value=product_csv)
+    context['task_instance'].xcom_push(key='inventory_df', value=inventory_csv)
+    context['task_instance'].xcom_push(key='pricing_df', value=pricing_csv)
+    context['task_instance'].xcom_push(key='brand_df', value=brand_csv)
+    context['task_instance'].xcom_push(key='seller_df', value=seller_csv)
 
 def load_specify_product_func(**context):
 #     # Retrieve the CSV string from XCom
@@ -966,13 +965,15 @@ with DAG(dag_id="Local_ETL",
 
         transform_data_product_task = PythonOperator(
             task_id=f'transform_data_product_{brand.lower()}',
-            python_callable=transform_specify_product_func
+            python_callable=transform_specify_product_func,
+            op_kwargs={'brand': brand}
         )
         transform_data_product_tasks[brand] = transform_data_product_task
 
         load_data_product_task = PythonOperator(
             task_id=f'load_data_product_{brand.lower()}',
-            python_callable=load_specify_product_func
+            python_callable=load_specify_product_func,
+            op_kwargs={'brand': brand}
         )
         load_data_product_tasks[brand] = load_data_product_task
 
@@ -988,13 +989,15 @@ with DAG(dag_id="Local_ETL",
 
         transform_data_feedback_task = PythonOperator(
             task_id=f'transform_data_feedback_{brand.lower()}',
-            python_callable=transform_specify_feedback_func
+            python_callable=transform_specify_feedback_func,
+            op_kwargs={'brand': brand}
         )
         transform_data_feedback_tasks[brand] = transform_data_feedback_task
 
         load_data_feedback_task = PythonOperator(
             task_id=f'load_data_feedback_{brand.lower()}',
-            python_callable=load_specify_feedback_func
+            python_callable=load_specify_feedback_func,
+            op_kwargs={'brand': brand}
         )
         load_data_feedback_tasks[brand] = load_data_feedback_task
 
