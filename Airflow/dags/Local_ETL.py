@@ -763,77 +763,76 @@ def extract_feedback_data_func(**context):
     # Push the CSV string as an XCom value
     context['task_instance'].xcom_push(key='feedback_data', value=feedback_data_csv)
 
-def transform_specify_feedback_func(**context):
-#     # Retrieve the CSV string from XCom
-#     csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_feedback_data", key='feedback_data')
-#     # Deserialize the CSV string to a DataFrame
-#     feedback_df = pd.read_csv(io.StringIO(csv_data))
+def transform_specify_feedback_func(brand, **context):
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{brand.lower()}_feedback_data", key='feedback_data')
+    # Deserialize the CSV string to a DataFrame
+    feedback_df = pd.read_csv(io.StringIO(csv_data))
     
-#     # TRANSFORM data
-#     # user df
-#     user = feedback_df[["user_id",
-#                            "username",
-#                            "joined_time",
-#                            "total_reviews",
-#                            "total_upvotes"]]
-#     user = user.rename(columns={"user_id": "UserID",
-#                                       "username": "Name",
-#                                       "joined_time": "JoinedDate",
-#                                       "total_reviews": "TotalReview",
-#                                       "total_upvotes": "TotalUpvote"})
-#     user = user.drop_duplicates()
+    # TRANSFORM data
+    # user df
+    user = feedback_df[["user_id",
+                           "username",
+                           "joined_time",
+                           "total_reviews",
+                           "total_upvotes"]]
+    user = user.rename(columns={"user_id": "UserID",
+                                      "username": "Name",
+                                      "joined_time": "JoinedDate",
+                                      "total_reviews": "TotalReview",
+                                      "total_upvotes": "TotalUpvote"})
+    user = user.drop_duplicates()
     
-#     # general_feedback df
-#     general_feedback = feedback_df[["review_id",
-#                                     "OneStarCount",
-#                                     "TwoStarCount",
-#                                     "ThreeStarCount",
-#                                     "FourStarCount",
-#                                     "FiveStarCount",
-#                                     "reviews_count"]]
-#     general_feedback = general_feedback.rename(columns={"review_id": "GeneralFeedbackID",
-#                                                         "OneStarCount": "OneStar",
-#                                                         "TwoStarCount": "TwoStar",
-#                                                         "ThreeStarCount": "ThreeStar",
-#                                                         "FourStarCount": "FourStar",
-#                                                         "FiveStarCount": "FiveStar",
-#                                                         "reviews_count": "ReviewCount"})
-#     general_feedback["LastUpdated"] = datetime.now()
-#     general_feedback = general_feedback.drop_duplicates()
+    # general_feedback df
+    general_feedback = feedback_df[["review_id",
+                                    "OneStarCount",
+                                    "TwoStarCount",
+                                    "ThreeStarCount",
+                                    "FourStarCount",
+                                    "FiveStarCount",
+                                    "reviews_count"]]
+    general_feedback = general_feedback.rename(columns={"review_id": "GeneralFeedbackID",
+                                                        "OneStarCount": "OneStar",
+                                                        "TwoStarCount": "TwoStar",
+                                                        "ThreeStarCount": "ThreeStar",
+                                                        "FourStarCount": "FourStar",
+                                                        "FiveStarCount": "FiveStar",
+                                                        "reviews_count": "ReviewCount"})
+    general_feedback["LastUpdated"] = datetime.now()
+    general_feedback = general_feedback.drop_duplicates()
     
-#     # feedback_detail df
-#     feedback_detail = feedback_df[["ProductID",
-#                                    "user_id",
-#                                    "review_id",
-#                                    "review_title",
-#                                    "review_content",
-#                                    "review_upvote",
-#                                    "review_rating",
-#                                    "review_created_at"]]
-#     feedback_detail = feedback_detail.rename(columns={"review_id": "GeneralFeedbackID",
-#                                                       "user_id": "UserID",
-#                                                       "review_title": "Title",
-#                                                       "review_content": "Content",
-#                                                       "review_upvote": "Upvote",
-#                                                       "review_rating": "Rating",
-#                                                       "review_created_at": "CreatedDate"})
-#     feedback_detail["FeedbackDetailID"] = range(1, len(feedback_detail) + 1)
-#     feedback_detail = feedback_detail.drop_duplicates()
+    # feedback_detail df
+    feedback_detail = feedback_df[["ProductID",
+                                   "user_id",
+                                   "review_id",
+                                   "review_title",
+                                   "review_content",
+                                   "review_upvote",
+                                   "review_rating",
+                                   "review_created_at"]]
+    feedback_detail = feedback_detail.rename(columns={"review_id": "GeneralFeedbackID",
+                                                      "user_id": "UserID",
+                                                      "review_title": "Title",
+                                                      "review_content": "Content",
+                                                      "review_upvote": "Upvote",
+                                                      "review_rating": "Rating",
+                                                      "review_created_at": "CreatedDate"})
+    feedback_detail["FeedbackDetailID"] = range(1, len(feedback_detail) + 1)
+    feedback_detail = feedback_detail.drop_duplicates()
     
-#     # Print out notification
-#     print(f"[SUCCESS] Transformed {len(user)} user records")
-#     print(f"[SUCCESS] Transformed {len(general_feedback)} general feedback records")
-#     print(f"[SUCCESS] Transformed {len(feedback_detail)} feedback detail records")
+    # Print out notification
+    print(f"[SUCCESS] Transformed {len(user)} user records")
+    print(f"[SUCCESS] Transformed {len(general_feedback)} general feedback records")
+    print(f"[SUCCESS] Transformed {len(feedback_detail)} feedback detail records")
     
-#     # Serialize the DataFrame to a CSV string
-#     user_csv = user.to_csv(index=False)
-#     general_feedback_csv = general_feedback.to_csv(index=False)
-#     feedback_detail_csv = feedback_detail.to_csv(index=False)
-#     # Push the CSV string as an XCom value
-#     context['task_instance'].xcom_push(key='user_df', value=user_csv)
-#     context['task_instance'].xcom_push(key='general_feedback_df', value=general_feedback_csv)
-#     context['task_instance'].xcom_push(key='feedback_detail_df', value=feedback_detail_csv)
-    return 0
+    # Serialize the DataFrame to a CSV string
+    user_csv = user.to_csv(index=False)
+    general_feedback_csv = general_feedback.to_csv(index=False)
+    feedback_detail_csv = feedback_detail.to_csv(index=False)
+    # Push the CSV string as an XCom value
+    context['task_instance'].xcom_push(key='user_df', value=user_csv)
+    context['task_instance'].xcom_push(key='general_feedback_df', value=general_feedback_csv)
+    context['task_instance'].xcom_push(key='feedback_detail_df', value=feedback_detail_csv)
 
 def load_specify_feedback_func(**context):
 #     # Retrieve the CSV string from XCom
