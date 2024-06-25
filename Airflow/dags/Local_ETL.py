@@ -477,57 +477,56 @@ def extract_specify_product_id_func(brands, **context):
     context['task_instance'].xcom_push(key='specify_product_ids', value=specify_product_ids_csv) 
 
 def extract_product_data_func(**context):
-#     # Retrieve the CSV string from XCom
-#     csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_id", key='specify_product_ids')
-#     # Deserialize the CSV string to a DataFrame
-#     product_ids_df = pd.read_csv(io.StringIO(csv_data))
+    # Retrieve the CSV string from XCom
+    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_id", key='specify_product_ids')
+    # Deserialize the CSV string to a DataFrame
+    product_ids_df = pd.read_csv(io.StringIO(csv_data))
 
-#     product_data_list = []
-#     for _, row in product_ids_df.iterrows():
-#         sub_category_id = row['SubCategoryID']
-#         product_id = row['ProductID']
+    product_data_list = []
+    for _, row in product_ids_df.iterrows():
+        sub_category_id = row['SubCategoryID']
+        product_id = row['ProductID']
 
-#         URL = f"https://tiki.vn/api/v2/products/{product_id}"
-#         PARAMS = {}
+        URL = f"https://tiki.vn/api/v2/products/{product_id}"
+        PARAMS = {}
 
-#         response = requests.get(URL, headers=HEADERS, params=PARAMS)
-#         time.sleep(random.uniform(3.2, 4.7))
+        response = requests.get(URL, headers=HEADERS, params=PARAMS)
+        time.sleep(random.uniform(3.2, 4.7))
 
-#         data = response.json()
+        data = response.json()
 
-#         product_data = {
-#             'product_id': data['id'],
-#             'product_name': data.get('name', None),
-#             'product_url': data.get('short_url', None),
-#             'pricing_current': data.get('price', None),
-#             'pricing_original': data.get('original_price', None),
-#             'product_image_url': data.get('thumbnail_url', None),
-#             'inventory_status': data.get('inventory_status', None),
-#             'inventory_type': data.get('inventory_type', None),
-#             'created_date': data.get('day_ago_created', None),
-#             'quantity_sold': data.get('all_time_quantity_sold', None),
-#             'brand_id': data.get('brand', {}).get('id', None),
-#             'brand_name': data.get('brand', {}).get('name', None),
-#             'brand_slug': data.get('brand', {}).get('slug', None),
-#             'seller_id': data.get('current_seller', {}).get('id', 0) if data.get('current_seller') else 0,
-#             'seller_name': data.get('current_seller', {}).get('name', 0) if data.get('current_seller') else 0,
-#             'seller_link': data.get('current_seller', {}).get('link', 0) if data.get('current_seller') else 0,
-#             'seller_image_url': data.get('current_seller', {}).get('logo', 0) if data.get('current_seller') else 0,
-#             'category_id': data['categories']['id'] if 'categories' in data and data['categories'].get('is_leaf', False) else data['breadcrumbs'][-2]['category_id'] if 'breadcrumbs' in data and len(data['breadcrumbs']) >= 2 else None,
-#             'sub_category_id': sub_category_id,
-#             'brand_name': row['BrandName']
-#         }
+        product_data = {
+            'product_id': data['id'],
+            'product_name': data.get('name', None),
+            'product_url': data.get('short_url', None),
+            'pricing_current': data.get('price', None),
+            'pricing_original': data.get('original_price', None),
+            'product_image_url': data.get('thumbnail_url', None),
+            'inventory_status': data.get('inventory_status', None),
+            'inventory_type': data.get('inventory_type', None),
+            'created_date': data.get('day_ago_created', None),
+            'quantity_sold': data.get('all_time_quantity_sold', None),
+            'brand_id': data.get('brand', {}).get('id', None),
+            'brand_name': data.get('brand', {}).get('name', None),
+            'brand_slug': data.get('brand', {}).get('slug', None),
+            'seller_id': data.get('current_seller', {}).get('id', 0) if data.get('current_seller') else 0,
+            'seller_name': data.get('current_seller', {}).get('name', 0) if data.get('current_seller') else 0,
+            'seller_link': data.get('current_seller', {}).get('link', 0) if data.get('current_seller') else 0,
+            'seller_image_url': data.get('current_seller', {}).get('logo', 0) if data.get('current_seller') else 0,
+            'category_id': data['categories']['id'] if 'categories' in data and data['categories'].get('is_leaf', False) else data['breadcrumbs'][-2]['category_id'] if 'breadcrumbs' in data and len(data['breadcrumbs']) >= 2 else None,
+            'sub_category_id': sub_category_id,
+            'brand_name': row['BrandName']
+        }
 
-#         product_data_list.append(product_data)
-#     # Print out notification
-#     print(f"[SUCCESS] Extracted {len(product_data_list)} product dataframes for {context['brand']}")
-#     # Convert the product data list to a DataFrame
-#     product_data_df = pd.DataFrame(product_data_list)
-#     # Serialize the DataFrame to a CSV string
-#     product_data_csv = product_data_df.to_csv(index=False)
-#     # Push the CSV string as an XCom value
-#     context['task_instance'].xcom_push(key='product_data', value=product_data_csv)
-    return 0
+        product_data_list.append(product_data)
+    # Print out notification
+    print(f"[SUCCESS] Extracted {len(product_data_list)} product dataframes for {context['brand']}")
+    # Convert the product data list to a DataFrame
+    product_data_df = pd.DataFrame(product_data_list)
+    # Serialize the DataFrame to a CSV string
+    product_data_csv = product_data_df.to_csv(index=False)
+    # Push the CSV string as an XCom value
+    context['task_instance'].xcom_push(key='product_data', value=product_data_csv)
 
 def transform_specify_product_func(**context):
 #     # Retrieve the CSV string from XCom
@@ -678,93 +677,92 @@ def load_specify_product_func(**context):
     return 0
 
 def extract_feedback_data_func(**context):
-#     # Retrieve the CSV string from XCom
-#     csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_data", key='product_data')
-#     # Deserialize the CSV string to a DataFrame
-#     product_df = pd.read_csv(io.StringIO(csv_data))
-#     feedback_data_list = []
-#     for _, row in product_df.iterrows():
-#       sub_category_id = row['sub_category_id']
-#       product_id = row['product_id']
-#       URL = "https://tiki.vn/api/v2/reviews"
-#       PARAMS = {"limit": 20, 
-#                 "spid": sub_category_id, 
-#                 "product_id": product_id}
+    # # Retrieve the CSV string from XCom
+    # csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_data", key='product_data')
+    # # Deserialize the CSV string to a DataFrame
+    # product_df = pd.read_csv(io.StringIO(csv_data))
+    # feedback_data_list = []
+    # for _, row in product_df.iterrows():
+    #   sub_category_id = row['sub_category_id']
+    #   product_id = row['product_id']
+    #   URL = "https://tiki.vn/api/v2/reviews"
+    #   PARAMS = {"limit": 20, 
+    #             "spid": sub_category_id, 
+    #             "product_id": product_id}
 
-#       response = requests.get(URL, headers=HEADERS, params=PARAMS)
-#       data = response.json()
-#       total_pages = data.get("paging", {}).get("last_page", 1)
+    #   response = requests.get(URL, headers=HEADERS, params=PARAMS)
+    #   data = response.json()
+    #   total_pages = data.get("paging", {}).get("last_page", 1)
 
-#       # Fetch data from each page
-#       for page in range(1, total_pages + 1):
-#         PARAMS["page"] = page
-#         response = requests.get(URL, headers=HEADERS, params=PARAMS)
-#         time.sleep(random.uniform(3.2, 4.7))
-#         data = response.json()
+    #   # Fetch data from each page
+    #   for page in range(1, total_pages + 1):
+    #     PARAMS["page"] = page
+    #     response = requests.get(URL, headers=HEADERS, params=PARAMS)
+    #     time.sleep(random.uniform(3.2, 4.7))
+    #     data = response.json()
 
-#         stars = data.get("stars", {})
-#         OneStarCount = stars.get("1", {}).get("count", 0)
-#         TwoStarCount = stars.get("2", {}).get("count", 0)
-#         ThreeStarCount = stars.get("3", {}).get("count", 0)
-#         FourStarCount = stars.get("4", {}).get("count", 0)
-#         FiveStarCount = stars.get("5", {}).get("count", 0)
-#         reviews_count = data.get("reviews_count", 0)
-#         review_data = data.get("data", [])
+    #     stars = data.get("stars", {})
+    #     OneStarCount = stars.get("1", {}).get("count", 0)
+    #     TwoStarCount = stars.get("2", {}).get("count", 0)
+    #     ThreeStarCount = stars.get("3", {}).get("count", 0)
+    #     FourStarCount = stars.get("4", {}).get("count", 0)
+    #     FiveStarCount = stars.get("5", {}).get("count", 0)
+    #     reviews_count = data.get("reviews_count", 0)
+    #     review_data = data.get("data", [])
 
-#         for review in review_data:
-#           review_id = review.get("id")
-#           review_title = review.get("title")
-#           review_content = review.get("content")
-#           review_upvote = review.get("thank_count", 0)
-#           review_rating = review.get("rating")
-#           review_created_at = review.get("created_at")
-#           reviewer = review.get("created_by", {})
+    #     for review in review_data:
+    #       review_id = review.get("id")
+    #       review_title = review.get("title")
+    #       review_content = review.get("content")
+    #       review_upvote = review.get("thank_count", 0)
+    #       review_rating = review.get("rating")
+    #       review_created_at = review.get("created_at")
+    #       reviewer = review.get("created_by", {})
 
-#           if reviewer is not None:
-#               user_id = reviewer.get("id")
-#               username = reviewer.get("name")
-#               joined_time = reviewer.get("created_time")
-#               total_reviews = reviewer.get("contribute_info", {}).get("summary", {}).get("total_review", 0)
-#               total_upvotes = reviewer.get("contribute_info", {}).get("summary", {}).get("total_thank", 0)
-#           else:
-#               user_id = None
-#               username = None
-#               joined_time = None
-#               total_reviews = 0
-#               total_upvotes = 0
+    #       if reviewer is not None:
+    #           user_id = reviewer.get("id")
+    #           username = reviewer.get("name")
+    #           joined_time = reviewer.get("created_time")
+    #           total_reviews = reviewer.get("contribute_info", {}).get("summary", {}).get("total_review", 0)
+    #           total_upvotes = reviewer.get("contribute_info", {}).get("summary", {}).get("total_thank", 0)
+    #       else:
+    #           user_id = None
+    #           username = None
+    #           joined_time = None
+    #           total_reviews = 0
+    #           total_upvotes = 0
 
-#           feedback_data_list.append({
-#               "ProductID": product_id,
-#               "OneStarCount": OneStarCount,
-#               "TwoStarCount": TwoStarCount,
-#               "ThreeStarCount": ThreeStarCount,
-#               "FourStarCount": FourStarCount,
-#               "FiveStarCount": FiveStarCount,
-#               "reviews_count": reviews_count,
-#               "review_id": review_id,
-#               "review_title": review_title,
-#               "review_content": review_content,
-#               "review_upvote": review_upvote,
-#               "review_rating": review_rating,
-#               "review_created_at": review_created_at,
-#               "user_id": user_id,
-#               "username": username,
-#               "joined_time": joined_time,
-#               "total_reviews": total_reviews,
-#               "total_upvotes": total_upvotes
-#           })
+    #       feedback_data_list.append({
+    #           "ProductID": product_id,
+    #           "OneStarCount": OneStarCount,
+    #           "TwoStarCount": TwoStarCount,
+    #           "ThreeStarCount": ThreeStarCount,
+    #           "FourStarCount": FourStarCount,
+    #           "FiveStarCount": FiveStarCount,
+    #           "reviews_count": reviews_count,
+    #           "review_id": review_id,
+    #           "review_title": review_title,
+    #           "review_content": review_content,
+    #           "review_upvote": review_upvote,
+    #           "review_rating": review_rating,
+    #           "review_created_at": review_created_at,
+    #           "user_id": user_id,
+    #           "username": username,
+    #           "joined_time": joined_time,
+    #           "total_reviews": total_reviews,
+    #           "total_upvotes": total_upvotes
+    #       })
 
-#     # Convert the feedback data list to a DataFrame
-#     feedback_data_df = pd.DataFrame(feedback_data_list)
+    # # Convert the feedback data list to a DataFrame
+    # feedback_data_df = pd.DataFrame(feedback_data_list)
     
-#     # Print out notification
-#     print(f"[SUCCESS] Extracted {len(feedback_data_df)} product feedbacks for {context['brand']}")
+    # # Print out notification
+    # print(f"[SUCCESS] Extracted {len(feedback_data_df)} product feedbacks for {context['brand']}")
 
-#     # Serialize the DataFrame to a CSV string
-#     feedback_data_csv = feedback_data_df.to_csv(index=False)
-#     # Push the CSV string as an XCom value
-#     context['task_instance'].xcom_push(key='feedback_data', value=feedback_data_csv)
-    return 0
+    # # Serialize the DataFrame to a CSV string
+    # feedback_data_csv = feedback_data_df.to_csv(index=False)
+    # # Push the CSV string as an XCom value
+    # context['task_instance'].xcom_push(key='feedback_data', value=feedback_data_csv)
 
 def transform_specify_feedback_func(**context):
 #     # Retrieve the CSV string from XCom
