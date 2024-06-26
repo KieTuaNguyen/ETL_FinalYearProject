@@ -27,7 +27,7 @@ except Exception as e:
 from datetime import datetime, timedelta, date  
 from dependencies import *
 # from configs.config_manager import get_config
-from Local_function import upsert_data
+from Local_function import upsert_data, insert_data
 
 # Set up header
 HEADERS = {
@@ -615,65 +615,54 @@ def transform_specify_product_func(brand, **context):
     context['task_instance'].xcom_push(key='seller_df', value=seller_csv)
 
 def load_specify_product_func(**context):
-#     # Retrieve the CSV string from XCom
-#     product_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='product_df')
-#     inventory_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='inventory_df')
-#     pricing_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='pricing_df')
-#     brand_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='brand_df')
-#     seller_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='seller_df')
+    # Retrieve the CSV string from XCom
+    product_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='product_df')
+    inventory_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='inventory_df')
+    pricing_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='pricing_df')
+    brand_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='brand_df')
+    seller_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_product_{context['brand'].lower()}", key='seller_df')
     
-#     # Deserialize the CSV string to a DataFrame
-#     product_df = pd.read_csv(io.StringIO(product_df))
-#     inventory_df = pd.read_csv(io.StringIO(inventory_df))
-#     pricing_df = pd.read_csv(io.StringIO(pricing_df))
-#     brand_df = pd.read_csv(io.StringIO(brand_df))
-#     seller_df = pd.read_csv(io.StringIO(seller_df))
+    # Deserialize the CSV string to a DataFrame
+    product_df = pd.read_csv(io.StringIO(product_df))
+    inventory_df = pd.read_csv(io.StringIO(inventory_df))
+    pricing_df = pd.read_csv(io.StringIO(pricing_df))
+    brand_df = pd.read_csv(io.StringIO(brand_df))
+    seller_df = pd.read_csv(io.StringIO(seller_df))
     
-#     # Convert to Dataframe
-#     product_df = pd.DataFrame(product_df)
-#     inventory_df = pd.DataFrame(inventory_df)
-#     pricing_df = pd.DataFrame(pricing_df)
-#     brand_df = pd.DataFrame(brand_df)
-#     seller_df = pd.DataFrame(seller_df)
+    # Convert to Dataframe
+    product_df = pd.DataFrame(product_df)
+    inventory_df = pd.DataFrame(inventory_df)
+    pricing_df = pd.DataFrame(pricing_df)
+    brand_df = pd.DataFrame(brand_df)
+    seller_df = pd.DataFrame(seller_df)
     
-#     # Establish the connection
-#     conn = pyodbc.connect(conn_str)
-#     cursor = conn.cursor()
-#     print("[SUCCESS] Connection is established")
+    # Config the warehouse folder
+    warehouse = 'product'
 
-#     # For Product
-#     database = 'Product'
-#     check_columns = ['ProductID', 'BrandID', 'SellerID', 'SubCategoryID', 'Name', 'URL', 'ImageURL', 'CreatedDate', 'QuantitySold']
-#     result = upsert_data(database, product_df, check_columns, conn)
-#     print(result)
+    # For Product
+    database = 'Product'
+    result = insert_data(base_dir, warehouse, database, product_df)
+    print(result)
     
-#     # For Inventory
-#     database = 'Inventory'
-#     check_columns = ['InventoryID', 'ProductID', 'Status', 'Type', 'LastUpdated']
-#     result = upsert_data(database, inventory_df, check_columns, conn)
-#     print(result)
+    # For Inventory
+    database = 'Inventory'
+    result = insert_data(base_dir, warehouse, database, inventory_df)
+    print(result)
     
-#     # For Pricing 
-#     database = 'Pricing'
-#     check_columns = ['PricingID', 'ProductID', 'CurrentPrice', 'OriginalPrice', 'LastUpdated']
-#     result = upsert_data(database, pricing_df, check_columns, conn)
-#     print(result)
+    # For Pricing
+    database = 'Pricing'
+    result = insert_data(base_dir, warehouse, database, pricing_df)
+    print(result)
     
-#     # For Brand
-#     database = 'Brand'
-#     check_columns = ['BrandID', 'Name', 'Slug']
-#     result = upsert_data(database, brand_df, check_columns, conn)
-#     print(result)
+    # For Brand
+    database = 'Brand'
+    result = insert_data(base_dir, warehouse, database, brand_df)
+    print(result)
     
-#     # For Seller
-#     database = 'Seller'
-#     check_columns = ['SellerID', 'Name', 'Link', 'ImageURL']
-#     result = upsert_data(database, seller_df, check_columns, conn)
-#     print(result)
-    
-#     cursor.close()
-#     conn.close()
-    return 0
+    # For Seller
+    database = 'Seller'
+    result = insert_data(base_dir, warehouse, database, seller_df)
+    print(result)
 
 def extract_feedback_data_func(**context):
     # Retrieve the CSV string from XCom
@@ -835,47 +824,38 @@ def transform_specify_feedback_func(brand, **context):
     context['task_instance'].xcom_push(key='feedback_detail_df', value=feedback_detail_csv)
 
 def load_specify_feedback_func(**context):
-#     # Retrieve the CSV string from XCom
-#     user_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_feedback_{context['brand'].lower()}", key='user_df')
-#     general_feedback_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_feedback_{context['brand'].lower()}", key='general_feedback_df')
-#     feedback_detail_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_feedback_{context['brand'].lower()}", key='feedback_detail_df')
+    # Retrieve the CSV string from XCom
+    user_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_feedback_{context['brand'].lower()}", key='user_df')
+    general_feedback_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_feedback_{context['brand'].lower()}", key='general_feedback_df')
+    feedback_detail_df = context['task_instance'].xcom_pull(task_ids=f"transform_data_feedback_{context['brand'].lower()}", key='feedback_detail_df')
     
-#     # Deserialize the CSV string to a DataFrame
-#     user_df = pd.read_csv(io.StringIO(user_df))
-#     general_feedback_df = pd.read_csv(io.StringIO(general_feedback_df))
-#     feedback_detail_df = pd.read_csv(io.StringIO(feedback_detail_df))
+    # Deserialize the CSV string to a DataFrame
+    user_df = pd.read_csv(io.StringIO(user_df))
+    general_feedback_df = pd.read_csv(io.StringIO(general_feedback_df))
+    feedback_detail_df = pd.read_csv(io.StringIO(feedback_detail_df))
     
-#     # Convert to Dataframe
-#     user_df = pd.DataFrame(user_df)
-#     general_feedback_df = pd.DataFrame(general_feedback_df)
-#     feedback_detail_df = pd.DataFrame(feedback_detail_df)
+    # Convert to Dataframe
+    user_df = pd.DataFrame(user_df)
+    general_feedback_df = pd.DataFrame(general_feedback_df)
+    feedback_detail_df = pd.DataFrame(feedback_detail_df)
     
-#     # Establish the connection
-#     conn = pyodbc.connect(conn_str)
-#     cursor = conn.cursor()
-#     print("[SUCCESS] Connection is established")
+    # Config the warehouse folder
+    warehouse = 'feedback'
     
-#     # For User
-#     database = 'User'
-#     check_columns = ['UserID', 'Name', 'JoinedDate', 'TotalReview', 'TotalUpvote']
-#     result = upsert_data(database, user_df, check_columns, conn)
-#     print(result)
+    # For User
+    database = 'User'
+    result = insert_data(base_dir, warehouse, database, user_df)
+    print(result)
     
-#     # For GeneralFeedback
-#     database = 'GeneralFeedback'
-#     check_columns = ['GeneralFeedbackID', 'OneStar', 'TwoStar', 'ThreeStar', 'FourStar', 'FiveStar', 'ReviewCount', 'LastUpdated']
-#     result = upsert_data(database, general_feedback_df, check_columns, conn)
-#     print(result)
+    # For GeneralFeedback
+    database = 'GeneralFeedback'
+    result = insert_data(base_dir, warehouse, database, general_feedback_df)
+    print(result)
     
-#     # For FeedbackDetail
-#     database = 'FeedbackDetail'
-#     check_columns = ['FeedbackDetailID', 'GeneralFeedbackID', 'ProductID', 'UserID', 'Title', 'Content', 'Upvote', 'Rating', 'CreatedDate']
-#     result = upsert_data(database, feedback_detail_df, check_columns, conn)
-#     print(result)
-    
-#     cursor.close()
-#     conn.close()
-    return 0
+    # For FeedbackDetail
+    database = 'FeedbackDetail'
+    result = insert_data(base_dir, warehouse, database, feedback_detail_df)
+    print(result)
 
 
 

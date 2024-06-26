@@ -87,3 +87,53 @@ def upsert_data(base_dir, warehouse, database, data_df, check_columns):
             result_message += f"[INSERT] There are {insert_count} records inserted."
         
         return result_message.strip()
+    
+def insert_data(base_dir, warehouse, database, data_df):
+    """
+    Insert new data from a pandas DataFrame to a local CSV file without overwriting existing data.
+    
+    Args:
+        base_dir (str): The base directory path.
+        warehouse (str): The warehouse name (formerly collection).
+        database (str): The name of the CSV file (formerly file_name).
+        data_df (pandas.DataFrame): The DataFrame containing the data to insert.
+    
+    Returns:
+        str: A summary message indicating the number of records inserted.
+    """
+    
+    # Ensure the file has a .csv extension
+    if not database.endswith('.csv'):
+        database += '.csv'
+    
+    # Construct the full file path
+    full_path = os.path.join(base_dir, warehouse, database)
+    
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(full_path), exist_ok=True)
+    
+    # Check if the file exists
+    file_exists = os.path.isfile(full_path)
+    
+    if not file_exists:
+        # Create a new CSV file with the data
+        data_df.to_csv(full_path, index=False)
+        print(f"[CREATE NEW] The file '{full_path}' created.")
+        return f"[INSERT] There are {len(data_df)} records inserted."
+    else:
+        print(f"[EXIST] The file '{full_path}' already exists.")
+        
+        # Read existing data
+        existing_df = pd.read_csv(full_path)
+        
+        # Concatenate existing data with new data
+        result_df = pd.concat([existing_df, data_df], ignore_index=True)
+        
+        # Remove duplicates based on all columns
+        result_df = result_df.drop_duplicates()
+        
+        # Write updated data back to CSV
+        result_df.to_csv(full_path, index=False)
+        
+        inserted_count = len(result_df) - len(existing_df)
+        return f"[INSERT] There are {inserted_count} records inserted."
