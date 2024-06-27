@@ -912,9 +912,9 @@ with DAG(dag_id="Local_ETL",
         python_callable=load_all_product_func
     )
 
-    # list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
+    list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
     # Testing
-    list_of_brands = ['Asus']
+    # list_of_brands = ['Asus']
     
     # Complex tasks for each brand
     extract_specify_product_id_tasks = {}
