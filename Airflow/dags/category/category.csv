@@ -8,7 +8,6 @@ CategoryID,MasterCategoryID,Name,isCategory
 2458,8095,Macbook,1
 5584,8095,Laptop Gaming,1
 29008,8095,Laptop 2 trong 1,1
-29012,8095,Chromebooks,1
 2665,12884,Màn Hình Máy Tính,1
 2308,12884,Máy In - Photocopy,1
 6255,12884,Phần Mềm Máy Tính,1
@@ -58,3 +57,4 @@ CategoryID,MasterCategoryID,Name,isCategory
 28916,8129,KVM Switches - Switch HDMI,1
 11968,8129,Linh Kiện Máy Tính Khác,1
 28918,8129,Linh Kiện Thay Thế Cho Laptop,1
+29012,8095,Chromebooks,1

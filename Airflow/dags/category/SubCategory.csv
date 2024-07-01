@@ -8,7 +8,6 @@ SubCategoryID,CategoryID,Name,isSubCategory
 2458,2458,Macbook,0
 5584,5584,Laptop Gaming,0
 29008,29008,Laptop 2 trong 1,0
-29012,29012,Chromebooks,0
 28932,2665,Màn Hình Phổ Thông,1
 12672,2665,Màn Hình Gaming,1
 28934,2665,Màn Hình Di Động,1
@@ -29,7 +28,6 @@ SubCategoryID,CategoryID,Name,isSubCategory
 28950,8086,Giấy In Ảnh,1
 28952,2664,Máy chiếu,1
 28960,2664,Phụ kiện máy chiếu,1
-29002,2664,Màn hình ghép - Màn hình LED,1
 30020,30020,Máy Scan Mã Vạch,0
 10089,10089,Máy Hủy Tài Liệu,0
 12886,12886,Máy Chấm Công,0
@@ -81,3 +79,5 @@ SubCategoryID,CategoryID,Name,isSubCategory
 28922,28918,Bàn Phím Thay Thế Laptop,1
 28924,28918,Pin Thay Thế Laptop,1
 28926,28918,Linh Kiện Thay Thế Laptop Khác,1
+29012,29012,Chromebooks,0
+29002,2664,Màn hình ghép - Màn hình LED,1

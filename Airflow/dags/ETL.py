@@ -567,9 +567,9 @@ def extract_product_data_func(**context):
     context['task_instance'].xcom_push(key='product_data', value=product_data_csv)
     return 0
 
-def transform_specify_product_func(**context):
+def transform_specify_product_func(brand, **context):
     # Retrieve the CSV string from XCom
-    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_data", key='product_data')
+    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{brand.lower()}_product_data", key='product_data')
     # Deserialize the CSV string to a DataFrame
     product_df = pd.read_csv(io.StringIO(csv_data))
     
@@ -804,9 +804,9 @@ def extract_feedback_data_func(**context):
     context['task_instance'].xcom_push(key='feedback_data', value=feedback_data_csv)
     return 0
 
-def transform_specify_feedback_func(**context):
+def transform_specify_feedback_func(brand, **context):
     # Retrieve the CSV string from XCom
-    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_feedback_data", key='feedback_data')
+    csv_data = context['task_instance'].xcom_pull(task_ids=f"extract_{brand.lower()}_feedback_data", key='feedback_data')
     # Deserialize the CSV string to a DataFrame
     feedback_df = pd.read_csv(io.StringIO(csv_data))
     
@@ -974,9 +974,9 @@ with DAG(dag_id="ETL",
         python_callable=load_all_product_func
     )
 
-    # list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
+    list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
     # Testing
-    list_of_brands = ['Asus']
+    # list_of_brands = ['Asus']
     
     # Complex tasks for each brand
     extract_specify_product_id_tasks = {}
