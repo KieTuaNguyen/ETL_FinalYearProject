@@ -2,11 +2,14 @@ try:
     from airflow import DAG
     from datetime import timedelta, datetime
     from airflow.operators.python import PythonOperator
-    from airflow.hooks.base import BaseHook
-    from airflow.utils.email import send_email_smtp
     import logging
     from airflow.models.xcom_arg import XComArg
-    from airflow.providers.smtp.hooks.smtp import SmtpHook
+    from email.utils import formataddr
+    import smtplib
+    from email.mime.text import MIMEText
+    from email.mime.multipart import MIMEMultipart
+    from email.utils import formataddr
+    from airflow.hooks.base import BaseHook
     print("Modules were imported successfully")
 except Exception as e:
     print("Error {} ".format(e))
@@ -50,10 +53,11 @@ default_args = {
     "owner": "airflow",
     "retries": 1,
     "retry_delay": timedelta(minutes=5),
-    "start_date": datetime(2024, 3, 1)
+    "start_date": datetime(2024, 3, 1),
+    'email_on_failure': True,
+    'email_on_retry': False
 }
-# Set up logging
-logger = logging.getLogger(__name__)    
+
 config = get_config('DevDB')
 print("[SUCCESS] Server, Database, Username, Password, Driver are loaded")
 # Configuration for the SQL Server connection
@@ -126,63 +130,80 @@ def retrieve_product_ids(id):
             product_data.append({"sub_category_id": id, "product_id": product_id, "brand_name": brand_name})
     return product_data
 
-def send_success_email(context):
+def send_email(subject, body):
+    """Helper function to send an email using the email_default connection."""
     try:
-        task_instance = context['task_instance']
-        task_id = task_instance.task_id
-        execution_date = context['execution_date']
-        log_url = context['task_instance'].log_url
+        # Get connection details from Airflow connection
+        conn = BaseHook.get_connection('email_default')
+        sender_email = conn.login
+        password = conn.password
         
-        subject = f"[SUCCESS] Flexiboard task {task_id} succeeded"
-        body = f"""
-        Task: {task_id}
-        Execution Date: {execution_date}
+        sender_name = "Flexiboard"
+        receiver_email = "kietdng2@gmail.com"  # or use conn.login if you want to send to the same email
+
+        # Create message
+        message = MIMEMultipart()
+        message["From"] = formataddr((sender_name, sender_email))
+        message["To"] = receiver_email
+        message["Subject"] = subject
+
+        # Add body to email
+        message.attach(MIMEText(body, "html"))
+
+        # Create SMTP session
+        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.starttls()  # Enable TLS
+            server.login(sender_email, password)
+            text = message.as_string()
+            server.sendmail(sender_email, receiver_email, text)
         
-        [SUCCESS] {task_instance.xcom_pull(task_ids=task_id)}
-        
-        Log URL: {log_url}
-        """
-        
-        smtp_hook = SmtpHook(smtp_conn_id='email_default')
-        smtp_hook.send_email(
-            to='kietntgdd210002@fpt.edu.vn',
-            subject=subject,
-            html_content=body,
-            mime_subtype='html'
-        )
-        logger.info(f"Success email sent for task {task_id}")
+        logging.info(f"Email sent successfully: {subject}")
     except Exception as e:
-        logger.error(f"Failed to send success email for task {task_id}: {str(e)}")
+        logging.error(f"Failed to send email: {str(e)}")
+                   
+def send_success_email(context):
+    """Send an email notification when a task succeeds."""
+    task_instance = context['task_instance']
+    task_id = task_instance.task_id
+    execution_date = context['execution_date']
+    log_url = context['task_instance'].log_url
+    
+    subject = f"[SUCCESS] Flexiboard task {task_id} succeeded"
+    body = f"""
+    <html>
+    <body>
+    <p>Task: {task_id}</p>
+    <p>Execution Date: {execution_date}</p>
+    <p>[SUCCESS] {task_instance.xcom_pull(task_ids=task_id)}</p>
+    <p>Log URL: <a href="{log_url}">{log_url}</a></p>
+    </body>
+    </html>
+    """
+    
+    send_email(subject, body)
 
 def send_failure_email(context):
-    try:
-        task_instance = context['task_instance']
-        task_id = task_instance.task_id
-        execution_date = context['execution_date']
-        log_url = context['task_instance'].log_url
-        
-        subject = f"[FAILED] Flexiboard task {task_id} failed"
-        body = f"""
-        Task: {task_id}
-        Execution Date: {execution_date}
-        
-        [FAILED] Failed the task.
-        Please check the log for more details.
-        
-        Log URL: {log_url}
-        """
-        
-        smtp_hook = SmtpHook(smtp_conn_id='email_default')
-        smtp_hook.send_email(
-            to='kietntgdd210002@fpt.edu.vn',
-            subject=subject,
-            html_content=body,
-            mime_subtype='html'
-        )
-        logger.info(f"Failure email sent for task {task_id}")
-    except Exception as e:
-        logger.error(f"Failed to send failure email for task {task_id}: {str(e)}")
+    """Send an email notification when a task fails."""
+    task_instance = context['task_instance']
+    task_id = task_instance.task_id
+    execution_date = context['execution_date']
+    log_url = context['task_instance'].log_url
     
+    subject = f"[FAILED] Flexiboard task {task_id} failed"
+    body = f"""
+    <html>
+    <body>
+    <p>Task: {task_id}</p>
+    <p>Execution Date: {execution_date}</p>
+    <p>[FAILED] Failed the task.</p>
+    <p>Please check the log for more details.</p>
+    <p>Log URL: <a href="{log_url}">{log_url}</a></p>
+    </body>
+    </html>
+    """
+    
+    send_email(subject, body)
+
 # Get the current date
 current_date = date.today()
 # Get the day of the month
@@ -314,17 +335,6 @@ def extract_sub_category_id_func(**context):
         context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
         context['task_instance'].xcom_push(key='category_df', value=category_csv)
         context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
-    return None
-
-    # # Retrieve the CSV string from XCom
-    # reference_product_df = context['task_instance'].xcom_pull(task_ids='extract_all_product_id', key='reference_product_df')
-    
-    # # Retrieve the CSV string from XCom
-    # specify_product_ids = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_id", key='specify_product_ids')
-    # # Retrieve the CSV string from XCom
-    # product_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_product_data", key='product_data')
-    # # Retrieve the CSV string from XCom
-    # feedback_data = context['task_instance'].xcom_pull(task_ids=f"extract_{context['brand'].lower()}_feedback_data", key='feedback_data')
 
 def transform_sub_category_func(**context):
     # Retrieve the CSV string from XCom
@@ -389,7 +399,6 @@ def transform_sub_category_func(**context):
         context['task_instance'].xcom_push(key='master_category_df', value=master_category_csv)
         context['task_instance'].xcom_push(key='category_df', value=category_csv)
         context['task_instance'].xcom_push(key='sub_category_df', value=sub_category_csv)
-    return 0
 
 def load_sub_category_func(**context):
     # Retrieve the CSV string from XCom
@@ -453,7 +462,6 @@ def load_sub_category_func(**context):
         print(f"[SUCCESS] Loaded {len(master_category_df)} master categories records")
         print(f"[SUCCESS] Loaded {len(category_df)} categories records")
         print(f"[SUCCESS] Loaded {len(sub_category_df)} sub-categories records")
-    return 0
 
 def extract_all_product_id_func(**context):
     # Retrieve the CSV string from XCom
@@ -496,7 +504,6 @@ def extract_all_product_id_func(**context):
         reference_product_csv = reference_product.to_csv(index=False)
         # Push the CSV strings as XCom values
         context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
-    return 0
 
 def transform_all_product_func(**context):
     # Retrieve the CSV string from XCom
@@ -527,7 +534,6 @@ def transform_all_product_func(**context):
         reference_product_csv = reference_product_df.to_csv(index=False)
         # Push the CSV strings as XCom values
         context['task_instance'].xcom_push(key='reference_product_df', value=reference_product_csv)
-    return 0
 
 def load_all_product_func(**context):
     # Retrieve the CSV string from XCom
@@ -555,7 +561,6 @@ def load_all_product_func(**context):
         print("[NOTICE] Skipping loading for reference products")
         # Print out notification
         print(f"[SUCCESS] Loaded {len(reference_product_df)} reference product records")
-    return 0
 
 def extract_specify_product_id_func(brands, **context):
     # Retrieve the CSV string from XCom
@@ -573,7 +578,6 @@ def extract_specify_product_id_func(brands, **context):
     specify_product_ids_csv = specify_product_ids.to_csv(index=False)
     # Push the CSV string as an XCom value
     context['task_instance'].xcom_push(key='specify_product_ids', value=specify_product_ids_csv) 
-    return 0
 
 def extract_product_data_func(**context):
     # Retrieve the CSV string from XCom
@@ -626,7 +630,6 @@ def extract_product_data_func(**context):
     product_data_csv = product_data_df.to_csv(index=False)
     # Push the CSV string as an XCom value
     context['task_instance'].xcom_push(key='product_data', value=product_data_csv)
-    return 0
 
 def transform_specify_product_func(brand, **context):
     # Retrieve the CSV string from XCom
@@ -773,7 +776,6 @@ def load_specify_product_func(**context):
     
     cursor.close()
     conn.close()
-    return 0
 
 def extract_feedback_data_func(**context):
     # Retrieve the CSV string from XCom
@@ -862,7 +864,6 @@ def extract_feedback_data_func(**context):
     feedback_data_csv = feedback_data_df.to_csv(index=False)
     # Push the CSV string as an XCom value
     context['task_instance'].xcom_push(key='feedback_data', value=feedback_data_csv)
-    return 0
 
 def transform_specify_feedback_func(brand, **context):
     # Retrieve the CSV string from XCom
@@ -976,7 +977,6 @@ def load_specify_feedback_func(**context):
     
     cursor.close()
     conn.close()
-    return 0
 
 
 
