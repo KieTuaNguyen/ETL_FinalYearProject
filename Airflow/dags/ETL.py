@@ -2,8 +2,11 @@ try:
     from airflow import DAG
     from datetime import timedelta, datetime
     from airflow.operators.python import PythonOperator
+    from airflow.hooks.base import BaseHook
+    from airflow.utils.email import send_email_smtp
+    import logging
     from airflow.models.xcom_arg import XComArg
-    
+    from airflow.providers.smtp.hooks.smtp import SmtpHook
     print("Modules were imported successfully")
 except Exception as e:
     print("Error {} ".format(e))
@@ -49,7 +52,8 @@ default_args = {
     "retry_delay": timedelta(minutes=5),
     "start_date": datetime(2024, 3, 1)
 }
-
+# Set up logging
+logger = logging.getLogger(__name__)    
 config = get_config('DevDB')
 print("[SUCCESS] Server, Database, Username, Password, Driver are loaded")
 # Configuration for the SQL Server connection
@@ -122,6 +126,63 @@ def retrieve_product_ids(id):
             product_data.append({"sub_category_id": id, "product_id": product_id, "brand_name": brand_name})
     return product_data
 
+def send_success_email(context):
+    try:
+        task_instance = context['task_instance']
+        task_id = task_instance.task_id
+        execution_date = context['execution_date']
+        log_url = context['task_instance'].log_url
+        
+        subject = f"[SUCCESS] Flexiboard task {task_id} succeeded"
+        body = f"""
+        Task: {task_id}
+        Execution Date: {execution_date}
+        
+        [SUCCESS] {task_instance.xcom_pull(task_ids=task_id)}
+        
+        Log URL: {log_url}
+        """
+        
+        smtp_hook = SmtpHook(smtp_conn_id='email_default')
+        smtp_hook.send_email(
+            to='kietntgdd210002@fpt.edu.vn',
+            subject=subject,
+            html_content=body,
+            mime_subtype='html'
+        )
+        logger.info(f"Success email sent for task {task_id}")
+    except Exception as e:
+        logger.error(f"Failed to send success email for task {task_id}: {str(e)}")
+
+def send_failure_email(context):
+    try:
+        task_instance = context['task_instance']
+        task_id = task_instance.task_id
+        execution_date = context['execution_date']
+        log_url = context['task_instance'].log_url
+        
+        subject = f"[FAILED] Flexiboard task {task_id} failed"
+        body = f"""
+        Task: {task_id}
+        Execution Date: {execution_date}
+        
+        [FAILED] Failed the task.
+        Please check the log for more details.
+        
+        Log URL: {log_url}
+        """
+        
+        smtp_hook = SmtpHook(smtp_conn_id='email_default')
+        smtp_hook.send_email(
+            to='kietntgdd210002@fpt.edu.vn',
+            subject=subject,
+            html_content=body,
+            mime_subtype='html'
+        )
+        logger.info(f"Failure email sent for task {task_id}")
+    except Exception as e:
+        logger.error(f"Failed to send failure email for task {task_id}: {str(e)}")
+    
 # Get the current date
 current_date = date.today()
 # Get the day of the month
@@ -652,7 +713,6 @@ def transform_specify_product_func(brand, **context):
     context['task_instance'].xcom_push(key='pricing_df', value=pricing_csv)
     context['task_instance'].xcom_push(key='brand_df', value=brand_csv)
     context['task_instance'].xcom_push(key='seller_df', value=seller_csv)
-    return 0
 
 def load_specify_product_func(**context):
     # Retrieve the CSV string from XCom
@@ -874,7 +934,6 @@ def transform_specify_feedback_func(brand, **context):
     context['task_instance'].xcom_push(key='user_df', value=user_csv)
     context['task_instance'].xcom_push(key='general_feedback_df', value=general_feedback_csv)
     context['task_instance'].xcom_push(key='feedback_detail_df', value=feedback_detail_csv)
-    return 0
 
 def load_specify_feedback_func(**context):
     # Retrieve the CSV string from XCom
@@ -945,33 +1004,45 @@ with DAG(dag_id="ETL",
     # Define Tasks
     extract_sub_category_id = PythonOperator(
         task_id='extract_sub_category_id',
-        python_callable=extract_sub_category_id_func
+        python_callable=extract_sub_category_id_func,
+        on_success_callback=send_success_email,
+        on_failure_callback=send_failure_email
     )
 
     transform_data_sub_category = PythonOperator(
         task_id='transform_data_sub_category',
-        python_callable=transform_sub_category_func
+        python_callable=transform_sub_category_func,
+        on_success_callback=send_success_email,
+        on_failure_callback=send_failure_email
     )
 
     load_data_sub_category = PythonOperator(
         task_id='load_data_sub_category',
-        python_callable=load_sub_category_func
+        python_callable=load_sub_category_func,
+        on_success_callback=send_success_email,
+        on_failure_callback=send_failure_email
     )
 
     extract_all_product_id = PythonOperator(
         task_id='extract_all_product_id',
         python_callable=extract_all_product_id_func,
-        op_kwargs={'sub_category_df': XComArg(extract_sub_category_id)}
+        op_kwargs={'sub_category_df': XComArg(extract_sub_category_id)},
+        on_success_callback=send_success_email,
+        on_failure_callback=send_failure_email
     )
 
     transform_data_all_product = PythonOperator(
         task_id='transform_data_all_product',
-        python_callable=transform_all_product_func
+        python_callable=transform_all_product_func,
+        on_success_callback=send_success_email,
+        on_failure_callback=send_failure_email
     )
 
     load_data_all_product = PythonOperator(
         task_id='load_data_all_product',
-        python_callable=load_all_product_func
+        python_callable=load_all_product_func,
+        on_success_callback=send_success_email,
+        on_failure_callback=send_failure_email
     )
 
     list_of_brands = ['Apple', 'HP', 'Asus', 'Samsung']
@@ -991,50 +1062,63 @@ with DAG(dag_id="ETL",
         extract_specify_product_id_task = PythonOperator(
             task_id=f'extract_{brand.lower()}_product_id',
             python_callable=extract_specify_product_id_func,
-            op_kwargs={'product_ids_df': XComArg(extract_all_product_id), 'brands': [brand]}
+            op_kwargs={'product_ids_df': XComArg(extract_all_product_id), 'brands': [brand]},
+            on_success_callback=send_success_email,
+            on_failure_callback=send_failure_email
         )
         extract_specify_product_id_tasks[brand] = extract_specify_product_id_task
-
-
 
         extract_product_data_task = PythonOperator(
             task_id=f'extract_{brand.lower()}_product_data',
             python_callable=extract_product_data_func,
-            op_kwargs={'brand': brand}
+            op_kwargs={'brand': brand},
+            on_success_callback=send_success_email,
+            on_failure_callback=send_failure_email
         )
         extract_product_data_tasks[brand] = extract_product_data_task
 
         transform_data_product_task = PythonOperator(
             task_id=f'transform_data_product_{brand.lower()}',
-            python_callable=transform_specify_product_func
+            python_callable=transform_specify_product_func,
+            op_kwargs={'brand': brand},
+            on_success_callback=send_success_email,
+            on_failure_callback=send_failure_email
         )
         transform_data_product_tasks[brand] = transform_data_product_task
 
         load_data_product_task = PythonOperator(
             task_id=f'load_data_product_{brand.lower()}',
-            python_callable=load_specify_product_func
+            python_callable=load_specify_product_func,
+            op_kwargs={'brand': brand},
+            on_success_callback=send_success_email,
+            on_failure_callback=send_failure_email
         )
         load_data_product_tasks[brand] = load_data_product_task
-
-
 
         extract_feedback_data_task = PythonOperator(
             task_id=f'extract_{brand.lower()}_feedback_data',
             python_callable=extract_feedback_data_func,
-            op_kwargs={'brand': brand}
+            op_kwargs={'brand': brand},
+            on_success_callback=send_success_email,
+            on_failure_callback=send_failure_email
         )
         extract_feedback_data_tasks[brand] = extract_feedback_data_task
 
-
         transform_data_feedback_task = PythonOperator(
             task_id=f'transform_data_feedback_{brand.lower()}',
-            python_callable=transform_specify_feedback_func
+            python_callable=transform_specify_feedback_func,
+            op_kwargs={'brand': brand},
+            on_success_callback=send_success_email,
+            on_failure_callback=send_failure_email
         )
         transform_data_feedback_tasks[brand] = transform_data_feedback_task
 
         load_data_feedback_task = PythonOperator(
             task_id=f'load_data_feedback_{brand.lower()}',
-            python_callable=load_specify_feedback_func
+            python_callable=load_specify_feedback_func,
+            op_kwargs={'brand': brand},
+            on_success_callback=send_success_email,
+            on_failure_callback=send_failure_email
         )
         load_data_feedback_tasks[brand] = load_data_feedback_task
 
