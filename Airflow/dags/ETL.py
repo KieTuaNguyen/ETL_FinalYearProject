@@ -683,7 +683,8 @@ def transform_specify_product_func(brand, **context):
     brand = product_df[["brand_id",
                            "brand_name",
                            "brand_slug"]]
-    brand = brand.rename(columns={"brand_name": "Name",
+    brand = brand.rename(columns={"brand_id": "BrandID",
+                                  "brand_name": "Name",
                                   "brand_slug": "Slug"})
     brand = brand.drop_duplicates()
 
@@ -692,7 +693,8 @@ def transform_specify_product_func(brand, **context):
                             "seller_name",
                             "seller_link",
                             "seller_image_url"]]
-    seller = seller.rename(columns={"seller_name": "Name",
+    seller = seller.rename(columns={"seller_id": "SellerID",
+                                    "seller_name": "Name",
                                     "seller_link": "Link",
                                     "seller_image_url": "ImageURL"})
     seller = seller.drop_duplicates()
