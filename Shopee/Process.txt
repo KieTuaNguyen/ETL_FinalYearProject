@@ -1,6 +1,0 @@
-Category - Facet - Product List - Product - Feedback
-
-Methods for each model:
-[All] Category = API [https://shopee.vn/api/v4/official_shop/get_categories?tab_type=1]
-[Thiết Bị Điện Tử] Sub Category = Crawling through URL [https://shopee.vn/Thiết-Bị-Điện-Tử-cat.11036132]
-[Headphones] Facet = Crawling through URL [https://shopee.vn/Headphones-cat.11036132.11109141]
