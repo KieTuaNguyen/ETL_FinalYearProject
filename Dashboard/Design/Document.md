@@ -42,6 +42,8 @@
 - Background Color: #E6E6E6
 - Border Radius: 30px
 - Shape: Capsule (fully rounded ends)
+- Spacing: 22 backspace units (or 35)
+- Height and width: 48px x 154px
 
 ### Chart Containers
 - Background Color: #F8F8F8
