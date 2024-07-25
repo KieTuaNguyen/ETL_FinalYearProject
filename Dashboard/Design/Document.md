@@ -16,11 +16,11 @@
 
 ### Chart Colors
 1. Heatmap Color Palette:
-   - Level 1: [Color code to be determined]
-   - Level 2: [Color code to be determined]
-   - Level 3: [Color code to be determined]
-   - Level 4: [Color code to be determined]
-   - Level 5: [Color code to be determined]
+   - Level 1: #0096C7
+   - Level 2: #00B4D8
+   - Level 3: #48CAE4
+   - Level 4: #90E0EF
+   - Level 5: #ADE8F4
 
 2. KPI Color Palette:
    - Increase: #6FB47A
@@ -41,22 +41,35 @@
 ### Buttons
 - Background Color: #E6E6E6
 - Border Radius: 30px
+- Shape: Capsule (fully rounded ends)
 
 ### Chart Containers
 - Background Color: #F8F8F8
 - Border Radius: 12px
+- Shape: Capsule (rounded rectangle)
 
 ## Layout Guidelines
 [This section would typically include information about the overall layout structure, grid system, and spacing guidelines. As this information wasn't provided in the original content, it should be defined and added here.]
 
 ## Responsive Design
-[Information about how the dashboard should adapt to different screen sizes and devices would be included here.]
-
-## Accessibility Considerations
-[Guidelines for ensuring the dashboard is accessible to users with disabilities would be outlined in this section.]
+- Enable responsive interactions:
+  - Allow users to click on each chart to expand or focus on its details
+  - Implement collapsible filters that can be easily accessed and modified on all device sizes
 
 ## Interaction Design
-[Details about hover states, animations, and other interactive elements would be described here.]
+- Implement hover effects for interactive elements:
+  - Buttons: Slight color change and subtle shadow on hover
+  - Chart elements: Highlight data points or segments on hover
+- Add tooltip functionality to display additional information on hover for complex chart elements
+- Enable chart expansion:
+  - Allow users to click on charts to view an expanded version with more detailed information
+  - Provide an option to view charts in full-screen mode
+- Implement smooth transitions (0.3s duration) for all state changes
+- For truncated text (indicated by "..."):
+  - On hover, show the full text in a tooltip
+  - For charts or statistic numbers, clicking the ellipsis should expand the element to show full details
+- Add subtle animations for loading states and data updates to improve perceived performance
+- Implement drag-and-drop functionality for customizable dashboard layouts (if applicable)
 
 ## Additional Notes
 - The design should maintain a clean, professional look consistent with Tiki's brand identity.
