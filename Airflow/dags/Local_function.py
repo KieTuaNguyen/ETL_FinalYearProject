@@ -1,13 +1,13 @@
 import os
 import pandas as pd
 
-def upsert_data(base_dir, warehouse, database, data_df, check_columns):
+def upsert_data(base_dir, collection, database, data_df, check_columns):
     """
-    Upload data from a pandas DataFrame to a local CSV file.
+    Upload data from a pandas DataFrame to a local CSV file within the warehouse structure.
     Args:
         base_dir (str): The base directory path.
-        warehouse (str): The warehouse name (formerly collection).
-        database (str): The name of the CSV file (formerly file_name).
+        collection (str): The collection name (e.g., 'category').
+        database (str): The name of the CSV file (e.g., 'Group.csv').
         data_df (pandas.DataFrame): The DataFrame containing the data to upload.
         check_columns (list): A list of column names to check for existing records.
     Returns:
@@ -18,18 +18,19 @@ def upsert_data(base_dir, warehouse, database, data_df, check_columns):
     if not database.endswith('.csv'):
         database += '.csv'
     
-    # Construct the full file path
-    full_path = os.path.join(base_dir, warehouse, database)
+    # Construct the full file path with warehouse structure
+    warehouse_path = os.path.join(base_dir, 'warehouse', collection)
+    full_path = os.path.join(warehouse_path, database)
     
-    # Ensure the directory exists
-    os.makedirs(os.path.dirname(full_path), exist_ok=True)
+    # Ensure the warehouse directory structure exists
+    os.makedirs(warehouse_path, exist_ok=True)
     
     # Check if the file exists
     file_exists = os.path.isfile(full_path)
     
     if not file_exists:
         # Create a new CSV file with the data
-        data_df.to_csv(full_path, index=False)
+        data_df.to_csv(full_path, index=False, encoding='utf-8-sig')
         print(f"[CREATE NEW] The file '{full_path}' created.")
         return f"[INSERT] There are {len(data_df)} records inserted."
     else:
@@ -78,7 +79,7 @@ def upsert_data(base_dir, warehouse, database, data_df, check_columns):
         result_df = pd.DataFrame(updated_records)
         
         # Write updated data back to CSV
-        result_df.to_csv(full_path, index=False)
+        result_df.to_csv(full_path, index=False, encoding='utf-8-sig')
         
         result_message = ""
         if update_count > 0:
@@ -87,15 +88,15 @@ def upsert_data(base_dir, warehouse, database, data_df, check_columns):
             result_message += f"[INSERT] There are {insert_count} records inserted."
         
         return result_message.strip()
-    
-def insert_data(base_dir, warehouse, database, data_df):
+
+def insert_data(base_dir, collection, database, data_df):
     """
-    Insert new data from a pandas DataFrame to a local CSV file without overwriting existing data.
+    Insert new data from a pandas DataFrame to a local CSV file within the warehouse structure.
     
     Args:
         base_dir (str): The base directory path.
-        warehouse (str): The warehouse name (formerly collection).
-        database (str): The name of the CSV file (formerly file_name).
+        collection (str): The collection name (e.g., 'category').
+        database (str): The name of the CSV file (e.g., 'Group.csv').
         data_df (pandas.DataFrame): The DataFrame containing the data to insert.
     
     Returns:
@@ -106,18 +107,19 @@ def insert_data(base_dir, warehouse, database, data_df):
     if not database.endswith('.csv'):
         database += '.csv'
     
-    # Construct the full file path
-    full_path = os.path.join(base_dir, warehouse, database)
+    # Construct the full file path with warehouse structure
+    warehouse_path = os.path.join(base_dir, 'warehouse', collection)
+    full_path = os.path.join(warehouse_path, database)
     
-    # Ensure the directory exists
-    os.makedirs(os.path.dirname(full_path), exist_ok=True)
+    # Ensure the warehouse directory structure exists
+    os.makedirs(warehouse_path, exist_ok=True)
     
     # Check if the file exists
     file_exists = os.path.isfile(full_path)
     
     if not file_exists:
         # Create a new CSV file with the data
-        data_df.to_csv(full_path, index=False)
+        data_df.to_csv(full_path, index=False, encoding='utf-8-sig')
         print(f"[CREATE NEW] The file '{full_path}' created.")
         return f"[INSERT] There are {len(data_df)} records inserted."
     else:
@@ -133,7 +135,7 @@ def insert_data(base_dir, warehouse, database, data_df):
         result_df = result_df.drop_duplicates()
         
         # Write updated data back to CSV
-        result_df.to_csv(full_path, index=False)
+        result_df.to_csv(full_path, index=False, encoding='utf-8-sig')
         
         inserted_count = len(result_df) - len(existing_df)
         return f"[INSERT] There are {inserted_count} records inserted."
