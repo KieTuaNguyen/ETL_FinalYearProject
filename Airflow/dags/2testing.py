@@ -81,7 +81,7 @@ def save_json_data(data, file_path):
 
 def main():
     BATCH_SIZE = 5
-    INPUT_FILE = 'warehouse/feedback/FeedbackDetail.json'
+    INPUT_FILE = 'warehouse/feedback/CustomerSatisfaction.json'
     OUTPUT_FILE = 'processed.json'
     FAILED_FILE = 'failed_entries.json'
 
